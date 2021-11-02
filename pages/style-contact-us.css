@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+}
+
+::placeholder {
+    font-family: 'Poppins', sans-serif;
+    line-height: 30px;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    color: black;
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    word-spacing: 3px;
+    margin: 0;
+}
+
+.container h3 {
+    color: black;
+    font-weight: 450;
+    letter-spacing: 0.2rem;
+    word-spacing: 2px;
+    margin: 0;
+}
+
+.container p {
+    color: black;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+/* Head */
+.head-content .container {
+    background-image: linear-gradient(
+        rgba(204, 152, 57, 0.7),rgba(5, 11, 32, 0.7)),url("/IE104_PROJECT/images/sapa-contact-us.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.head-content .container h1 {
+    color: white;
+}
+
+.head-content .container p {
+    color: white;
+}
+/* End Header */
+
+/* Main */
+.main-content {
+    max-width: 1200px;
+    /* width: 80%; */
+    margin: auto;
+    padding: 50px 0;
+}
+
+.personal-info {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.personal-info input {
+    border-radius: 5px;
+    border-color: rgb(63, 63, 63);
+    border-width: 0.5px;
+    font-size: 15px;
+    color: darkgray;
+    width: 100%;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.personal-info textarea {
+    border-radius: 5px;
+    border-color: rgb(63, 63, 63);
+    border-width: 1px;
+    font-size: 15px;
+    color: darkgray;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+canvas {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(255, 225, 185);
+    border-radius: 5px;
+}
+
+.confirm-captcha #textBox {
+    width: 200px;
+    height: 100px;
+    border-radius: 5px;
+    border-color: rgb(63, 63, 63);
+    border-width: 1px;
+    font-size: 15px;
+    color: darkgray;
+}
+
+input[type = submit],
+button[type = submit] {
+    display: inline-block;
+    background-color: rgb(177, 192, 187);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    width: 100px;
+    height: 50px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+input[type = submit]:hover,
+button[type = submit]:hover {
+    background-color: rgb(255, 225, 185);
+    width: 110px;
+    height: 55px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(255, 225, 185, 0.2), 0 6px 20px 0 rgba(255, 225, 185, 0.2);
+    font-size: 2.2rem;
+}
+/* End Main */
+
+/* More Contact */
+.more-contact {
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info .info {
+    width: 500px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 18px 0 #0000002c;
+    transition: 0.3s ease box-shadow;
+}
+
+.contact-info .info:hover {
+    box-shadow: 0 0 5px 0 #0000002c;
+}
+
+.contact-info .info i {
+    font-size: 100px;
+}
+
+.info .info-detail {
+    width: 300px;
+}
+
+.location {
+    width: 100%;
+}
+
+.location .contact-location {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+/* End More Contact */
+
+/* Media */
+@media only screen and (min-width: 950px) {
+    form {
+        width: 100%;
+        max-width: 1000px;
+    }
+    
+    .personal-info {
+        display: flex;
+        width: 100%;
+    }
+
+    .personal-info input {
+        padding: 12px 20px;
+        margin: 12px 0;
+        width: 47%;
+        height: 55px;
+    }
+
+    .personal-info textarea {
+        width: 100%;
+        height: 300px;
+    }
+
+    .confirm-captcha .captcha-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .contact-info {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 20px 0;
+    }
+
+    .contact-location {
+        margin: 20px 0;
+    }
+
+    .contact-info .info {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 200px;
+    }
+
+    .info .icon img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .more-contact .info i {
+        font-size: 100px;
+    }
+        
+}
+/* End Media */

@@ -1,0 +1,236 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+}
+
+p, q, ol, ul, h3, h4, h5, h6 {
+    line-height: 30px;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+}
+
+::placeholder {
+    font-family: 'Poppins', sans-serif;
+    line-height: 30px;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    color: black;
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    word-spacing: 3px;
+    margin: 0;
+}
+
+.container h3 {
+    color: black;
+    font-weight: 450;
+    letter-spacing: 0.2rem;
+    word-spacing: 2px;
+    margin: 0;
+}
+
+.container p {
+    color: black;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+/* Head */
+.head-content .container {
+    background-image: linear-gradient(
+        rgba(204, 152, 57, 0.7),rgba(5, 11, 32, 0.7)),url("/IE104_PROJECT/images/sapa-contact-us.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.head-content h1 {
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+/* End Header */
+
+/* Main Content */
+.main-content {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.content p {
+    font-weight: 400;
+}
+
+.content .info {
+    display: flex;
+    align-items: center;
+}
+
+.post-owner {
+    align-items: center;
+    margin-left: 20px;
+}
+
+.info img {
+    max-width: 200px;
+    width: 20%;
+    max-width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.detail {
+    text-align: justify;
+    line-height: 20px;
+}
+
+/* Photo */
+.photos {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.photos .head-photo {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column {
+    -ms-flex: 50%; 
+    flex: 50%;
+    padding: 0 4px;
+}
+  
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.btn {
+    margin-top: 10px;
+    margin-right: 20px;
+    display: inline-block;
+    background-color: rgb(177, 192, 187);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: rgb(255, 225, 185);
+    width: 60px;
+    height: 55px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(255, 225, 185, 0.2), 0 6px 20px 0 rgba(255, 225, 185, 0.2);
+    font-size: 2.2rem;
+}
+
+.btn.active {
+    background-color: tomato;
+}
+
+/* End Photo */
+
+/* Interaction */
+.interaction {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.interaction textarea {
+    border-radius: 5px;
+    border-color: rgb(63, 63, 63);
+    border-width: 1px;
+    font-size: 15px;
+    color: darkgray;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.interaction .info-comment input {
+    border-radius: 5px;
+    border-color: rgb(63, 63, 63);
+    border-width: 1px;
+    font-size: 15px;
+    color: darkgray;
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.interaction .save-info {
+    display: inline-flex;
+}
+
+.interaction .save-info input {
+    margin-top: 10px;
+    margin-right: 20px;
+    height: 50px;
+}
+
+.interaction input[type=submit] {
+    display: inline-block;
+    background-color: rgb(177, 192, 187);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    width: 200px;
+    height: 50px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.interaction input[type=submit]:hover {
+    background-color: rgb(255, 225, 185);
+    width: 210px;
+    height: 55px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(255, 225, 185, 0.2), 0 6px 20px 0 rgba(255, 225, 185, 0.2);
+    font-size: 2.2rem;
+}
+
+/* End Main Content */
