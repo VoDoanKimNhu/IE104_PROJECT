@@ -1,0 +1,293 @@
+
+/*--------------------Main Site Section------------*/
+
+/*------------------Blog Carousel------------------*/
+/*Slideshow*/
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.slides {
+    display: none;
+    overflow: hidden;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    padding: 15px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.1s;
+    user-select: none;
+    width: auto;
+    margin-top: -70px;
+}
+
+.prev:hover, .next:hover {
+    color: #3498db;
+}
+
+.next {
+    right: 0;
+}
+
+.dotbox {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50% ;
+    background-color: #bbb;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+.nameImg {
+    position: absolute;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 20px;
+    top: 40%;
+    left: 10%;
+    z-index: 1;
+}
+
+.nameImg h1 {
+    color:rgb(252, 249, 249);
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 28px;
+    width: 100%;
+}
+
+.nameImg p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*Reponsive carousel*/
+
+@media (max-width: 600px) {
+    .nameImg {
+        left: 16%;
+    }
+    .nameImg h1 {
+        font-size: 20px;
+    }
+    .nameImg p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .nameImg {
+        top: 20%;
+        left: 14%;
+    }
+    .nameImg h1 {
+        font-size: 14px;
+    }
+    .nameImg p {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .dot {
+    width: 13px;
+    height: 13px;
+    margin: 0 6px;
+    }
+}
+/*------------------Blog Carousel------------------*/
+
+
+/*------------------Site Content-------------------*/
+main .site-content {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin-top: 2rem;
+    margin-left: 3.5rem;
+    margin-right: 4rem;
+}
+
+main .post-content {
+    width: 100%;
+    margin-bottom: 5rem;
+    padding: -10px;
+}
+
+main .site-content .post-content > .post-image, .post-title {
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+main .site-content .post-content > .post-image .post-info {
+    border: 0px solid ;
+    background-color: #81BEF7;
+    padding: 0.3rem; 
+    position: absolute;
+    bottom: 0%;
+    left: 20vw;
+    border-radius: 3rem;;
+}
+
+main .site-content .post-content > .post-image > div {
+    overflow: hidden;
+}
+
+main .site-content .post-content > .post-image .img-p {
+    width: 100%;
+    transition: all 1s ease;
+}
+
+main .site-content .post-content > .post-image .img-p:hover {
+    transform: scale(1.2);
+}
+
+main .site-content .post-content > .post-image .post-info span {
+    margin: 0.5rem;
+}
+
+main .post-content .post-title a {
+    font-family: sd;
+    font-size: 1.5rem;
+}
+
+main .post-content .post-title p {
+    line-height: 22px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+main .site-content .post-content .post-title .post-btn {
+    margin-top: 20px;
+    border: 0px solid;
+    border-radius: 0;
+    padding: .7rem 1.5rem;
+    background-color: #81BEF7;
+}
+
+hr {
+    margin-top: -68px;
+}
+
+.site-content .pagination {
+    justify-content: center;
+    color: rgba(0,0,0,0.2);
+    margin: 4rem 0;
+}
+
+.site-content .pagination a {
+    padding: .6rem .9rem;
+    border-radius: 2rem;
+    margin: 0.3rem;
+}
+
+.site-content .pagination .pages {
+    background: grey;
+    color: white;
+}
+
+.sidebar {
+    margin-left: 20px;
+}
+
+.site-content .sidebar .popular-post h1 {
+    margin-left: 24px;
+}
+
+.site-content .sidebar .popular-post .post-content {
+    padding: 1rem 0;
+}
+
+.site-content .sidebar .popular-post h1 {
+    padding-top: .3rem;
+}
+
+.site-content .sidebar .popular-post .post-info {
+    padding: 0.1px 0.1px !important;
+    bottom: 1rem !important;
+    left: 2rem !important;
+    border-radius: 0rem !important;
+    background: cornsilk !important;
+    font-size: 11px;
+}
+
+.site-content .sidebar .popular-post .post-title a{
+    font-size: 1.4rem;
+}
+
+.site-content .sidebar .popular-tag {
+    padding: 4rem 0;
+    margin-left: 24px;
+}
+
+.site-content .sidebar .popular-tag .tags .tag {
+    background: #81BEF7;
+    padding: .4rem 1rem;
+    border-radius: 3rem;
+    margin: .4rem .6rem;
+}
+/*------------------Site Content-------------------*/
+
+
+
+/*--------------------Main Site Section------------*/
+
+
+@media only screen and (max-width: 1130px){
+    .site-content .post-content > .post-image .post-info {
+        left: 2rem !important;
+        bottom: 1.2rem !important;
+        border-radius: 0% !important;
+    }
+    .site-content .sidebar .popular-post .post-info{
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 750px){
+    main .site-content {
+         grid-template-columns: 100%;
+    } 
+}
+
+@media only screen and (max-width: 520px){
+    main .site-content .post-content > .post-image .post-info {
+        display: none;
+    }
+}
