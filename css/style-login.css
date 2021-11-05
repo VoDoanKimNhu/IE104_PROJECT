@@ -55,7 +55,7 @@ p, q, ol, ul, h3, h4, h5, h6 {
 
 .container {
     background-image: linear-gradient(
-        rgba(204, 152, 57, 0.7),rgba(5, 11, 32, 0.7)),url("/IE104_PROJECT/images/sapa-contact-us.jpg");
+        rgba(204, 152, 57, 0.7),rgba(5, 11, 32, 0.7)),url("/IE104_PROJECT/image/sapa-contact-us.jpg");
     background-position: center;
     background-size: cover;
     position: relative;
