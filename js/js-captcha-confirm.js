@@ -5,7 +5,7 @@ ctx.fillStyle = "#000";
 
 let userText = document.querySelector('#textBox');
 let submitButton = document.querySelector('#submitButton');
-let output = document.querySelector('#output');
+let output = '';
 let refreshButton = document.querySelector('#refreshButton');
 
 // alphaNums contains the characters with which you want to create the CAPTCHA
@@ -27,10 +27,10 @@ userText.addEventListener('keyup', function(e) {
  if (e.keyCode === 13) {
  if (userText.value === c) {
  output.classList.add("correctCaptcha");
- output.innerHTML = "Correct!";
+ output = true;
  } else {
  output.classList.add("incorrectCaptcha");
- output.innerHTML = "Incorrect, please try again";
+ output = false;
  }
  }
 });
@@ -40,10 +40,10 @@ userText.addEventListener('keyup', function(e) {
 submitButton.addEventListener('click', function() {
  if (userText.value === c) {
  output.classList.add("correctCaptcha");
- output.innerHTML = "Correct!";
+ output = true;
  } else {
  output.classList.add("incorrectCaptcha");
- output.innerHTML = "Incorrect, please try again";
+ output = false;
  }
 });
 // This event listener is stimulated whenever the user press the "Refresh" button
@@ -59,3 +59,7 @@ refreshButton.addEventListener('click', function() {
  ctx.fillText(refreshArr.join(''),captchaText.width/4, captchaText.height/2);
  output.innerHTML = "";
 });
+
+if(output == true) {
+    
+}

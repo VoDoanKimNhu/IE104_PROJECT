@@ -169,6 +169,16 @@ p, q, ol, ul, h3, h4, h5, h6 {
 
 /* End Photo */
 
+/* Comment */
+.comment {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+    border: 1px solid gray;
+}
+
+/* End Comment */
+
 /* Interaction */
 .interaction {
     width: 80%;

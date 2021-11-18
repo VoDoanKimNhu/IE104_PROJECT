@@ -13,30 +13,75 @@
                         <button type="button" onclick="login()" class="toggle-btn"><span>Log In</span></button>
                         <button type="button" onclick="register()" class="toggle-btn"><span>Register</span></button>
                     </div>
-                    <form action="" id="login" class="input-group-login">
-                        <input type="email" name="email" id="email" class="input-field" placeholder="Your Email" required><br>
+                    <form action="" id="login" class="input-group-login" method="POST">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input name="email" type="email" id="email" placeholder="Your Email">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input name="password" type="password" id="password" placeholder="Your Password">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <input type="checkbox" name="remember-pswd" id="remember-pswd" class="check-box"><span>Remember Password</span>
+
+                        <button type="submit" class="submit-btn">Log In</button>
+
+                        <!-- <input type="email" name="email" id="email" class="input-field" placeholder="Your Email" required><br>
                         <input type="password" name="password" id="password" class="input-field" placeholder="Your Password" required><br>
                         <input type="checkbox" name="remember-pswd" id="remember-pswd" class="check-box"><span>Remember Password</span>
-                        <button type="submit" class="submit-btn">Log In</button>
+                        <button type="submit" class="submit-btn">Log In</button> -->
                     </form>
-                    <form action="" id="register" class="input-group-register">
-                        <input type="text" name="first-name" id="first-name" class="input-field" placeholder="Your First Name" required><br>
+                    <form action="" id="register" class="input-group-register" method="POST">
+                        <div class="form-group">
+                            <label for="first-name" class="form-label">First Name</label>
+                            <input name="first-name" type="text" id="first-name" placeholder="Your First Name">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name" class="form-label">Last Name</label>
+                            <input name="last-name" type="text" id="last-name" placeholder="Your Last Name">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input name="email" type="email" id="email" placeholder="Your Email">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input name="password" type="password" id="password" placeholder="Your Password">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password" class="form-label">Confirm Password</label>
+                            <input name="confirm-password" type="password" id="confirm-password" placeholder="Confirm Password">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <input type="checkbox" name="agree-terms" id="agree-terms" class="check-box"><span>I agree to the terms and conditions</span><br>
+                        <button type="submit" class="submit-btn">Register</button>
+
+                        <!-- <input type="text" name="first-name" id="first-name" class="input-field" placeholder="Your First Name" required><br>
                         <input type="text" name="last-name" id="last-name" class="input-field" placeholder="Your Last Name" required><br>
                         <input type="email" name="email" id="email" class="input-field" placeholder="Your Email" required><br>
                         <input type="password" name="password" id="password" class="input-field" placeholder="Your Password" required><br>
                         <input type="password" name="confirm-password" id="confirm-password" class="input-field" placeholder="Confirm Your Password" required><br>
                         <input type="checkbox" name="agree-terms" id="agree-terms" class="check-box"><span>I agree to the terms and conditions</span><br>
-                        <button type="submit" class="submit-btn">Register</button>
+                        <button type="submit" class="submit-btn">Register</button> -->
                     </form>
                 </div>
             </div>    
         </div>
     </main>
-<<<<<<< HEAD
     <script src="/IE104_PROJECT/js/js-login.js"></script>
-=======
-    <script src="js/js-login.js"></script>
->>>>>>> dev
     <!--#include virtual="/IE104_PROJECT/common/footer.html"-->
 </body>
 </html>
