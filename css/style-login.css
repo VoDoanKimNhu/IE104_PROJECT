@@ -1,0 +1,204 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+}
+
+p, q, ol, ul, h3, h4, h5, h6 {
+    line-height: 30px;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+}
+
+::placeholder {
+    font-family: 'Poppins', sans-serif;
+    line-height: 30px;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    color: black;
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    word-spacing: 3px;
+    margin: 0;
+}
+
+.container h3 {
+    color: black;
+    font-weight: 450;
+    letter-spacing: 0.2rem;
+    word-spacing: 2px;
+    margin: 0;
+}
+
+.container p {
+    color: black;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.container {
+    background-image: linear-gradient(
+        rgba(204, 152, 57, 0.7),rgba(5, 11, 32, 0.7)),url("/IE104_PROJECT/image/sapa-contact-us.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    opacity: 0.7;
+}
+
+/* Form */
+/* #login-form {
+    display: none;
+} */
+
+.form-box {
+    width: 500px;
+    height: 650px;
+    position: relative;
+    margin: 2% auto;
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    overflow: hidden;
+}
+
+.form-group p {
+    color: white;
+    font-size: 10px;
+    font-weight: 300;
+    padding: 0 0;
+    word-spacing: 0;
+}
+
+.button-box {
+    width: 325px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+
+.toggle-btn,
+.submit-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    width: 160px;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 160px;
+    height: 100%;
+    background: #f3c693;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.input-group-login {
+    top: 150px;
+    position: absolute;
+    width: 320px;
+    transition: 0.5s;
+}
+
+.input-group-register {
+    top: 120px;
+    /* position: relative; */
+    position: absolute;
+    width: 320px;
+    transition: 0.5s;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.invalid {
+    border: 3px solid rgb(138, 0, 0);
+    border-left: 0;
+    border-top: 0;
+}
+
+.submit-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+
+    /* position: relative; */
+
+    margin: auto;
+    background: #f3c693;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.check-box {
+    margin: 30px 10px 34px 0;
+}
+
+span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#login span,
+#register span {
+    color: rgb(167, 167, 167);
+    font-size: 15px;
+    bottom: 72px;
+    position: absolute;
+}
+
+#login {
+    left: 90px;
+    top: 200px;
+
+}
+
+#login input {
+    color: white;
+    font-size: 15;
+}
+
+#register {
+    left: 600px;
+}
+
+#register input {
+    color: white;
+    font-size: 15;
+}
+/* End Form */
