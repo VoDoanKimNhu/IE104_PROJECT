@@ -257,33 +257,73 @@ p {
 /* End Photo */
 
 /* Comment */
-.comment {
-    width: 80%;
+.comment-act, .comment {
+    width: 50%;
+    max-width: 700px;
     margin: auto;
-    padding: 20px 0;
-    /* border: 1px solid gray; */
 }
 
-.container .comment .info img,
-.container .comment .add-comment .info img {
-    max-width: 200px;
-    width: 10%;
-    max-width: 100px;
+.comment-act {
+    margin-top: 40px;
+}
+
+.container .comment-act .add-comment .info img {
+    max-width: 70px;
+    width: 100%;
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
 }
 
-.container .comment .detail {
-    padding-left: 80px;
-}
-
-.container .container .add-comment hr {
-    width: 500px;
-}
-
 .add-comment {
     display: flex;
+}
+
+.add-comment .info {
+    width: 20%;
+    justify-content: center;
+}
+
+.add-comment .add-cmt {
+    width: 80%;
+    /* margin-top: 20px; */
+    justify-content: center;
+}
+
+.container .comment-act .add-comment input {
+    border: none;
+    width: 400px;
+    height: 30px;
+    background-color: transparent;
+}
+
+.comment-act .btn-cmt {
+    margin-right: 50px;
+}
+
+.container .comment-act button {
+    float: right;
+    width: 100px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.comment .info .post-owner {
+    width: 80%;
+    float: right;
+}
+
+.container .comment .info img {
+    max-width: 100px;
+    width: 10%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.comment .detail {
+    width: 80%;
+    float: right;
 }
 
 /* End Comment */
@@ -376,3 +416,38 @@ p {
 }
 
 /* End Main Content */
+
+@media only screen and (max-width: 1000px) {
+    /* Comment */
+    .comment-act, .comment {
+        width: 90%;
+    }
+
+    .comment-act .add-comment .info,
+    .comment-act .add-comment .add-cmt {
+        width: 100%;
+        justify-content: center;
+        margin: auto;
+    }
+        
+    .add-comment {
+        flex-direction: column;
+    }
+    
+    .container .comment-act .add-comment input {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .comment-act .btn-cmt {
+        /* width: 100%; */
+    }
+        
+    .comment .detail {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    /* End Comment */
+
+}

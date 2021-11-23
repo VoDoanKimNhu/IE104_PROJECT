@@ -107,17 +107,21 @@
 
         <section class="container">
             <h3>100 Comments</h3>
-            <div class="comment">
+            <div class="comment-act">
                 <div class="add-comment">
                     <div class="info">
                         <img src="/IE104_PROJECT/image/avt-nhu.jpg" alt="Image of owner" class="img-owner">
                     </div> 
-                    <div>
-                        <p>Add a public comment...</p>
-                        <svg height="2" width="500">
-                            <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgb(78, 78, 78);stroke-width:2" />
-                          </svg>
+                    <div class="add-cmt">
+                        <input type="text" name="comment" id="comment" placeholder="Add a public comment...">
+                        <svg height="2" width="450">
+                            <line x1="0" y1="0" x2="450" y2="0" style="stroke:rgb(78, 78, 78); stroke-width:2;"/>
+                        </svg>
                     </div>
+                </div>
+                <div class="btn-cmt">
+                    <button class="btn" onclick="y()">Comment</button>
+                    <button class="btn" onclick="x()">Cancel</button>    
                 </div>
             </div>
             <div class="comment">
