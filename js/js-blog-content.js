@@ -1,3 +1,4 @@
+// img grid 
 var elements = document.getElementsByClassName("column");
 
 var i; //amount img in column
@@ -31,4 +32,27 @@ for(var i=0; i<btns.length; i++) {
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
     });
+}
+
+// img modal
+var modal = document.getElementById('myModal');
+
+var imgs = document.getElementsByClassName('row-img');
+// var imgs = document.getElementsByClassName('row-img');
+for(let i=0; i<imgs.length; i++) {
+    var modalImg = document.getElementById("img01");
+    console.log(modalImg);
+    var captionText = document.getElementById("caption");
+    imgs[i].onclick = function(){
+
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }    
+}
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() { 
+  modal.style.display = "none";
 }
