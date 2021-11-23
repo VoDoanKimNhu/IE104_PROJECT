@@ -1,42 +1,99 @@
 <!--#include virtual="/IE104_PROJECT/common/document-head.html"-->
-    <title>Login</title>
-    <link rel="stylesheet" href="/IE104_PROJECT/css/style-login.css">
+<title>Login</title>
+<link rel="stylesheet" href="/IE104_PROJECT/css/style-login.css">
 </head>
 <body>
-    <!--#include virtual="/IE104_PROJECT/common/header.html"-->
-    <main>
-        <div class="container">
-            <div id="login-form" class="login-page">
-                <div class="form-box">
-                    <div class="button-box">
-                        <div id="btn"></div>
-                        <button type="button" onclick="login()" class="toggle-btn"><span>Log In</span></button>
-                        <button type="button" onclick="register()" class="toggle-btn"><span>Register</span></button>
-                    </div>
-                    <form action="" id="login" class="input-group-login">
-                        <input type="email" name="email" id="email" class="input-field" placeholder="Your Email" required><br>
-                        <input type="password" name="password" id="password" class="input-field" placeholder="Your Password" required><br>
-                        <input type="checkbox" name="remember-pswd" id="remember-pswd" class="check-box"><span>Remember Password</span>
-                        <button type="submit" class="submit-btn">Log In</button>
-                    </form>
-                    <form action="" id="register" class="input-group-register">
-                        <input type="text" name="first-name" id="first-name" class="input-field" placeholder="Your First Name" required><br>
-                        <input type="text" name="last-name" id="last-name" class="input-field" placeholder="Your Last Name" required><br>
-                        <input type="email" name="email" id="email" class="input-field" placeholder="Your Email" required><br>
-                        <input type="password" name="password" id="password" class="input-field" placeholder="Your Password" required><br>
-                        <input type="password" name="confirm-password" id="confirm-password" class="input-field" placeholder="Confirm Your Password" required><br>
-                        <input type="checkbox" name="agree-terms" id="agree-terms" class="check-box"><span>I agree to the terms and conditions</span><br>
-                        <button type="submit" class="submit-btn">Register</button>
-                    </form>
+<!--#include virtual="/IE104_PROJECT/common/header.html"-->
+<main>
+    <div class="container">
+        <div id="login-form" class="login-page">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" onclick="login()" class="toggle-btn"><span>Log In</span></button>
+                    <button type="button" onclick="register()" class="toggle-btn"><span>Register</span></button>
                 </div>
-            </div>    
-        </div>
-    </main>
-<<<<<<< HEAD
-    <script src="/IE104_PROJECT/js/js-login.js"></script>
-=======
-    <script src="js/js-login.js"></script>
->>>>>>> dev
-    <!--#include virtual="/IE104_PROJECT/common/footer.html"-->
+                <form action="" id="login" class="input-group-login" method="POST">
+                    <div class="form-group">
+                        <input name="email" type="email" id="email-login" class="input-field" placeholder="Your Email">
+                        <p class="form-message"></p><br>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="password" type="password" id="password-login" class="input-field" placeholder="Your Password">
+                        <p class="form-message"></p>
+                    </div>
+
+                    <input type="checkbox" name="remember-pswd" id="remember-pswd" class="check-box"><span>Remember Password</span>
+
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+                <form action="" id="register" class="input-group-register" method="POST">
+                    <div class="form-group">
+                        <input name="first-name" type="text" id="first-name" class="input-field" placeholder="Your First Name">
+                        <p class="form-message"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="last-name" type="text" id="last-name" class="input-field" placeholder="Your Last Name">
+                        <p class="form-message"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="email" type="email" id="email-reg" class="input-field" placeholder="Your Email">
+                        <p class="form-message"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="password" type="password" id="password-reg" class="input-field" placeholder="Your Password">
+                        <p class="form-message"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="confirm-password" type="password" id="confirm-password" class="input-field" placeholder="Confirm Password">
+                        <p class="form-message"></p>
+                    </div>
+
+                    <input type="checkbox" name="agree-terms" id="agree-terms" class="check-box"><span>I agree to the terms and conditions</span><br>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>    
+    </div>
+</main>
+<script src="/IE104_PROJECT/js/js-login.js"></script>
+<script src="/IE104_PROJECT/js/js-validator.js"></script>
+<script>
+    Validator({
+    form: '#register',
+    errorSelector: '.form-message',
+    rules: [
+        Validator.isRequired('#first-name'),
+        Validator.isRequired('#last-name'),
+        Validator.isRequired('#email-reg'),
+        Validator.isEmail('#email-reg'),
+        Validator.isRequired('#password-reg'),
+        Validator.minLength('#password-reg', 6),
+        Validator.isRequired('#confirm-password'),
+        Validator.isConfirmed('#confirm-password', function() {
+            return document.querySelector('#register #password-reg').value;
+        }),
+    ],
+    onSubmit: function (data) {
+        console.log(data);
+    }
+    });
+
+    Validator({
+        form: '#login',
+        errorSelector: '.form-message',
+        rules: [
+        Validator.isRequired('#email-login'),
+        Validator.isEmail('#email-login'),
+        Validator.isRequired('#password-login'),
+    ],
+    });
+</script>
+<!--#include virtual="/IE104_PROJECT/common/footer.html"-->
 </body>
 </html>
