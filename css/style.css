@@ -1,11 +1,11 @@
 /* whole page */
-html {
+/* html {
     margin: 0 0;
     padding: 0 0;
     font-family: 'Poppins', sans-serif;
     font-size: 10px;
     background-color: #FFFBEA; 
-}
+} */
 
 * {
     margin: 0 0;
@@ -13,7 +13,7 @@ html {
     box-sizing: border-box;
 }
 
-h1 {
+/* h1 {
     font-size: 5rem;
     text-transform: capitalize;
     margin-bottom: 20px;
@@ -57,7 +57,7 @@ dd, dt {
 dt {
     font-weight: bold;
 }
-
+ */
 a{
     text-decoration: none;
 }
