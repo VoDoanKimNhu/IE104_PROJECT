@@ -23,7 +23,7 @@ p, q, ol, ul, h3, h4, h5, h6 {
 }
 
 .container {
-    min-height: 100vh;
+    min-height: 50vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -286,19 +286,17 @@ p {
 
 .add-comment .add-cmt {
     width: 80%;
-    /* margin-top: 20px; */
-    justify-content: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.container .comment-act .add-comment input {
+.container .comment-act .add-comment .add-cmt input[type="text"] {
     border: none;
-    width: 400px;
+    width: 100%;
     height: 30px;
     background-color: transparent;
-}
-
-.comment-act .btn-cmt {
-    margin-right: 50px;
+    border-bottom: 2px solid gray;
 }
 
 .container .comment-act button {
@@ -434,9 +432,10 @@ p {
         flex-direction: column;
     }
     
-    .container .comment-act .add-comment input {
+    .container .comment-act .add-comment input[type=text] {
         margin-top: 10px;
         width: 100%;
+        text-align: center;
     }
 
     .comment-act .btn-cmt {
