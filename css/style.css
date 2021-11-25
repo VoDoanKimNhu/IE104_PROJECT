@@ -1,11 +1,3 @@
-/* whole page */
-html {
-    margin: 0 0;
-    padding: 0 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    background-color: #FFFBEA; 
-}
 
 * {
     margin: 0 0;
@@ -13,49 +5,18 @@ html {
     box-sizing: border-box;
 }
 
-h1 {
-    font-size: 5rem;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-weight: 700;
+a{
+    text-decoration: none;
 }
 
-h2 {
-    font-size: 4rem;
-    text-transform: capitalize;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    font-weight: 600;
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-h3 {
-    font-size: 3rem;
-    text-transform: capitalize;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-weight: 550;
-}
-
-h4 {
-    font-size: 2rem;
-}
-
-p, q, ul, ol, dl {
-    font-size: 1.7rem;
-    font-weight: 500; 
-}
-
-li, p {
-    line-height: 1.5rem;
-}
-
-dd, dt {
-    line-height: 1.5rem;
-}
-
-dt {
-    font-weight: bold;
+ul{
+    list-style-type: none;
 }
 
 /* Header */
@@ -65,15 +26,16 @@ dt {
     display: flex;
     justify-content:space-between;
     align-items: center;
-    background-color: black;
-    color: blanchedalmond;
+    color: black;
+    background-color: #d6d3d3;
     width: 100%;
+    padding: 10px;
 }
 
 .blog-title {
     margin-left: 24px;
     font-family: 'Chakra Petch', sans-serif;
-    color: white;
+    color: black;
     font-size: 30px;
 }
 
@@ -92,7 +54,8 @@ dt {
 .narbar-links li a {
     text-decoration: none;
     font-family: 'Noto Sans Display', sans-serif;
-    font-size: large;  
+    font-size: large; 
+    color: black; 
 }
 
 .logo {
@@ -101,7 +64,7 @@ dt {
 
 .logIn {
     display: flex;
-    border: 2px solid red;
+    border: 2px solid rgb(32, 29, 29);
     border-radius: 20px;
     padding: 7px;
     padding-left: 15px;
@@ -121,7 +84,7 @@ li a, .dropbtn {
 }
   
 li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: rgb(163, 159, 159);
 }
   
 li.dropdown {
@@ -156,7 +119,7 @@ li.dropdown {
 /*Responsive navbar*/
 .toggle-button {
     position: absolute;
-    top: 16px;
+    top: 24px;
     right: 24px;
     display: none;
     flex-direction: column;
@@ -172,7 +135,24 @@ li.dropdown {
     border-radius: 10px;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 960px){
+    .navbarlink {
+        font-size: 20px;
+    }
+
+    .narbar-links li a{
+        padding: 12px;
+    }
+
+    .logIn {
+        border-radius: 24px;
+        padding: 7px 7px 0px 0px;
+        margin-top: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 790px) {
     .toggle-button {
         display: flex;
     }
@@ -210,7 +190,6 @@ li.dropdown {
         height: 60px;
         text-align: center;
     }
-
 } 
 
 /* Footer */
@@ -252,3 +231,18 @@ footer p {
     color: brown;
 }
 
+footer .move-up {
+    position: absolute;
+    right: 6%;
+    font-size: 2rem;
+}
+
+footer .move-up span {
+    color: brown;
+}
+
+footer .move-up span:hover {
+    color: wheat;
+    cursor: pointer;
+}
+/*-------------------Footer-----------------*/

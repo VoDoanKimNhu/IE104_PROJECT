@@ -1,0 +1,67 @@
+.wall{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-top: 18%;
+    background-image: linear-gradient(
+        rgba(204, 152, 57, 0.7),rgba(5, 11, 32, 0.7)),url("https://i.pinimg.com/originals/8b/dd/46/8bdd462db1ecd0a26b475e2bea0c5eab.jpg");
+        background-position: center;
+    background-size: cover;
+}
+.wall .text-content{
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    text-align: center;
+}
+.wall .text-heading{
+    font-size: 4vw;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: white;
+}
+.donate-thanks{
+    text-align: center;
+    margin: 5% 5% 10% 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.donate-thanks .img-donate{
+    height: 32%;
+    width: 32%;
+    border-radius: 4px;
+}
+.donate-thanks .thanks-text{
+    margin-top: 2%;
+    font-size: 20px;
+    line-height: 29px;
+}
+.donate-purpose {
+    margin-bottom: 10%;
+}
+.donate-purpose .card-text{
+    font-size: 20px;
+}
+.donate-thanks,.donate-purpose h1{
+    text-align: center;
+    margin-bottom: 4%;
+}
+.donate-method{
+    display: grid;
+    align-content: center;
+    text-align: center;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-gap: 2%;
+    margin: 10% 20% 5% 20%;
+}
+.donate-method .method-text,.method-icon{
+    font-size: 20px;
+    font-family:sans-serif;
+    font-style: normal;
+    line-height: 24px;
+}
+.donate-method .method-text:hover{
+    color: brown;
+}
+
+  

@@ -1,11 +1,301 @@
 <!--#include virtual="/IE104_PROJECT/common/document-head.html"-->
     <title>Home</title>
+    <link href="./css/style-home.css" rel="stylesheet"> 
+    <link href="./css/style.css" rel="stylesheet">
+
+
+
 </head>
 <body>
     <!--#include virtual="/IE104_PROJECT/common/header.html"-->
     <main>
-        <h1>This is Home</h1>
+        <!-----------------------------Blog Carousel---------------------------------->
+        <article class="slideshow-container">
+            <div class="slides fade" style="display: block;">
+                <a href="blog-content.html" target="_self">
+                    <div class="nameImg" data-aos="flip-up" data-aos-delay="300">
+                        <h1>Mã Pí Lèng - Hà Giang</h1>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled rover</p>
+                    </div>
+                </a>
+                <img src="image/m-blog-5(!.png" style="width: 100%;">
+            </div>
+
+            <div class="slides fade" >
+                <a href="blog-content.html" target="_self">
+                    <div class="nameImg">
+                        <h1>Vịnh Hạ Long - Quảng Ninh</h1>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled rover</p>
+                    </div>
+                </a>
+                <img src="image/blog4(1).png" style="width: 100%;">
+            </div>
+
+            <div class="slides fade" >
+                <a href="blog-content.html" target="_self">
+                    <div class="nameImg">
+                        <h1>Hội An</h1>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled rover</p>
+                    </div>
+                </a>
+                <img src="image/hoi_an.png" style="width: 100%;">
+            </div>
+
+            <div class="slides fade" >
+                <a href="blog-content.html" target="_self">
+                    <div class="nameImg">
+                        <h1>Bà Nà Hill - Đà Nẵng</h1>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled rover</p>
+                    </div>
+                </a>
+                <img src="image/ba_na_hill.png" style="width: 100%;">
+            </div>
+
+            <div class="slides fade" >
+                <a href="blog-content.html" target="_self">
+                    <div class="nameImg">
+                        <h1>Núi Bà Đen - Tây Ninh</h1>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled rover</p>
+                    </div>
+                </a>
+                <img src="image/nui-ba-den-tay-ninh.png" style="width: 100%;">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <br>
+            <div class="dotbox" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+
+            <script src="js/home.js"></script>
+
+        </article>
+        <!-----------------------------Blog Carousel---------------------------------->
+
+        <!------------------------------Site Content------------------------------->
+
+        <section class="site-container">
+            <div class="site-content">
+                <div class="posts">
+
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="post-image">
+                            <div>
+                                <img src="image/blog4.png" class="img-p" alt="Image name">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray">&nbsp;&nbsp;Jan 14 2021</i></span>
+                                <span>2 Comments</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="blog-content.html">Travel travel and travel</a>
+                            <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled rover on Mars, and discovered thousands of exoplanets—planets that orbit stars outside of this solar system. Scientists can even explore the 95% of invisible space comprised of dark energy, dark matter, and dark radiation. 
+                                The size of the universe is hard to fathom, and it’s expanding even faster than scientists originally thought. While humans will never map out the entirety of space, that doesn’t stop them from exploring it. ...
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="image/m-blog-2.jpg" class="img-p" alt="Image name">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray">&nbsp;&nbsp;Jan 14 2021</i></span>
+                                <span>2 Comments</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="blog-content.html">Travel travel and travel</a>
+                            <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled rover on Mars, and discovered thousands of exoplanets—planets that orbit stars outside of this solar system. Scientists can even explore the 95% of invisible space comprised of dark energy, dark matter, and dark radiation. 
+
+                                The size of the universe is hard to fathom, and it’s expanding even faster than scientists originally thought. While humans will never map out the entirety of space, that doesn’t stop them from exploring it. ...
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="image/m-blog-4.jpg" class="img-p" alt="Image name">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray">&nbsp;&nbsp;Jan 14 2021</i></span>
+                                <span>2 Comments</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="blog-content.html">Travel travel and travel</a>
+                            <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled rover on Mars, and discovered thousands of exoplanets—planets that orbit stars outside of this solar system. Scientists can even explore the 95% of invisible space comprised of dark energy, dark matter, and dark radiation. 
+
+                                The size of the universe is hard to fathom, and it’s expanding even faster than scientists originally thought. While humans will never map out the entirety of space, that doesn’t stop them from exploring it. ...
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="image/m-blog-5.jpg" class="img-p" alt="Image name">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray">&nbsp;&nbsp;Jan 14 2021</i></span>
+                                <span>2 Comments</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="/pages/blog-content.html">Travel travel and travel</a>
+                            <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled rover on Mars, and discovered thousands of exoplanets—planets that orbit stars outside of this solar system. Scientists can even explore the 95% of invisible space comprised of dark energy, dark matter, and dark radiation. 
+
+                                The size of the universe is hard to fathom, and it’s expanding even faster than scientists originally thought. While humans will never map out the entirety of space, that doesn’t stop them from exploring it. ...
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div> -->
+
+                    <div class="pagination flex-row">
+                        <a href="#" ><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="pages">1</a>
+                        <a href="#" class="pages">2</a>
+                        <a href="#" class="pages">3</a>
+                        <a href="#" ><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <aside class="sidebar">
+
+                    <div class="filter">
+                        <h1>Filter</h1>
+
+                        <div class="all-button">
+                            <button type="button" class="active">All Post</button>
+                        </div>
+                    </div>
+
+                    <div class="popular-post">
+                        <h1>Popular Posts</h1>
+
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+
+                            <div class="post-image">
+                                <div>
+                                    <img src="image/blog4.png" class="img-p" alt="Image name">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
+                                    <span><i class="fas fa-calendar-alt text-gray">&nbsp;&nbsp;Jan 14 2021</i></span>
+                                    <span>2 Comments</span>
+                                </div>
+                            </div>
+
+                            <div class="post-title">
+                                <a href="blog-content.html">Travel travel and travel</a>
+                            </div>
+
+                        </div>
+
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+
+                            <div class="post-image">
+                                <div>
+                                    <img src="image/m-blog-1.jpg" class="img-p" alt="Image name">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
+                                    <span><i class="fas fa-calendar-alt text-gray">&nbsp;&nbsp;Jan 14 2021</i></span>
+                                    <span>2 Comments</span>
+                                </div>
+                            </div>
+
+                            <div class="post-title">
+                                <a href="blog-content.html">Travel travel and travel</a>
+                            </div>
+
+                        </div>
+
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+
+                            <div class="post-image">
+                                <div>
+                                    <img src="image/m-blog-3.jpg" class="img-p" alt="Image name">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
+                                    <span><i class="fas fa-calendar-alt text-gray">&nbsp;&nbsp;Jan 14 2021</i></span>
+                                    <span>2 Comments</span>
+                                </div>
+                            </div>
+
+                            <div class="post-title">
+                                <a href="blog-content.html">Travel travel and travel</a>
+                            </div>
+
+                        </div>
+
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+
+                            <div class="post-image">
+                                <div>
+                                    <img src="image/m-blog-5.jpg" class="img-p" alt="Image name">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
+                                    <span><i class="fas fa-calendar-alt text-gray">&nbsp;&nbsp;Jan 14 2021</i></span>
+                                    <span>2 Comments</span>
+                                </div>
+                            </div>
+
+                            <div class="post-title">
+                                <a href="blog-content.html">Travel travel and travel</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="popular-tag">
+                        <h1>Popular Tags</h1>
+                        <div class="tags flex-row">
+                            <span class="tag" data-aos="flip-up" data-aos-delay="100"><a href="#">Hà Nội</a></span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="200"><a href="#">Đà Nẵng</a></span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="300"><a href="#">Hội An</a></span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="400"><a href="#">Huế</a></span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="500"><a href="#">Vũng Tàu</a></span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="600"><a href="#">Cần Thơ</a></span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="700"><a href="#">Tp Hồ Chí Minh</a></span>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+        </section>
+
+        <!------------------------------Site Content------------------------------->
+
     </main>
+    <!-----------------------------Main Site Section------------------------------------>
+
     <!--#include virtual="/IE104_PROJECT/common/footer.html"-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            AOS.init();
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,387 @@
+<!--#include virtual="/IE104_PROJECT/common/document-head.html"-->
+<title>User Blog</title>
+
+<link href="./css/style-usr-blog.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!----------------------------Header--------------------------->
+
+    <!--#include virtual="/IE104_PROJECT/common/header.html"-->
+
+    <!----------------------------Header-------------------------------->
+
+    <main>
+        <section class="head-content">
+            <div class="container">
+                <h1>POST</h1>
+                <p>Place to keep the memories!</p>        
+            </div>
+        </section>
+        <article class="usr-blog-content">
+            <section class="blog-nav">
+                <div class="avatar-container">
+                    <img src="./image/avt.jpg" alt="user avatar" class="usr-avatar">
+                    <div class="change-avatar">
+                        <a href="#changeavt" id="linkavt" style="color: white;"><i class="fas fa-camera"></i>&nbsp;Change Avatar</a>
+                    </div>
+                    <div class="modal" id="mymodal">
+                        <div class="modal-content">
+                            <form action="#">
+                                <span class="close">&times;</span>
+                                <h2 style="margin: 2rem; text-align: center;">Change your avatar</h2>
+                                <div class="form-group">
+                                    <button>Choose image</button>
+                                    <input type="text" id="first-name" name="fname">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="usr-name">@User Name</div>
+
+                <div class="modal-container">
+                    <div>
+                        <button id="myBtn1" class="mybtn" href="#changeinf" data-aos="flip-up" data-aos-delay="100"><i
+                                class="fas fa-pencil"></i>&nbsp;&nbsp;Change your information</button>
+                    </div>
+                    <!--Change user inf modal-->
+                    <div class="modal" id="mymodal1">
+                        <div class="modal-content">
+                            <form action="#">
+                                <span class="close">&times;</span>
+                                <h2>Change your information</h2>
+                                <div class="form-group">
+                                    <label for="fname">First Name</label>
+                                    <input type="text" id="first-name" name="fname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lname">Last Name</label>
+                                    <input type="text" id="last-name" name="lname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <b>User Name</b>
+                                    <input type="text" name="username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fb">Link Facebook</label>
+                                    <input type="text" name="fb">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ig">Link Instagram</label>
+                                    <input type="text" name="ig">
+                                </div>
+                                <div class="form-group">
+                                    <label for="twitter">Link Twitter</label>
+                                    <input type="text" name="twitter">
+                                </div>
+                                <div class="form-group">
+                                    <button>Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--Change password modal-->
+                    <div>
+                        <button id="myBtn2" class="mybtn" href="#changepw" data-aos="flip-up" data-aos-delay="100"><i
+                                class="fas fa-pencil"></i>&nbsp;&nbsp;Change Password</button>
+                    </div>
+
+                    <div class="modal" id="mymodal2">
+                        <div class="modal-content">
+                            <form action="#">
+                                <span class="close">&times;</span>
+                                <h2>Change your password</h2>
+                                <div class="form-group">
+                                    <b>Password</b>
+                                    <input type="password" name="password">
+                                </div>
+                                <div class="form-group">
+                                    <b>New password</b>
+                                    <input type="password" name="new-password">
+                                </div>
+                                <div class="form-group">
+                                    <b>Confirm Password</b>
+                                    <input type="password" name="conf-password">
+                                </div>
+                                <div class="form-group">
+                                    <button>Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--Add new post modal-->
+                    <div>
+                        <button id="myBtn3" class="mybtn" href="#addnewpost" data-aos="flip-up" data-aos-delay="100"><i
+                                class="fas fa-pencil"></i>&nbsp;&nbsp;Add new post</button>
+                    </div>
+
+                    <div class="modal" id="mymodal3">
+                        <div class="modal-content">
+                            <form action="#">
+                                <span class="close">&times;</span>
+                                <h2>Add new post</h2>
+                                <div class="form-group">
+                                    <label for="btitle">Title</label><br>
+                                    <input type="text" id="title" name="blog-title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bplace">Place</label>
+                                    <select id="province" name="province">
+                                        <option value="1">An Giang</option>
+                                        <option value="2">Bà Rịa - Vũng Tàu</option>
+                                        <option value="3">Bắc Giang</option>
+                                        <option value="4">Bắc Cạn</option>
+                                        <option value="5">Bạc Liêu</option>
+                                        <option value="6">Bắc Ninh</option>
+                                        <option value="7">Bến Tre</option>
+                                        <option value="8">Bình Định</option>
+                                        <option value="9">Bình Dương</option>
+                                        <option value="10">Bình Phước</option>
+                                        <option value="11">Bình Thuận</option>
+                                        <option value="12">Cà Mau</option>
+                                        <option value="13">Cần Thơ</option>
+                                        <option value="14">Cao Bằng </option>
+                                        <option value="15">Đà Nẵng</option>
+                                        <option value="16">Đắk Lắk</option>
+                                        <option value="17">Đắk Nông</option>
+                                        <option value="18">Điện Biên</option>
+                                        <option value="19">Đồng Nai</option>
+                                        <option value="20">Đồng Tháp</option>
+                                        <option value="21">Gia Lai</option>
+                                        <option value="22">Hà Giang</option>
+                                        <option value="23">Hà Nam</option>
+                                        <option value="24">Hà Nội </option>
+                                        <option value="25">Hà Tĩnh</option>
+                                        <option value="26">Hải Dương</option>
+                                        <option value="27">Hải Phòng</option>
+                                        <option value="28">Hậu Giang</option>
+                                        <option value="29">Hòa Bình</option>
+                                        <option value="30">Hưng Yên</option>
+                                        <option value="31">Khánh Hòa</option>
+                                        <option value="32">Kiên Giang</option>
+                                        <option value="33">Kon Tum</option>
+                                        <option value="34">Lai Châu</option>
+                                        <option value="35">Lâm Đồng</option>
+                                        <option value="36">Lạng Sơn</option>
+                                        <option value="37">Lào Cai</option>
+                                        <option value="38">Long An</option>
+                                        <option value="39">Nam Định</option>
+                                        <option value="40">Nghệ An</option>
+                                        <option value="41">Ninh Bình</option>
+                                        <option value="42">Ninh Thuận</option>
+                                        <option value="43">Phú Thọ</option>
+                                        <option value="44">Phú Yên</option>
+                                        <option value="45">Quảng Bình</option>
+                                        <option value="46">Quảng Nam</option>
+                                        <option value="47">Quảng Ngãi</option>
+                                        <option value="48">Quảng Ninh</option>
+                                        <option value="49">Quảng Trị</option>
+                                        <option value="50">Sóc Trăng</option>
+                                        <option value="51">Sơn La</option>
+                                        <option value="52">Tây Ninh</option>
+                                        <option value="53">Thái Bình</option>
+                                        <option value="54">Thái Bình</option>
+                                        <option value="55">Thanh Hóa</option>
+                                        <option value="56">Thừa Thiên Huế</option>
+                                        <option value="57">Tiền Giang</option>
+                                        <option value="58">Thành phố Hồ Chí Minh</option>
+                                        <option value="59">Trà Vinh</option>
+                                        <option value="60">Tuyên Quang</option>
+                                        <option value="61">Vĩnh Long</option>
+                                        <option value="62">Vĩnh Phúc</option>
+                                        <option value="63">Yên Bái</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="picture">Picture</label><br>
+                                    <button>Choose picture</button><br>
+                                    <input type="text" name="picture">
+                                </div>
+                                <div class="form-group">
+                                    <label for="content">Content</label><br>
+                                    <textarea>Some text...</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button>Send request</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script src="js/modal-usr-blog.js"></script>
+
+
+                <div class="contact-icon" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                </div>
+            </section>
+
+            <section class="usr-list-post">
+                <div class="usr-post" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="usr-post-image">
+                        <img src="./image/blog4.png" alt="Image name">
+                    </div>
+                    <div class="usr-post-title">
+                        <a href="blog-content.html">Travel travel and travel</a>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled
+                            rover on Mars...
+                        </p>
+                    </div>
+                    <a href="#deletepost" id="del-post" class="del-btn"><i class="fas fa-trash-alt"></i></a>
+                    <div class="confirm"></div>
+                </div>
+
+                <div class="usr-post" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="usr-post-image">
+                        <img src="./image/m-blog-1.jpg" alt="Image name">
+                    </div>
+                    <div class="usr-post-title">
+                        <a href="blog-content.html">Travel travel and travel</a>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled
+                            rover on Mars...
+                        </p>
+                    </div>
+                    <a href="#deletepost" id="del-post" class="del-btn"><i class="fas fa-trash-alt"></i></a>
+                    <div class="confirm"></div>
+                </div>
+
+                <div class="usr-post" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="usr-post-image">
+                        <img src="./image/m-blog-2.jpg" alt="Image name">
+                    </div>
+                    <div class="usr-post-title">
+                        <a href="blog-content.html">Travel travel and travel</a>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled
+                            rover on Mars...
+                        </p>
+                    </div>
+                    <a href="#deletepost" id="del-post" class="del-btn"><i class="fas fa-trash-alt"></i></a>
+                    <div class="confirm"></div>
+                </div>
+
+                <div class="usr-post" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="usr-post-image">
+                        <img src="./image/m-blog-3.jpg" alt="Image name">
+                    </div>
+                    <div class="usr-post-title">
+                        <a href="blog-content.html">Travel travel and travel</a>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled
+                            rover on Mars...
+                        </p>
+                    </div>
+                    <a href="#deletepost" id="del-post" class="del-btn"><i class="fas fa-trash-alt"></i></a> 
+                    <div class="confirm"></div>               
+                </div>
+
+                <div class="usr-post" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="usr-post-image">
+                        <img src="./image/m-blog-4.jpg" alt="Image name">
+                    </div>
+                    <div class="usr-post-title">
+                        <a href="blog-content.html">Travel travel and travel</a>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled
+                            rover on Mars...
+                        </p>
+                    </div>
+                    <a href="#deletepost" id="del-post" class="del-btn"><i class="fas fa-trash-alt"></i></a>
+                    <div class="confirm"></div>
+                </div>
+
+                <div class="usr-post" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="usr-post-image">
+                        <img src="./image/m-blog-5.jpg" alt="Image name">
+                    </div>
+                    <div class="usr-post-title">
+                        <a href="blog-content.html">Travel travel and travel</a>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled
+                            rover on Mars...
+                        </p>
+                    </div>
+                    <a href="#deletepost" id="del-post" class="del-btn"><i class="fas fa-trash-alt"></i></a>
+                    <div class="confirm"></div>
+                </div>
+
+                <div class="usr-post" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="usr-post-image">
+                        <img src="./image/post-8.jpg" alt="Image name">
+                    </div>
+                    <div class="usr-post-title">
+                        <a href="blog-content.html">Travel travel and travel</a>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled
+                            rover on Mars...
+                        </p>
+                    </div>
+                    <a href="#deletepost" id="del-post" class="del-btn"><i class="fas fa-trash-alt"></i></a>
+                    <div class="confirm"></div>
+                </div>
+
+                <div class="usr-post" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="usr-post-image">
+                        <img src="./image/post-9.jpg" alt="Image name">
+                    </div>
+                    <div class="usr-post-title">
+                        <a href="blog-content.html">Travel travel and travel</a>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled
+                            rover on Mars...
+                        </p>
+                    </div>
+                    <a href="#deletepost" id="del-post" class="del-btn"><i class="fas fa-trash-alt"></i></a>
+                    <div class="confirm"></div>
+                </div>
+
+                <div class="usr-post" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="usr-post-image">
+                        <img src="./image/post-10.jpg" alt="Image name">
+                    </div>
+                    <div class="usr-post-title">
+                        <a href="blog-content.html">Travel travel and travel</a>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled
+                            rover on Mars...
+                        </p>
+                    </div>
+                    <a href="#deletepost" id="del-post" class="del-btn"><i class="fas fa-trash-alt"></i></a>
+                    <div class="confirm"></div>
+                </div>
+
+                <div class="usr-post" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="usr-post-image">
+                        <img src="./image/hoi_an.png" alt="Image name">
+                    </div>
+                    <div class="usr-post-title">
+                        <a href="blog-content.html">Travel travel and travel</a>
+                        <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a robot-controlled
+                            rover on Mars...
+                        </p>
+                    </div>
+                    <a href="#deletepost" id="del-post" class="del-btn"><i class="fas fa-trash-alt"></i></a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!------------------------------Footer---------------------------------------------------->
+
+    <!--#include virtual="/IE104_PROJECT/common/footer.html"-->
+
+    <!------------------------------Footer---------------------------------------------------->
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            AOS.init();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,3 +1,58 @@
+/* whole page */
+html {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    background-color: #FFFBEA; 
+} 
+
+h1 {
+    font-size: 5rem;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 4rem;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 550;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+p, q, ul, ol, dl {
+    font-size: 1.7rem;
+    font-weight: 500; 
+}
+
+li, p {
+    line-height: 1.5rem;
+}
+
+dd, dt {
+    line-height: 1.5rem;
+}
+
+dt {
+    font-weight: bold;
+}
+
+
 
 * {
     padding: 0;
@@ -52,6 +107,7 @@ p, q, ol, ul, h3, h4, h5, h6 {
     color: black;
     letter-spacing: 1px;
     line-height: 1.5;
+    font-style: italic;
 }
 
 .container {
@@ -70,12 +126,20 @@ p, q, ol, ul, h3, h4, h5, h6 {
 
 .form-box {
     width: 500px;
-    height: 600px;
+    height: 650px;
     position: relative;
     margin: 2% auto;
     background: rgba(0,0,0,0.4);
     padding: 10px;
     overflow: hidden;
+}
+
+.form-group p {
+    color: white;
+    font-size: 10px;
+    font-weight: 300;
+    padding: 0 0;
+    word-spacing: 0;
 }
 
 .button-box {
@@ -132,6 +196,12 @@ p, q, ol, ul, h3, h4, h5, h6 {
     border-bottom: 1px solid #999;
     outline: none;
     background: transparent;
+}
+
+.invalid {
+    border: 3px solid rgb(138, 0, 0);
+    border-left: 0;
+    border-top: 0;
 }
 
 .submit-btn {
