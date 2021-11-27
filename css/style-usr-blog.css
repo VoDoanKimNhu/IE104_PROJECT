@@ -188,8 +188,8 @@ main .usr-blog-content .usr-list-post .del-btn {
     border: none;
     color: rgb(90, 90, 241);
     text-align: right;
-    margin-left: 15rem;
     font-size: 18px;
+    position: relative;
 } 
 
 @media only screen and (max-width: 1200px){
