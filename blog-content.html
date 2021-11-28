@@ -1,3 +1,4 @@
+
 <!--#include virtual="/IE104_PROJECT/common/document-head.html"-->
     <title>Blog Content</title>
     <link rel="stylesheet" href="/IE104_PROJECT/css/style-blog-content.css">
@@ -29,25 +30,26 @@
                         </div>
                         <div class="row">
                             <div class="column">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
+                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo" class="row-img1">
+                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo" class="row-img">
                             </div>
                             <div class="column">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
+                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo" class="row-img">
+                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo" class="row-img">
                             </div>
                             <div class="column">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
+                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo" class="row-img">
+                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo" class="row-img">
                             </div>
                             <div class="column">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
-                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo">
+                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo" class="row-img">
+                                <img src="/IE104_PROJECT/image/sapa-contact-us.jpg" alt="sapa photo" class="row-img">
                             </div>
+                        </div>
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
                         </div>
                     </div>
                     <br>
@@ -97,7 +99,68 @@
                 </div>
             </section>
         </section>
-        <section class="interaction container">
+
+        <section class="container">
+            <h3>100 Comments</h3>
+            <div class="comment-act">
+                <div class="add-comment">
+                    <div class="info">
+                        <img src="/IE104_PROJECT/image/avt-nhu.jpg" alt="Image of owner" class="img-owner">
+                    </div> 
+                    <div class="add-cmt">
+                        <input type="text" name="comment" id="comment" placeholder="Add a public comment...">
+                    </div>
+                </div>
+                <div class="btn-cmt">
+                    <button class="btn" onclick="y()">Comment</button>
+                    <button class="btn" onclick="x()">Cancel</button>    
+                </div>
+            </div>
+            <div class="comment">
+                <div class="info">
+                    <img src="/IE104_PROJECT/image/vtk-user.jpg" alt="Image of owner" class="img-owner">
+                    <div class="post-owner">
+                        <h4>Vuong Tuan Khai</h4>
+                        <p>Oct. 18 2021</p>
+                    </div>
+                </div>
+                <div class="detail">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, non sequi laborum atque doloremque voluptas, maiores debitis perspiciatis harum quo eaque cum facere mollitia id ea nesciunt officia, adipisci exercitationem!</p>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="info">
+                    <img src="/IE104_PROJECT/image/vtk-user.jpg" alt="Image of owner" class="img-owner">
+                    <div class="post-owner">
+                        <h4>Vuong Tuan Khai</h4>
+                        <p>Oct. 18 2021</p>
+                    </div>
+                </div>
+                <div class="detail">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, non sequi laborum atque doloremque voluptas, maiores debitis perspiciatis harum quo eaque cum facere mollitia id ea nesciunt officia, adipisci exercitationem!</p>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="info">
+                    <img src="/IE104_PROJECT/image/vtk-user.jpg" alt="Image of owner" class="img-owner">
+                    <div class="post-owner">
+                        <h4>Vuong Tuan Khai</h4>
+                        <p>Oct. 18 2021</p>
+                    </div>
+                </div>
+                <div class="detail">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, non sequi laborum atque doloremque voluptas, maiores debitis perspiciatis harum quo eaque cum facere mollitia id ea nesciunt officia, adipisci exercitationem!</p>
+                </div>
+            </div>
+            <div class="pagination flex-row">
+                <a href="#" ><i class="fas fa-chevron-left"></i></a>
+                <a href="#" class="pages">1</a>
+                <a href="#" class="pages">2</a>
+                <a href="#" class="pages">3</a>
+                <a href="#" ><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </section>
+        <!-- <section class="interaction container">
             <h3>LEAVE A REPLY</h3>
             <hr>
             <br>
@@ -117,12 +180,11 @@
                 <br> 
                 <input type="submit" value="POST COMMENT">  
             </form>
-        </section>
+        </section> -->
 
     </main>
     <!--#include virtual="/IE104_PROJECT/common/footer.html"-->
-    <script src="/IE104_PROJECT/js/js-blog-img-grid.js"></script>
+    <script src="/IE104_PROJECT/js/js-blog-content.js"></script>
 </body>
 </html>
 
-<!-- test -->
