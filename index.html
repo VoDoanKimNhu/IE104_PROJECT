@@ -290,31 +290,31 @@
                         <div class="gallery-container">
                             <div class="gallery">
                                 <figure class="item1" data-aos="zoom-in-right" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <img class="ga-img" src="image/See Vietnam Now - Vietnam Tourism - 3.jpg" onclick="openModal();currentSlide(1)">
+                                    <img class="ga-img" src="image/See Vietnam Now - Vietnam Tourism - 3.jpg" onclick="openModal();currentSlideImg(1)">
                                 </figure>
                                 <figure class="item2" data-aos="zoom-in-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <img class="ga-img" src="image/My Khe Beach Da Nang Vietnam.jpg" onclick="openModal();currentSlide(2)">
+                                    <img class="ga-img" src="image/My Khe Beach Da Nang Vietnam.jpg" onclick="openModal();currentSlideImg(2)">
                                 </figure>
                                 <figure class="item3" data-aos="zoom-out-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <img class="ga-img" src="image/things to do in hcmc-7.jpg" onclick="openModal();currentSlide(3)">
+                                    <img class="ga-img" src="image/things to do in hcmc-7.jpg" onclick="openModal();currentSlideImg(3)">
                                 </figure>
                                 <figure class="item4" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <img class="ga-img" src="image/See Vietnam Now - Vietnam Tourism - 11.jpg" onclick="openModal();currentSlide(4)">
+                                    <img class="ga-img" src="image/See Vietnam Now - Vietnam Tourism - 11.jpg" onclick="openModal();currentSlideImg(4)">
                                 </figure>
                                 <figure class="item5" data-aos="flip-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <img class="ga-img" src="image/Cao_Bang-Ban_Gioc_Waterfall-0014 text.jpg" onclick="openModal();currentSlide(5)">
+                                    <img class="ga-img" src="image/Cao_Bang-Ban_Gioc_Waterfall-0014 text.jpg" onclick="openModal();currentSlideImg(5)">
                                 </figure>
                                 <figure class="item6" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <img class="ga-img" src="image/Da Nang Best Dishes Vietnam Tourism.jpg" onclick="openModal();currentSlide(6)">
+                                    <img class="ga-img" src="image/Da Nang Best Dishes Vietnam Tourism.jpg" onclick="openModal();currentSlideImg(6)">
                                 </figure>
                                 <figure class="item7" data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <img class="ga-img" src="image/Water puppet shows Vietnam Tourism.jpg" onclick="openModal();currentSlide(7)">
+                                    <img class="ga-img" src="image/Water puppet shows Vietnam Tourism.jpg" onclick="openModal();currentSlideImg(7)">
                                 </figure>
                                 <figure class="item8" data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <img class="ga-img" src="image/See Vietnam Now - Vietnam Tourism - 9.jpg" onclick="openModal();currentSlide(8)">
+                                    <img class="ga-img" src="image/See Vietnam Now - Vietnam Tourism - 9.jpg" onclick="openModal();currentSlideImg(8)">
                                 </figure>
                                 <figure class="item9" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-                                    <img class="ga-img" src="image/See Vietnam Now - Vietnam Tourism - 7_0.jpg" onclick="openModal();currentSlide(9)">
+                                    <img class="ga-img" src="image/See Vietnam Now - Vietnam Tourism - 7_0.jpg" onclick="openModal();currentSlideImg(9)">
                                 </figure>
                             </div>
 
@@ -366,8 +366,8 @@
                                     <img src="image/See Vietnam Now - Vietnam Tourism - 7_0.jpg" style="width:100%">
                                   </div>
                                   
-                                  <a class="prev-ga" onclick="plusSlides(-1)">&#10094;</a>
-                                  <a class="next-ga" onclick="plusSlides(1)">&#10095;</a>
+                                  <a class="prev-ga" onclick="plusSlideImgs(-1)">&#10094;</a>
+                                  <a class="next-ga" onclick="plusSlideImgs(1)">&#10095;</a>
                               
                                   <div class="caption-container">
                                     <p id="caption"></p>
@@ -378,39 +378,7 @@
                         </div>
                     </div>
 
-                    <script>
-                        function openModal() {
-                          document.getElementById("imgModal").style.display = "block";
-                        }
-                        
-                        function closeModal() {
-                          document.getElementById("imgModal").style.display = "none";
-                        }
-                        
-                        var slideIndex = 1;
-                        showSlides(slideIndex);
-                        
-                        function plusSlides(n) {
-                          showSlides(slideIndex += n);
-                        }
-                        
-                        function currentSlide(n) {
-                          showSlides(slideIndex = n);
-                        }
-                        
-                        function showSlides(n) {
-                          var i;
-                          var slides = document.getElementsByClassName("slider");
-                          var captionText = document.getElementById("caption");
-                          if (n > slides.length) {slideIndex = 1}
-                          if (n < 1) {slideIndex = slides.length}
-                          for (i = 0; i < slides.length; i++) {
-                              slides[i].style.display = "none";
-                          }
-                          slides[slideIndex-1].style.display = "block";
-                          captionText.innerHTML = slides[slideIndex-1].alt;
-                        }
-                        </script>
+                    <script src="./js/js-modal-img.js" ></script>
 
                 </aside>
             </div>
