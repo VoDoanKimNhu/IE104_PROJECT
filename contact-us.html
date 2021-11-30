@@ -1,6 +1,7 @@
 <!--#include virtual="/IE104_PROJECT/common/document-head.html"-->
     <title>Contact Us...</title>
     <link rel="stylesheet" href="/IE104_PROJECT/css/style-contact-us.css">
+
 </head>
 <body>
     <!--#include virtual="/IE104_PROJECT/common/header.html"-->
@@ -46,21 +47,21 @@
         </section>
         <section class="more-contact container">
             <div class="contact-info">
-                <div class="info">
+                <div class="info" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fa fa-phone" style="font-size: 50px; background-color: #FFFBEA; color: black;"><a href="#"></a></i>
                     <div class="info-detail">
                         <h3>TELEPHONE</h3>
                         <p>+84 000 000 000</p>    
                     </div>
                 </div>
-                <div class="info">
+                <div class="info" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fa fa-map-marker" style="font-size: 50px; background-color: #FFFBEA; color: black;"><a href="#"></a></i>
                     <div class="info-detail">
                         <h3>ADDRESS</h3>
                         <p><strong>U</strong>niversity of <br><strong>I</strong>nformation and <strong>T</strong>echnology</p>    
                     </div>
                 </div>
-                <div class="info">
+                <div class="info" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fa fa-envelope" style="font-size: 50px; background-color: #FFFBEA; color: black;"><a href="#"></a></i>
                     <div class="info-detail">
                         <h3>EMAIL</h3>
@@ -77,5 +78,10 @@
     </main>
     <script src="/IE104_PROJECT/js/js-captcha-confirm.js"></script>
     <!--#include virtual="/IE104_PROJECT/common/footer.html"-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            AOS.init();
+        });
+    </script>
 </body>
 </html>
