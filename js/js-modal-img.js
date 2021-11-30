@@ -20,12 +20,10 @@ function openModal() {
   function showSlides(n) {
     var i;
     var slider = document.getElementsByClassName("slider");
-    var captionText = document.getElementById("caption");
     if (n > slider.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slider.length}
     for (i = 0; i < slider.length; i++) {
-        slider[i].style.display = "none";
+      slider[i].style.display = "none";
     }
     slider[slideIndex-1].style.display = "block";
-    captionText.innerHTML = slider[slideIndex-1].alt;
   }

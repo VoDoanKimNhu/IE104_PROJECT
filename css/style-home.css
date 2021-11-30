@@ -442,7 +442,7 @@ hr {
     grid-column-end: 7;
 }
 
-.imgmodal {
+.site-content .sidebar .imgmodal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -455,7 +455,7 @@ hr {
     background-color: rgba(0, 0, 0, 0.603);
 }
 
-.imgmodal-content {
+.site-content .sidebar .imgmodal .imgmodal-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -464,7 +464,7 @@ hr {
     max-width: 1200px;
   }
 
-.close {
+.site-content .sidebar .imgmodal .close {
     color: white;
     position: absolute;
     top: 10px;
@@ -480,11 +480,11 @@ hr {
     cursor: pointer;
 }
 
-.slider {
+.site-content .sidebar .imgmodal .imgmodal-content .slider {
     display: none;
 }
   
-.cursor {
+.site-content .sidebar .imgmodal .imgmodal-content .cursor {
     cursor: pointer;
 }
 
@@ -515,7 +515,7 @@ hr {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.numbertext {
+.site-content .sidebar .imgmodal .imgmodal-content .slider .numbertext {
     color: #f2f2f2;
     font-size: 16px;
     padding: 8px 12px;
@@ -523,11 +523,12 @@ hr {
     top: 0;
 }
 
-.caption-container {
+.site-content .sidebar .imgmodal .imgmodal-content .slider .caption-container {
     text-align: center;
     background-color: rgb(153, 8, 8);
     padding: 8px 16px;
     color: white;
+    font-size: 11px;
 }
 
 /*------------------Gallery Image------------------*/
