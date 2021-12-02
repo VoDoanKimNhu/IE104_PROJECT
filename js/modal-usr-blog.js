@@ -1,7 +1,20 @@
 var datamap = new Map([
     [document.getElementById("myBtn1"), document.getElementById("mymodal1")],
     [document.getElementById("myBtn2"), document.getElementById("mymodal2")],
-    [document.getElementById("myBtn3"), document.getElementById("mymodal3")]
+    [document.getElementById("myBtn3"), document.getElementById("mymodal3")],
+    [document.getElementById("linkavt"), document.getElementById("mymodal")]
+    [document.getElementById("edit-post1"), document.getElementById("editmodal")],
+    [document.getElementById("edit-post2"), document.getElementById("editmodal")],
+    [document.getElementById("edit-post3"), document.getElementById("editmodal")],
+    [document.getElementById("edit-post4"), document.getElementById("editmodal")],
+    [document.getElementById("edit-post5"), document.getElementById("editmodal")],
+    [document.getElementById("del-post1"), document.getElementById("delmodal")],
+    [document.getElementById("del-post2"), document.getElementById("delmodal")],
+    [document.getElementById("del-post3"), document.getElementById("delmodal")],
+    [document.getElementById("del-post4"), document.getElementById("delmodal")],
+    [document.getElementById("del-post5"), document.getElementById("delmodal")],
+    [document.getElementById("del-post6"), document.getElementById("delmodal")],
+
 ]);
 
 datamap.forEach((value, key) => {
@@ -27,8 +40,42 @@ function doModal(anchor, popupbox) {
         }
     });
 }
+/* 
+let modals = document.getElementsByClassName('modals');
+let modalBtns = document.getElementsByClassName('modal-btns');
+let closeBtns = document.getElementsByClassName('closes');
 
-var modal = document.getElementById("mymodal");
+for(let modalBtn of modalBtns) {
+    modalBtn.onclick = function(event) {
+        document.querySelector(event.target.getAttribute('href') ).style.display = 'block';
+    }
+}
+
+for(let closeBtn of closeBtns) {
+    closeBtn.onclick = function(event) {
+        event.target.parentNode.parentNode.style.display = 'none';
+    }
+}
+
+window.onclick = function(event) {
+    if(event.target.classList.contains('modals') ) {
+        for(let modal of modals) {
+            if(typeof modal.style !== 'undefined') {
+                modal.style.display = 'none';    
+            }
+        }
+    }
+}
+
+window.onkeydown = function(event) {
+    if (event.key == 'Escape') {
+        for(let modal of modals) {
+            modal.style.display = 'none';
+        }
+    }
+} */
+
+/* var modal = document.getElementById("mymodal");
 var a = document.getElementById("linkavt");
 var span = document.getElementsByClassName("close");
 
@@ -44,7 +91,7 @@ window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-}
+} */
 /* var modals = document.querySelectorAll(".modal");
 var btn = document.querySelectorAll("button.mybtn");
 var spans = document.getElementsByClassName("close");
