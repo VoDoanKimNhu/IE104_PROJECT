@@ -1,60 +1,4 @@
 
-/* whole page */
-html {
-    margin: 0 0;
-    padding: 0 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    background-color: #FFFBEA; 
-} 
-
-h1 {
-    font-size: 5rem;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 4rem;
-    text-transform: capitalize;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-h3 {
-    font-size: 3rem;
-    text-transform: capitalize;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-weight: 550;
-}
-
-h4 {
-    font-size: 2rem;
-}
-
-p, q, ul, ol, dl {
-    font-size: 1.7rem;
-    font-weight: 500; 
-}
-
-li, p {
-    line-height: 1.5rem;
-}
-
-dd, dt {
-    line-height: 1.5rem;
-}
-
-dt {
-    font-weight: bold;
-}
-
-
-
 * {
     padding: 0;
     margin: 0;
@@ -66,14 +10,13 @@ main {
 }
 
 ::placeholder {
-    font-family: 'Poppins', sans-serif;
     line-height: 30px;
     word-spacing: 2px;
     letter-spacing: 0.5px;
 }
 
 .container {
-    min-height: 100vh;
+    min-height: 50vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -83,10 +26,11 @@ main {
 
 .container h1 {
     color: black;
-    font-weight: 500;
+    font-weight: bold;
     letter-spacing: 0.3rem;
     word-spacing: 3px;
     margin: 0;
+    font-size: 4rem;
 }
 
 .container h3 {
@@ -112,19 +56,16 @@ main {
     position: relative;
 }
 
-.head-content .container h1 {
-    color: white;
-}
-
+.head-content .container h1,
 .head-content .container p {
     color: white;
 }
+
 /* End Header */
 
 /* Main */
 .main-content {
     max-width: 1200px;
-    /* width: 80%; */
     margin: auto;
     padding: 50px 0;
 }
@@ -162,44 +103,39 @@ main {
 canvas {
     width: 200px;
     height: 100px;
-    background-color: rgb(255, 225, 185);
-    border-radius: 5px;
+    background-color: rgb(168,116,18,0.3);
 }
 
 .confirm-captcha #textBox {
     width: 200px;
-    height: 100px;
-    border-radius: 5px;
-    border-color: rgb(63, 63, 63);
-    border-width: 1px;
+    height: 50px;
+    border-color: rgb(168,116,18,0.3);
+    border-width: 2px;
     font-size: 15px;
     color: darkgray;
 }
 
 input[type = submit],
 button[type = submit] {
-    display: inline-block;
-    background-color: rgb(177, 192, 187);
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    font-size: 2rem;
-    width: 100px;
+    background-color: rgb(168,116,18,0.7);
+    width: 120px;
     height: 50px;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: 0.5s;
+    margin-right: 20px;
+    text-align: center;
+    justify-content: center;
+    text-transform: none;
+    color: rgb(153,8,8);
+    font-weight: bolder;
+    font-size: 17px;
+    transition: 1s;
+    border: none;
 }
 
 input[type = submit]:hover,
-button[type = submit]:hover {
-    background-color: rgb(255, 225, 185);
-    width: 110px;
+button[type = submit]:hover  {
+    background-color: rgb(168,116,18);
     height: 55px;
-    margin: 10px 0;
-    box-shadow: 0 4px 8px 0 rgba(255, 225, 185, 0.2), 0 6px 20px 0 rgba(255, 225, 185, 0.2);
-    font-size: 2.2rem;
+    width: 125px;;
 }
 /* End Main */
 

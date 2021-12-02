@@ -1,60 +1,4 @@
 
-/* whole page */
-html {
-    margin: 0 0;
-    padding: 0 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    background-color: #FFFBEA; 
-} 
-
-h1 {
-    font-size: 5rem;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 4rem;
-    text-transform: capitalize;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-h3 {
-    font-size: 3rem;
-    text-transform: capitalize;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-weight: 550;
-}
-
-h4 {
-    font-size: 2rem;
-}
-
-p, q, ul, ol, dl {
-    font-size: 1.7rem;
-    font-weight: 500; 
-}
-
-li, p {
-    line-height: 1.5rem;
-}
-
-dd, dt {
-    line-height: 1.5rem;
-}
-
-dt {
-    font-weight: bold;
-}
-
-
-
 * {
     padding: 0;
     margin: 0;
@@ -72,14 +16,14 @@ p, q, ol, ul, h3, h4, h5, h6 {
 }
 
 ::placeholder {
-    font-family: 'Poppins', sans-serif;
     line-height: 30px;
     word-spacing: 2px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    font-size: 15px;
 }
 
 .container {
-    min-height: 100vh;
+    min-height: 50vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -89,24 +33,18 @@ p, q, ol, ul, h3, h4, h5, h6 {
 
 .container h1 {
     color: black;
-    font-weight: 500;
+    font-weight: bold;
     letter-spacing: 0.3rem;
     word-spacing: 3px;
     margin: 0;
-}
-
-.container h3 {
-    color: black;
-    font-weight: 450;
-    letter-spacing: 0.2rem;
-    word-spacing: 2px;
-    margin: 0;
+    font-size: 4rem;
 }
 
 .container p {
     color: black;
     letter-spacing: 1px;
     line-height: 1.5;
+    font-size: 16px;
 }
 
 /* Head */
@@ -132,11 +70,7 @@ p, q, ol, ul, h3, h4, h5, h6 {
     padding: 20px 0;
 }
 
-.content p {
-    font-weight: 400;
-}
-
-.content .info {
+.info {
     display: flex;
     align-items: center;
 }
@@ -151,8 +85,12 @@ p, q, ol, ul, h3, h4, h5, h6 {
     width: 20%;
     max-width: 100px;
     border-radius: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
+}
+
+.info .post-owner p {
+    color: black;
 }
 
 .detail {
@@ -164,7 +102,9 @@ p, q, ol, ul, h3, h4, h5, h6 {
 .photos {
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 100%;
+    width: 70%;
+    margin: auto;
+
 }
 
 .photos .head-photo {
@@ -190,40 +130,238 @@ p, q, ol, ul, h3, h4, h5, h6 {
 .column img {
     margin-top: 8px;
     vertical-align: middle;
-    width: 100%;
+    width: 100%; 
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.column img:hover {
+    opacity: 1;
+    transition: scale(1.1,1.1);
 }
 
 .btn {
-    margin-top: 10px;
-    margin-right: 20px;
-    display: inline-block;
-    background-color: rgb(177, 192, 187);
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    font-size: 2rem;
-    width: 50px;
+    width: 60px;
     height: 50px;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: 0.5s;
+    margin-top: 20px;
+    border: 0px solid;
+    padding: 0.7rem 1.5rem;
+    background-color: rgb(168,116,18,0.7);
+    font-family: 'M PLUS 2', sans-serif;
+    text-align: center;
+    justify-content: center;
+    text-transform: none;
+    color: rgb(153,8,8);
+    font-weight: bolder;
+    font-size: 17px;
+    transition: 1;
 }
 
 .btn:hover {
-    background-color: rgb(255, 225, 185);
-    width: 60px;
     height: 55px;
     margin: 10px 0;
     box-shadow: 0 4px 8px 0 rgba(255, 225, 185, 0.2), 0 6px 20px 0 rgba(255, 225, 185, 0.2);
-    font-size: 2.2rem;
 }
 
 .btn.active {
-    background-color: tomato;
+    background-color: rgb(168,116,18);
 }
 
+/* Img modal */
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation */
+  .modal-content, #caption {  
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
+/* End img modal */
+
 /* End Photo */
+
+/* Comment */
+.comment-act, .comment {
+    width: 50%;
+    max-width: 700px;
+    margin: auto;
+}
+
+.comment-act {
+    margin-top: 40px;
+}
+
+.container .comment-act .add-comment .info img {
+    max-width: 70px;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.add-comment {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.add-comment .info {
+    width: 20%;
+    justify-content: center;
+}
+
+.add-comment form .add-cmt {
+    width: 80%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container .comment-act form .add-cmt input[type="text"] {
+    border: none;
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    border-bottom: 2px solid gray;
+    text-align: center;
+}
+
+.container .comment-act button {
+    background-color: rgb(168,116,18,0.7);
+    float: right;
+    width: 120px;
+    height: 50px;
+    margin-right: 20px;
+    text-align: center;
+    justify-content: center;
+    text-transform: none;
+    color: rgb(153,8,8);
+    font-weight: bolder;
+    font-size: 17px;
+    transition: 1s;
+}
+
+.container .comment-act button:hover {
+    box-shadow: 0 4px 8px 0 rgba(255, 225, 185, 0.2), 0 6px 20px 0 rgba(255, 225, 185, 0.2);
+    height: 55px;
+    background-color: rgb(168,116,18);
+}
+
+
+.comment .info .post-owner {
+    width: 80%;
+    float: right;
+}
+
+.container .comment .info img {
+    max-width: 100px;
+    width: 10%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.comment .detail {
+    width: 80%;
+    float: right;
+}
+
+/* End Comment */
+
+/* Pagination flex-row */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pagination {
+    justify-content: center;
+    color: rgba(0,0,0,0.2);
+    margin: 4rem 0;
+}
+
+.pagination a {
+    padding: .6rem .9rem;
+    border-radius: 2rem;
+    margin: 0.3rem;
+    color: gray;
+}
+
+.pagination .pages {
+    background: grey;
+    color: white;
+}
+
+.pagination ul {
+    list-style-type:none;
+}
+
+/* Pagination flex-row */
 
 /* Interaction */
 .interaction {
@@ -291,3 +429,40 @@ p, q, ol, ul, h3, h4, h5, h6 {
 }
 
 /* End Main Content */
+
+@media only screen and (max-width: 1000px) {
+    .photos {
+        width: 100%;
+    }
+    /* Comment */
+    .comment-act, .comment {
+        width: 90%;
+    }
+
+    .comment-act .add-comment .info,
+    .comment-act form .add-cmt {
+        width: 100%;
+        justify-content: center;
+        margin: auto;
+    }
+        
+    .add-comment {
+        flex-direction: column;
+    }
+    
+    .container .comment-act form input[type=text] {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .comment-act .btn-cmt {
+        /* width: 100%; */
+    }
+        
+    .comment .detail {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    /* End Comment */
+}
