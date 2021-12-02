@@ -16,7 +16,11 @@ main {
 }
 
 .container {
+<<<<<<< HEAD
     min-height: 50vh;
+=======
+    min-height: 70vh;
+>>>>>>> dd1a9256c014f75d87ed29975a396e738ab4bd9d
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -30,7 +34,11 @@ main {
     letter-spacing: 0.3rem;
     word-spacing: 3px;
     margin: 0;
+<<<<<<< HEAD
     font-size: 4rem;
+=======
+    
+>>>>>>> dd1a9256c014f75d87ed29975a396e738ab4bd9d
 }
 
 .container h3 {
@@ -45,6 +53,7 @@ main {
     color: black;
     letter-spacing: 1px;
     line-height: 1.5;
+    font-size: 1.2rem;
 }
 
 /* Head */
@@ -56,9 +65,25 @@ main {
     position: relative;
 }
 
+<<<<<<< HEAD
 .head-content .container h1,
+=======
+.head-content .container h1 {
+    color: white;
+    font-family: 'Comforter', cursive;
+    font-size: 6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+>>>>>>> dd1a9256c014f75d87ed29975a396e738ab4bd9d
 .head-content .container p {
     color: white;
+    color: white;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-size: 1.2rem;
 }
 
 /* End Header */
