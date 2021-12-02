@@ -162,7 +162,7 @@ li.dropdown {
     }
 }
 
-@media (max-width: 790px) {
+@media (max-width: 825px) {
     .toggle-button {
         display: flex;
     }

@@ -179,7 +179,7 @@
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
 
 /*------------------Site Content-------------------*/
 body {
@@ -192,7 +192,7 @@ main .site-content {
     grid-template-columns: 70% 30%;
     margin-top: 2rem;
     margin-left: 3.5rem;
-    margin-right: 4rem;
+    margin-right: 3.5rem;
 }
 
 main .post-content {
@@ -236,6 +236,23 @@ main .site-content .post-content > .post-image .post-info span {
     font-size: 16px;
 }
 
+main .site-container .site-content .posts .post-content .post-image img {
+    height: 370px;
+    width: 100%;
+    overflow: hidden;
+    border: 3px solid rgb(168, 116, 18);
+    object-fit: cover;
+}
+
+main .site-container .site-content .posts .post-content .post-title .place {
+    color: rgb(168, 116, 18);
+    text-transform: uppercase;
+    font-family: 'Outfit', sans-serif;
+    word-spacing: 1px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
 main .post-content .post-title .post-cont {
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -256,7 +273,6 @@ main .post-content .post-title p {
 main .site-content .post-content .post-title .post-btn {
     margin-top: 20px;
     border: 0px solid;
-    border-radius: 0;
     padding: .7rem 1.5rem;
     background-color: rgb(168, 116, 18);
     font-family: 'M PLUS 2', sans-serif;
@@ -269,28 +285,36 @@ hr {
     margin-top: -68px;
 }
 
-.site-content .pagination {
+main .site-content .pagination {
     justify-content: center;
     color: rgba(0,0,0,0.2);
     margin: 4rem 0;
 }
 
-.site-content .pagination a {
+main .site-content .pagination a {
     padding: .6rem .9rem;
     border-radius: 2rem;
     margin: 0.3rem;
 }
 
-.site-content .pagination .pages {
+main .site-content .pagination .pages {
     background: grey;
     color: white;
 }
 
-.sidebar {
+main .sidebar {
     margin-left: 20px;
 }
 
-.site-content .sidebar .popular-post h1 {
+main .site-container .site-content .sidebar .popular-post .post-content .post-image img {
+    height: 160px;
+    width: 100%;
+    overflow: hidden;
+    border: 3px solid rgb(168, 116, 18);
+    object-fit: cover;
+}
+
+main .site-content .sidebar .popular-post h1 {
     margin-top: 0.5rem;
     margin-left: 24px;
     text-transform: uppercase;
@@ -302,29 +326,40 @@ hr {
     color: rgb(168, 116, 18);
 }
 
-.site-content .sidebar .popular-post .post-content {
-    padding: 0.6rem 0;
+main .site-content .sidebar .popular-post .post-content {
+    padding: 1rem 0;
 }
 
-.site-content .sidebar .popular-post .post-info {
-    padding: 0.1px 0.1px !important;
-    bottom: 0.5rem !important;
-    left: 1.5rem !important;
+main .site-container .site-content .sidebar .popular-post .post-content .post-info {
+    padding: .2rem .1rem !important;
+    bottom: 0rem !important;
+    left: 1.7rem !important;
     border-radius: 0rem !important;
     background: cornsilk !important;
-    font-size: 5px;
+}
+main .site-container .site-content .sidebar .popular-post .post-content .post-info span {
+    font-size: 15px;
 }
 
-.site-content .sidebar .popular-post .post-title a{
+main .site-container .site-content .sidebar .popular-post .post-title .place {
+    color: rgb(168, 116, 18);
+    text-transform: uppercase;
+    font-family: 'Outfit', sans-serif;
+    word-spacing: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+main .site-content .sidebar .popular-post .post-title a{
     font-size: 1rem;
 }
 
-.site-content .sidebar .popular-tag {
+main .site-content .sidebar .popular-tag {
     padding: 4rem 0;
     margin-left: 24px;
 }
 
-.site-content .sidebar .popular-tag h1 {
+main .site-content .sidebar .popular-tag h1 {
     text-transform: uppercase;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
@@ -343,14 +378,17 @@ hr {
     font-family: 'M PLUS 2', sans-serif;
     font-weight: bolder;
 }
+
+
 /*------------------Site Content-------------------*/
 
 /*------------------Gallery Image------------------*/
 
-.site-content .sidebar .gallery-image {
+main .site-content .sidebar .gallery-image {
     margin-left: 24px;
+    margin-bottom: 2rem;
 }
-.site-content .sidebar .gallery-image h1 {
+main .site-content .sidebar .gallery-image h1 {
     text-transform: uppercase;
     font-size: 1.5rem;
     letter-spacing: 1px;
@@ -360,19 +398,20 @@ hr {
     color: rgb(168, 116, 18);
 }
 
-.site-content .sidebar .gallery-image .gallery-container {
+main .site-content .sidebar .gallery-image .gallery-container {
     width: 100%;
-    margin: 2rem auto; 
+    margin: auto; 
+    margin-top: 1.5rem;
   }
   
-.site-content .sidebar .gallery-image .gallery-container .gallery {
+main .site-content .sidebar .gallery-image .gallery-container .gallery {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(13, 5vw);
     grid-gap: 0.2rem; 
 }
   
-.site-content .sidebar .gallery-image .gallery-container .gallery .ga-img {
+main .site-content .sidebar .gallery-image .gallery-container .gallery .ga-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
