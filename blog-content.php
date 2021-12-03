@@ -6,6 +6,7 @@
 </head>
 
 <?php
+
     use MongoDB\Client;
 
     require_once "vendor/autoload.php";
@@ -18,7 +19,7 @@
 
     $viewerid = 5;
 
-    $postid = 1;
+    $postid = (int) $_GET['postid'];
     $result = $post->findOne(['postid' => $postid]);
     
     $title = $result['title'];
@@ -199,7 +200,7 @@
                 $rec_count = $num_cmt;
                 $total_pages = ceil($rec_count/$no_of_records_per_page);
                 
-                $res = $comment->find(['postid' => 1]);
+                $res = $comment->find(['postid' => $postid]);
 
                 $i = 0;
                 foreach ($res as $row) {

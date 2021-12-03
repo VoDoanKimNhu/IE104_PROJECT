@@ -88,7 +88,10 @@
                 'lastname' => $lname,
                 'email' => $email_reg,
                 'role' => $role,
-                'password' => $pass_reg
+                'password' => $pass_reg,
+                'facebook' => '',
+                'instagram' => '',
+                'twitter' => ''
             ]);   
             if($insert_cmt) {
                 $_SESSION['loggedin'] = true;
@@ -204,5 +207,16 @@
     <?php
         require('common/footer.php');
     ?>
+    <script>
+        document.getElementById("close_announce").addEventListener("click", function(){
+            document.getElementById("announce").classList.add("action");
+        })
+        document.addEventListener('keydown',function(e){
+            if (e.keyCode === 13) {
+                document.getElementById("announce").classList.add("action");
+            }
+        });
+    </script>
+
 </body>
 </html>

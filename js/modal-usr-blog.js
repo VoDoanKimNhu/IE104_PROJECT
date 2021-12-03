@@ -3,17 +3,17 @@ var datamap = new Map([
     [document.getElementById("myBtn2"), document.getElementById("mymodal2")],
     [document.getElementById("myBtn3"), document.getElementById("mymodal3")],
     [document.getElementById("linkavt"), document.getElementById("mymodal")]
-    [document.getElementById("edit-post1"), document.getElementById("editmodal")],
-    [document.getElementById("edit-post2"), document.getElementById("editmodal")],
-    [document.getElementById("edit-post3"), document.getElementById("editmodal")],
-    [document.getElementById("edit-post4"), document.getElementById("editmodal")],
-    [document.getElementById("edit-post5"), document.getElementById("editmodal")],
-    [document.getElementById("del-post1"), document.getElementById("delmodal")],
-    [document.getElementById("del-post2"), document.getElementById("delmodal")],
-    [document.getElementById("del-post3"), document.getElementById("delmodal")],
-    [document.getElementById("del-post4"), document.getElementById("delmodal")],
-    [document.getElementById("del-post5"), document.getElementById("delmodal")],
-    [document.getElementById("del-post6"), document.getElementById("delmodal")],
+    // [document.getElementById("edit-post1"), document.getElementById("editmodal")],
+    // [document.getElementById("edit-post2"), document.getElementById("editmodal")],
+    // [document.getElementById("edit-post3"), document.getElementById("editmodal")],
+    // [document.getElementById("edit-post4"), document.getElementById("editmodal")],
+    // [document.getElementById("edit-post5"), document.getElementById("editmodal")],
+    // [document.getElementById("del-post1"), document.getElementById("delmodal")],
+    // [document.getElementById("del-post2"), document.getElementById("delmodal")],
+    // [document.getElementById("del-post3"), document.getElementById("delmodal")],
+    // [document.getElementById("del-post4"), document.getElementById("delmodal")],
+    // [document.getElementById("del-post5"), document.getElementById("delmodal")],
+    // [document.getElementById("del-post6"), document.getElementById("delmodal")],
 
 ]);
 
