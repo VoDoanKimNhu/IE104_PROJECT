@@ -13,9 +13,9 @@
         </a>
         <div class="narbar-links">
             <ul>
-                <li><a href="index.html" target="_self">Home</a></li>
-                <li><a href="place.html" target="_self">Place</a></li>
-                <li><a href="usr-blog.html" target="_self">Blog</a></li>
+                <li><a href="index.php" target="_self">Home</a></li>
+                <li><a href="place.php" target="_self">Place</a></li>
+                <li><a href="usr-blog.php" target="_self">Blog</a></li>
 
                 <!-- <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Blog</a>
                     <div class="dropdown-content">
@@ -24,9 +24,9 @@
                     </div>
                 </li> -->
 
-                <li><a href="about-us.html" target="_self">About Us</a></li>
-                <li><a href="contact-us.html" target="_self">Contact us</a></li>
-                <li><a href="donate.html" target="_self">Donate</a></li>
+                <li><a href="about-us.php" target="_self">About Us</a></li>
+                <li><a href="contact-us.php" target="_self">Contact us</a></li>
+                <li><a href="donate.php" target="_self">Donate</a></li>
                 <li><a href="login.php" target="_self" class="logIn">Log out</a></li>
             </ul>
         </div>

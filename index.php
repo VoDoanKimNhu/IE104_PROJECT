@@ -1,14 +1,30 @@
-<!--#include virtual="/IE104_PROJECT/common/document-head.html"-->
+<?php
+    require('common/document-head.php');
+?>
 <title>Home</title>
 <link href="./css/style-home.css" rel="stylesheet">
 <link href="./css/style.css" rel="stylesheet">
-
-
-
 </head>
+<?php
+    error_reporting(0);    
+    use MongoDB\Client;
 
+    require_once "vendor/autoload.php";
+
+    $conn = new Client("mongodb+srv://kimnhu:kimnhu@cluster0.uvhrc.mongodb.net/?serverSelectionTryOnce=false&serverSelectionTimeoutMS=15000&w=majority");
+    $db = $conn->IE104_PROJECT;
+    $post = $db->POST;
+    $account = $db->ACCOUNT;
+    $comment = $db->COMMENT;
+    $province = $db->PROVINCE;
+
+    $viewerid = 1;
+    $result_post = $post->find();
+?>
 <body>
-    <!--#include virtual="/IE104_PROJECT/common/header.html"-->
+    <?php
+        require('common/header.php');
+    ?>
     <main>
         <!-----------------------------Blog Carousel---------------------------------->
         <article class="slideshow-container">
@@ -94,237 +110,159 @@
 
 
         <!------------------------------Site Content------------------------------->
-
         <section class="site-container">
             <div class="site-content">
                 <div class="posts">
+                <?php
+                    if (isset($_GET['pageno'])) {
+                        $pageno = $_GET['pageno'];
+                    } else {
+                        $pageno = 1;
+                    }
 
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="post-image image">
-                            <div>
-                                <img src="image/Mai Chau Vietnam Travel-9.jpg" class="img-p" alt="Image name">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<time
-                                        datetime="2021-02-14">Jan 14 2021</time> </span>
-                                <span>2 Comments</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a class="post-cont" href="blog-content.php">The Perfect Weekend in Ha Noi</a>
-                            <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a
-                                robot-controlled rover on Mars, and discovered thousands of exoplanets—planets that
-                                orbit stars outside of this solar system. Scientists can even explore the 95% of
-                                invisible space comprised of dark energy, dark matter, and dark radiation.
-                                The size of the universe is hard to fathom, and it’s expanding even faster than
-                                scientists originally thought. While humans will never map out the entirety of space,
-                                that doesn’t stop them from exploring it. ...
-                            </p>
-                            <button class="btn post-btn"><a href="blog-content.php" style="color: rgb(153, 8, 8);">
-                                    Read More &nbsp;<i style="color: rgb(153, 8, 8);"
-                                        class="fas fa-arrow-right"></i></a></button>
-                        </div>
-                    </div>
-                    <hr>
+                    $no_of_records_per_page = 4;
+                    $offset = ($pageno-1)*$no_of_records_per_page;
+                    $rec_count = 16;
+                    $total_pages = ceil($rec_count/$no_of_records_per_page);
+                    
+                    $new_post = $post->find([],['sort' => ['_id' => -1], 'limit' => 16]);
 
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image image">
-                            <div>
-                                <img src="image/Sapa Food Vietnam Tourism.jpg" class="img-p" alt="Image name">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<time
-                                        datetime="2021-02-14">Jan 14 2021</time> </span>
-                                <span>2 Comments</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a class="post-cont" href="blog-content.php">The Perfect Weekend in Ha Noi</a>
-                            <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a
-                                robot-controlled rover on Mars, and discovered thousands of exoplanets—planets that
-                                orbit stars outside of this solar system. Scientists can even explore the 95% of
-                                invisible space comprised of dark energy, dark matter, and dark radiation.
+                    $i = 0;
+                    foreach ($new_post as $row) {
+                        if($i>=$offset && $i<$offset+$no_of_records_per_page) {
+                            $new_accountid = $row->accountid;
 
-                                The size of the universe is hard to fathom, and it’s expanding even faster than
-                                scientists originally thought. While humans will never map out the entirety of space,
-                                that doesn’t stop them from exploring it. ...
-                            </p>
-                            <button class="btn post-btn"><a href="blog-content.php" style="color: rgb(153, 8, 8);">
-                                    Read More &nbsp;<i style="color: rgb(153, 8, 8);"
-                                        class="fas fa-arrow-right"></i></a></button>
-                        </div>
-                    </div>
-                    <hr>
+                            $post_account = $account->findOne(['accountid' => $new_accountid]);
 
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image image">
-                            <div>
-                                <img src="image/Ha Giang things to do Vietnam travel-4.jpg" class="img-p"
-                                    alt="Image name">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<time
-                                        datetime="2021-02-14">Jan 14 2021</time> </span>
-                                <span>2 Comments</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a class="post-cont" href="blog-content.php">The Perfect Weekend in Ha Noi</a>
-                            <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a
-                                robot-controlled rover on Mars, and discovered thousands of exoplanets—planets that
-                                orbit stars outside of this solar system. Scientists can even explore the 95% of
-                                invisible space comprised of dark energy, dark matter, and dark radiation.
-
-                                The size of the universe is hard to fathom, and it’s expanding even faster than
-                                scientists originally thought. While humans will never map out the entirety of space,
-                                that doesn’t stop them from exploring it. ...
-                            </p>
-                            <button class="btn post-btn"><a href="blog-content.php" style="color: rgb(153, 8, 8);">
-                                    Read More &nbsp;<i style="color: rgb(153, 8, 8);"
-                                        class="fas fa-arrow-right"></i></a></button>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image image">
-                            <div>
-                                <img src="image/Ha Giang things to do Vietnam travel-6.jpg" class="img-p"
-                                    alt="Image name">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<time
-                                        datetime="2021-02-14">Jan 14 2021</time> </span>
-                                <span>2 Comments</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a class="post-cont" href="blog-content.php">The Perfect Weekend in Ha Noi</a>
-                            <p>Since NASA’s inception in 1958, astronauts have landed on the moon, parked a
-                                robot-controlled rover on Mars, and discovered thousands of exoplanets—planets that
-                                orbit stars outside of this solar system. Scientists can even explore the 95% of
-                                invisible space comprised of dark energy, dark matter, and dark radiation.
-
-                                The size of the universe is hard to fathom, and it’s expanding even faster than
-                                scientists originally thought. While humans will never map out the entirety of space,
-                                that doesn’t stop them from exploring it. ...
-                            </p>
-                            <button class="btn post-btn"><a href="blog-content.php" style="color: rgb(153, 8, 8);">
-                                    Read More &nbsp;<i style="color: rgb(153, 8, 8);"
-                                        class="fas fa-arrow-right"></i></a></button>
-                        </div>
-                    </div>
-
-                    <div class="pagination flex-row">
-                        <a href="#"><i class="fas fa-chevron-left"></i></a>
-                        <a href="#" class="pages">1</a>
-                        <a href="#" class="pages">2</a>
-                        <a href="#" class="pages">3</a>
-                        <a href="#"><i class="fas fa-chevron-right"></i></a>
-                    </div>
+                            $post_cmt = $comment->find(['postid' => $row->postid]);
+                            $count_cmt = 0;
+                            foreach($post_cmt as $cmt) {
+                                $count_cmt++;
+                            }
+                            ?>
+                                <div class="post-content" data-aos="zoom-in" data-aos-delay="<?php $i*10;?>">
+                                    <div class="post-image image">
+                                        <div>
+                                            <img src="image/<?php echo $row['img'][0];?>" class="img-p" alt="Image name">
+                                        </div>
+                                        <div class="post-info flex-row">
+                                            <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;<?php echo $post_account['lastname'];?></span>
+                                            <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<time
+                                        datetime="<?php echo $row->date;?>"><?php echo $row->date;?></time> </span>
+                                            <span><?php echo $count_cmt;?> Comments</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-title">
+                                        <a class="post-cont" href="blog-content.php?postid=<?php echo $row->postid;?>"><?php echo $row->title;?></a>
+                                        <p>
+                                            <?php echo $row->description;?>
+                                        </p>
+                                        <button class="btn post-btn"><a href="blog-content.php" style="color: rgb(153, 8, 8);">
+                                                Read More &nbsp;<i style="color: rgb(153, 8, 8);"
+                                                    class="fas fa-arrow-right"></i></a></button>
+                                    </div>
+                                </div>
+                                <hr>
+                            <?php   
+                        }
+                        $i++;              
+                    }    
+                ?>
+                <div class="pagination flex-row">
+                    <a href="#"><i class="fas fa-chevron-left"></i></a>
+                    <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="pages"> 
+                        <?php if($pageno <= 1){ echo '...'; } else { echo ($pageno - 1); } ?>
+                    </a>
+                    <a href="<?php echo "?pageno=".($pageno); ?>" class="pages"><?php echo $pageno;?></a>
+                    <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>" class="pages">
+                        <?php if($pageno >= $total_pages){ echo '...'; } else { echo ($pageno + 1); } ?>
+                    </a>
+                    <a href="#"><i class="fas fa-chevron-right"></i></a>
                 </div>
+                </div>    
                 <aside class="sidebar">
                     <div class="popular-post">
                         <h1>Popular Posts</h1>
+                        <?php 
+                            $num_cmts = array();
+                            $id_post = array();
+                            $i = 0;
+                            $top_post = $post->find();
 
-                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+                            foreach($top_post as $row) {
+                                $cnt = 0;
+                                $res_cmt = $comment->find(['postid'=>$row->postid]);
+                                foreach($res_cmt as $cmtss) {
+                                    $cnt++;
+                                }
+                                $id_post[$i] = $row->postid;
+                                $num_cmts[$i] = $cnt;
+                                $i++;
+                            }
 
-                            <div class="post-image">
-                                <div>
-                                    <img src="image/Hanoi Old Quarter Vietnam Tourism.jpg" class="img-p"
-                                        alt="Image name">
+                            rsort($num_cmts);
+                            $top4 = array_slice($num_cmts, 0, 4);
+                        
+                            foreach ($top4 as $key => $val) {
+                                // echo $val;
+                                // echo $key."k\n";
+                                $post__ = $post->findOne(['postid' => $id_post[$key]]);
+                                ?>
+                                    <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+
+                                    <div class="post-image">
+                                        <div>
+                                            <img src="image/<?php echo $post__['img'][0];?>" class="img-p"
+                                                alt="Image name">
+                                        </div>
+                                    </div>
+
+                                    <div class="post-title">
+                                        <a class="post-cont" href="blog-content.php?postid=<?php echo $key;?>"><?php echo $post__['title'];?></a>
+                                    </div>
+
                                 </div>
-                                <div class="post-info flex-row">
-                                    <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<time
-                                            datetime="2021-02-14">Jan 14 2021</time></span>
-                                    <span>2 Comments</span>
-                                </div>
-                            </div>
-
-                            <div class="post-title">
-                                <a class="post-cont" href="blog-content.php">The Perfect Weekend in Ha Noi</a>
-                            </div>
-
-                        </div>
-
-                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
-
-                            <div class="post-image">
-                                <div>
-                                    <img src="image/Mai Chau Vietnam Travel-8.jpg" class="img-p" alt="Image name">
-                                </div>
-                                <div class="post-info flex-row">
-                                    <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<time
-                                            datetime="2021-02-14">Jan 14 2021</time> </span>
-                                    <span>2 Comments</span>
-                                </div>
-                            </div>
-
-                            <div class="post-title">
-                                <a class="post-cont" href="blog-content.php">The Perfect Weekend in Ha Noi</a>
-                            </div>
-
-                        </div>
-
-                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
-
-                            <div class="post-image">
-                                <div>
-                                    <img src="image/Ninh Binh Vietnam Travel-5.jpg" class="img-p" alt="Image name">
-                                </div>
-                                <div class="post-info flex-row">
-                                    <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<time
-                                            datetime="2021-02-14">Jan 14 2021</time> </span>
-                                    <span>2 Comments</span>
-                                </div>
-                            </div>
-
-                            <div class="post-title">
-                                <a class="post-cont" href="blog-content.php">The Perfect Weekend in Ha Noi</a>
-                            </div>
-
-                        </div>
-
-                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
-
-                            <div class="post-image">
-                                <div>
-                                    <img src="image/pu luong - Jaon Zullo-7.jpg" class="img-p" alt="Image name">
-                                </div>
-                                <div class="post-info flex-row">
-                                    <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Admin</span>
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<time
-                                            datetime="2021-02-14">Jan 14 2021</time> </span>
-                                    <span>2 Comments</span>
-                                </div>
-                            </div>
-
-                            <div class="post-title">
-                                <a class="post-cont" href="blog-content.php">The Perfect Weekend in Ha Noi</a>
-                            </div>
-
-                        </div>
-
+                                <?php
+                            }
+                        ?>
                     </div>
-
                     <div class="popular-tag">
                         <h1>Popular Tags</h1>
                         <div class="tags flex-row">
-                            <span class="tag" data-aos="flip-up" data-aos-delay="100"><a href="#">Hà Nội</a></span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="200"><a href="#">Đà Nẵng</a></span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="300"><a href="#">Hội An</a></span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="400"><a href="#">Huế</a></span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="500"><a href="#">Vũng Tàu</a></span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="600"><a href="#">Cần Thơ</a></span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="700"><a href="#">Tp Hồ Chí
-                                    Minh</a></span>
+                        <?php
+                            $provinceid = array();
+                            $index = 0;
+                            $top10 = array_slice($num_cmts, 0, 10);
+                            foreach ($top10 as $key => $val) {
+                                $pro_post = $post->findOne(['postid'=>$id_post[$key]]);
+                                $top_province = $province->findOne(['provinceid' => $pro_post['provinceid']]);
+
+                                if($index == 0) {
+                                    $provinceid[$index] = $top_province['name'];
+                                    $index++;
+                                } else {
+                                    $check = true;
+                                    for($i=0; $i<$index; $i++) {
+                                        if($provinceid[$i] == $top_province['name']) {
+                                            $check = false;
+                                            break;
+                                        }
+                                    }
+                                    if($check) {
+                                        $provinceid[$index] = $top_province['name'];
+                                        $index++;
+                                    }
+                                }
+                            }
+                            for($i=0; $i<$index; $i++) {
+                                if($provinceid[$i] != '') {
+                                ?>
+                                <span class="tag" data-aos="flip-up" data-aos-delay="100"><a href="#"><?php echo $provinceid[$i];?></a></span>
+                                <?php
+                                }
+                            }                        
+
+                        ?>
                         </div>
                     </div>
 
@@ -504,7 +442,9 @@
     </main>
     <!-----------------------------Main Site Section------------------------------------>
 
-    <!--#include virtual="/IE104_PROJECT/common/footer.html"-->
+    <?php
+        require('common/footer.php');
+    ?>
     <script type="text/javascript">
         $(document).ready(function () {
             AOS.init();
