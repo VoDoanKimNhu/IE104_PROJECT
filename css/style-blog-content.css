@@ -11,8 +11,6 @@ main {
 
 p, q, ol, ul, h3, h4, h5, h6 {
     line-height: 30px;
-    word-spacing: 2px;
-    letter-spacing: 0.5px;
 }
 
 ::placeholder {
@@ -23,7 +21,7 @@ p, q, ol, ul, h3, h4, h5, h6 {
 }
 
 .container {
-    min-height: 50vh;
+    min-height: 70vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -31,21 +29,21 @@ p, q, ol, ul, h3, h4, h5, h6 {
     justify-content: center;
 }
 
-.container h1 {
+/* .container h1 {
     color: black;
     font-weight: bold;
     letter-spacing: 0.3rem;
     word-spacing: 3px;
     margin: 0;
     font-size: 4rem;
-}
+} */
 
-.container p {
+/* .container p {
     color: black;
     letter-spacing: 1px;
     line-height: 1.5;
     font-size: 16px;
-}
+} */
 
 /* Head */
 .head-content .container {
@@ -55,12 +53,24 @@ p, q, ol, ul, h3, h4, h5, h6 {
     background-size: cover;
     position: relative;
 }
-
+/* 
 .head-content h1 {
     color: white;
     text-align: center;
     justify-content: center;
+} */
+
+.head-content .container h1 {
+    color: white;
+    letter-spacing: 0.3rem;
+    word-spacing: 3px;
+    margin: 0;
+    font-size: 6rem;
+    font-family: 'Comforter', cursive;
+    text-align: center;
+    justify-content: center;
 }
+
 /* End Header */
 
 /* Main Content */
@@ -89,14 +99,43 @@ p, q, ol, ul, h3, h4, h5, h6 {
     cursor: pointer;
 }
 
+.info .post-owner h2 {
+    color: rgb(153, 8, 8);
+    font-family: 'Outfit', sans-serif;
+}
+
 .info .post-owner p {
     color: black;
 }
 
 .detail {
     text-align: justify;
-    line-height: 20px;
 }
+
+.detail-content h3 {
+    color: rgb(153, 8, 8);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.detail p {
+    letter-spacing: 1.2px;
+    word-spacing: 0.5px;
+}
+
+.detail-content q {
+    font-family: 'M PLUS 2', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    word-spacing: 0.5px;
+}
+
+.summary p {
+    letter-spacing: 1.2px;
+    word-spacing: 0.5px;
+}
+
 
 /* Photo */
 .photos {
@@ -329,6 +368,10 @@ p, q, ol, ul, h3, h4, h5, h6 {
     width: 80%;
     float: right;
 }
+
+.comment .info .post-owner h2 {
+    font-size: 1.5rem;
+} 
 
 /* End Comment */
 
