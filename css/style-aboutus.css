@@ -14,7 +14,7 @@ a:hover {
   position: relative;
   /* padding-top: 18%; */
   background-image: linear-gradient(
-      rgba(204, 152, 57, 0.7),rgba(5, 11, 32, 0.7)),url("https://i.pinimg.com/originals/8b/dd/46/8bdd462db1ecd0a26b475e2bea0c5eab.jpg");
+      rgba(204, 152, 57, 0.7),rgba(5, 11, 32, 0.7)),url("/IE104_PROJECT/image/blog_content_11_5.jpg");
   background-position: center;
   background-size: cover;
   /**/
@@ -45,46 +45,31 @@ a:hover {
   color: white;
 } */
 /* about us */
-.aboutus-members, .aboutus-project{
+.aboutus-members {
   margin: 8% 8% 8% 8%;
   text-align: center;
 }
 
-.aboutus-members h1 {
+.aboutus-members h1, .achie h1 {
   color: rgb(168, 116, 18);
   font-family: 'Outfit', sans-serif;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 5rem;
+  /*margin-top: 5rem;*/
   font-weight: bold;
-}
-
-.centered {
-  margin-top: 3rem;
-  position: relative;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.centered h1 {
-  color: rgb(168, 116, 18);
-  font-family: 'Outfit', sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.centered p {
-  margin-top: 2rem;
-  line-height: 2rem;
-  letter-spacing: 1.5px;
   word-spacing: 1px;
-  font-family: 'M PLUS 2', sans-serif;
-  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .row{  
   margin-bottom: 4%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 9rem;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.row .col-sm-4 img {
+  border-radius: 50%;
+
 }
 
 .member-text{
@@ -92,19 +77,30 @@ a:hover {
   font-family: 'M PLUS 2', sans-serif;
 }
 
-.member-text .h2{
-  font-weight: bold;
+.member-text h2{
+  font-weight: 900;
   font-family: 'M PLUS 2', sans-serif;
+  color: rgb(153, 8, 8);
+  font-size: 1.7rem;
+  text-transform: uppercase;
 }
 
 .member-text p{
-  font-size: 26px;
+  font-size: 18px;
   align-items: center;
   line-height: 30px;
+  font-family: 'M PLUS 2', sans-serif;
+  letter-spacing: 1px;
 }
+
+.aboutus-members .row .icons {
+  background-color: white;
+}
+
 .aboutus-members .icons a {
-  color: rgb(255, 255, 255);
+  color: rgb(168, 116, 18);
   font-size: 35px;
+  margin-right: 20px;
 }
 
 .aboutus-members .icons a:hover {
@@ -116,8 +112,80 @@ a:hover {
   margin: 100px 0 200px 0;
   text-align: center;
 }
+/* 
+.project img {
+  width: 100%;
+} */
 
+.head-content .container {
+  background-image: url("/IE104_PROJECT/image/pro1.jpg");
+  background-position: center;
+  /*background-size: cover;*/
+  /*position: relative;*/
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -30px;
+}
 
+.head-content .container h1 {
+  color: rgb(168, 116, 18);
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.head-content .container p {
+  color: black;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  font-family: 'M PLUS 2', sans-serif;
+  text-align: center;
+}
+
+/* .centered {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10rem;
+  
+} */
+
+/* .centered h1 {
+  color: rgb(168, 116, 18);
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+} */
+/* 
+.centered p {
+  margin-top: 2rem;
+  line-height: 2rem;
+  letter-spacing: 1.5px;
+  word-spacing: 1px;
+  font-family: 'M PLUS 2', sans-serif;
+  font-weight: 600;
+} */
+
+/* .achie h1 {
+  margin-top: 3rem;
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(168, 116, 18);
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+ */
 /* img {vertical-align: middle;} */
 
 /* Slideshow container */

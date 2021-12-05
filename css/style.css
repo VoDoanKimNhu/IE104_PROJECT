@@ -34,6 +34,7 @@ ul{
     background-color: rgb(255, 255, 255);
     width: 100%;
     padding: 10px;
+    border-bottom: 5px solid rgb(153, 8, 8) ;
 }
 
 .blg-tit {
@@ -209,39 +210,92 @@ footer {
     margin: auto;
     padding: 30px 0;
     text-align: center;
-    background-color: black;
+    background-color: white;
+    border-top: 5px solid rgb(153, 8, 8);
 }
 
-footer h4 {
+.slogan {
+    color: rgb(153, 8, 8);
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+footer h3 {
     margin-top: 20px;
     margin-bottom: 10px;
-    color: white;
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+    color: rgb(168, 116, 18);
+    font-weight: lighter;
+    font-size: 16px;
 }
 
-footer q,
-footer p {
-    font-weight: 400;
-    color: white;
+footer .footer-link {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 1rem;
 }
 
-.icons {
-    background-color: black;
+.icons .fa{
+    color: rgb(168, 116, 18);
+    font-size: 1.5rem;
+    margin-right: 12px;
 }
 
-.fa {
-    background-color: black;
-    color: white;
+footer .footer-link .link .use-link {
+    margin-bottom: 10px;
+}
+
+footer .footer-link .link a{
+    text-decoration: none;
+    color: rgb(7, 7, 7);
+    line-height: 10px;
+    font-family: 'M PLUS 2', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+footer .footer-link .link a:hover {
+    color: brown;
+}
+
+footer .inf {
+    font-family: 'M PLUS 2', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    text-align: left;
+    padding: 10px 9rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.5px;
+    justify-content: center;
+}
+
+footer .source {
+    font-family: 'M PLUS 2', sans-serif;
+    font-size: 15px;
+    color: rgb(153, 8, 8);
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* .fa {
+    color: rgb(7, 7, 7);
     margin: 0 5px;
     cursor: pointer;
     transition: 1s;
     padding: 18px 0;
-}
+} */
 
 .fa:hover {
     color: brown;
 }
 
-footer .move-up {
+/* footer .move-up {
     position: absolute;
     right: 6%;
     font-size: 2rem;
@@ -254,5 +308,17 @@ footer .move-up span {
 footer .move-up span:hover {
     color: wheat;
     cursor: pointer;
+} */
+
+@media (max-width: 890px) {
+    footer .inf {
+        padding: 10px 6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    footer .footer-link {
+        grid-template-columns: 100%;
+    }
 }
 /*-------------------Footer-----------------*/
