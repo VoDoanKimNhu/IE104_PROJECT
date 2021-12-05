@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     session_start();
     require('common/document-head.php');
 ?>
@@ -25,13 +26,13 @@
             $_SESSION['accountid'] = $result['accountid'];
             switch ($result['role']) {
                 case '1':
-                    header("location: index-role.php");
+                    header("location: role-index.php");
                     break;
                 case '2':
                     header("location: #");
                     break;    
                 default:
-                    header("location: index-role.php");
+                    header("location: role-index.php");
                     break;
             }
         } 
@@ -91,13 +92,14 @@
                 'password' => $pass_reg,
                 'facebook' => '',
                 'instagram' => '',
-                'twitter' => ''
+                'twitter' => '',
+                'imgsrc' => 'user_default.jpg'
             ]);   
             if($insert_cmt) {
                 $_SESSION['loggedin'] = true;
                 $_SESSION['accountid'] = $accountid;
 
-                header("location: index-role.php");
+                header("location: role-index.php");
             }  
         }
     }

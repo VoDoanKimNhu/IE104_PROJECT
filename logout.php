@@ -1,6 +1,6 @@
 <?php
+    error_reporting(0);
     session_start();
     unset($_SESSION["accountid"]);
-    // unset($_SESSION["name"]);
-    header("location: #");
+    header("location: index.php");
 ?>

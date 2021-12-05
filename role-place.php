@@ -1,5 +1,6 @@
 <?php
     error_reporting(0);
+    session_start();
     require('common/document-head.php');
 ?>
 <title>Place</title>
@@ -16,13 +17,13 @@
     $db = $conn->IE104_PROJECT;
     $post = $db->POST;
 
-    $viewerid = 1;
+    $viewerid = $_SESSION['accountid'];
 ?>
 <body>
     <!----------------------------Header--------------------------->
 
     <?php
-        require('common/header.php');
+        require('common/role-header.php');
     ?>
 
     <!----------------------------Header-------------------------------->
@@ -50,11 +51,11 @@
                 <button class="all" name="search_all">ALL</button>
             </form> -->
             <div class="search-container">
-                <form action="place.php" method="POST">
+                <form action="role-place.php" method="POST">
                     <!-- <input type="text" placeholder="Search.." name="search"> -->
                     <div class="form-group">
                             <select id="province" name="province" value="selected">
-                            <option  <?php if($_SERVER["REQUEST_METHOD"] == "POST") if($_POST["province"] == 0) echo "selected";?> value=0>Viet Nam</option>
+                                <option  <?php if($_SERVER["REQUEST_METHOD"] == "POST") if($_POST["province"] == 0) echo "selected";?> value=0>Viet Nam</option>
                                 <option <?php if($_SERVER["REQUEST_METHOD"] == "POST") if($_POST["province"] == 1) echo "selected";?>  <?php if($_SERVER["REQUEST_METHOD"] == "POST") if($_POST["province"] == 1) echo "selected";?> value=1>An Giang</option>
                                 <option <?php if($_SERVER["REQUEST_METHOD"] == "POST") if($_POST["province"] == 2) echo "selected";?> value="2">Ba Ria - Vung Tau</option>
                                 <option <?php if($_SERVER["REQUEST_METHOD"] == "POST") if($_POST["province"] == 3) echo "selected";?> value="3">Bac Giang</option>

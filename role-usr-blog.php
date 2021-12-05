@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     session_start();
     require('common/document-head.php');
 ?>
@@ -23,10 +24,156 @@
 <body>
     <!----------------------------Header--------------------------->
     <?php
-        require('common/header.php');
+        require('common/role-header.php');
     ?>
     <!----------------------------Header-------------------------------->
+    <?php
+            $res = $post->find();
+            $num_post = 0;
+            foreach ($res as $row) {
+                $num_post++;
+            }                       
+                
+            if (isset($_POST['btn_new_post'])){
+                $title = $_POST['blog-title'];
+                $province = $_POST['province'];
+                $description = $_POST['description'];
+                $heading1 = $_POST['blog-heading1'];
+                $para1 = $_POST['blog-para1'];
+                $heading2 = $_POST['blog-heading2'];
+                $para2 = $_POST['blog-para2'];
+                $heading3 = $_POST['blog-heading3'];
+                $para3 = $_POST['blog-para3'];
+                $heading4 = $_POST['blog-heading4'];
+                $para4 = $_POST['blog-para4'];
+                $heading5 = $_POST['blog-heading5'];
+                $para5 = $_POST['blog-para5'];
+                $brief = $_POST['brief'];
 
+                $date = date("D M d Y");
+                $postid = $num_post + 1;
+
+                $fileName = array();
+                $fileTmpName = array();
+                $fileType = array();
+                $fileExt = array();
+                $fileActualExt = array();
+                $img_post = array();
+
+                $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+
+                $check = true;
+                $count = 0;
+                $_FILES['userfile']['name'][1];
+
+                for($i=0; 1==1; $i++) {
+                    // echo $_FILES['userfile']['name'][$i];
+                    if((string)$_FILES['userfile']['name'][$i] != '') {
+                        $count++;
+                        $fileName[$i]=$_FILES['userfile']['name'][$i];
+                        $fileTmpName[$i]=$_FILES['userfile']['tmp_name'][$i];
+                        $fileType[$i]=$_FILES['userfile']['type'][$i];
+
+                        $fileExt[$i] = explode('.', $fileName[$i]);
+                        $fileActualExt[$i] = strtolower(end($fileExt[$i]));
+
+                        if(!in_array($fileActualExt[$i], $allowed)) {
+                            $check = false;
+                            break;
+                        }        
+                    } else {
+                        break;
+                    }
+                }
+                if($check) {
+                    $fileNameNew = array();
+                    $fileDestination = array();
+
+                    for($i=0; $i<$count; $i++) {
+                        $fileNameNew[$i] = 'blog_content_'.$postid.'_'.($i+1).'.'.$fileActualExt[$i];
+                        $fileDestination[$i] = 'image/'.$fileNameNew[$i];
+                        $img_post[$i] = $fileNameNew[$i];
+                        move_uploaded_file($fileTmpName[$i], $fileDestination[$i]);
+                    }
+
+                    $insert_post = $post->insertOne([
+                        'postid'    => $postid,
+                        'accountid'  => $viewerid,
+                        'title' => $title,
+                        'description' => $description,
+                        'date' => $date,
+                        'provinceid' => $province,
+                        'heading1' => $heading1,
+                        'paragraph1' => $para1,
+                        'heading2' => $heading2,
+                        'paragraph2' => $para2,
+                        'heading3' => $heading3,
+                        'paragraph3' => $para3,
+                        'heading4' => $heading4,
+                        'paragraph4' => $para4,
+                        'heading5' => $heading5,
+                        'paragraph5' => $para5,
+                        'brief' => $brief,
+                        'img' => $img_post
+                    ]);       
+                    ?>
+                        <div class="announce failed" id="announce">
+                            <div class="form_announce">
+                                <div class="content">
+                                    <h3>Post successfully.</h3>
+                                    <div class="btn close" style="display: flex; justify-content: center;">
+                                        <!-- <button id="close_announce">OK</button> -->
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+
+                } else {
+                    ?>
+                        <div class="announce failed" id="announce">
+                            <div class="form_announce">
+                                <div class="content">
+                                    <h3>Post failed.<br>Please check your inputs again.</h3>
+                                    <div class="btn close" style="display: flex; justify-content: center;">
+                                        <!-- <button id="close_announce">OK</button> -->
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                }
+                echo "<meta http-equiv='refresh' content='0'>";                    
+            }
+
+            if(isset($_POST['delete_post'])) {
+                $p = $post->findOne(['postid' => (int) $_GET['postid']]);
+                $imgs = $p['img'];
+                $imgs_length = count($imgs);
+
+                for($i=0; $i<$imgs_length; $i++) {
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/IE104_PROJECT/image/'.$imgs[$i];
+                    unlink($path);
+                }
+
+                $result = $post->deleteOne(['postid' => (int) $_GET['postid']]);
+                if($result) {
+                    ?>
+                        <div class="announce failed" id="announce">
+                            <div class="form_announce">
+                                <div class="content">
+                                    <h3>Delete successfully.</h3>
+                                    <div class="btn close" style="display: flex; justify-content: center;">
+                                        <!-- <button id="close_announce">OK</button> -->
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                }
+                echo "<meta http-equiv='refresh' content='0'>";                    
+            }
+        ?>
     <main>
         <section class="head-content">
             <div class="container">
@@ -36,9 +183,14 @@
         </section>
         <?php
             if (isset($_POST['btn_change_img'])){
-                $fileName = $_FILES['userfile']['name'];
-                $fileTmpName = $_FILES['userfile']['tmp_name'];
-                $fileType = $_FILES['userfile']['type'];
+                $acc = $account->findOne(['accountid'=>$viewerid]);
+                if($acc['imgsrc'] != 'user_default.jpg') {             
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/IE104_PROJECT/image/'.$acc['imgsrc'];
+                    unlink($path);
+                }
+                $fileName = $_FILES['file']['name'];
+                $fileTmpName = $_FILES['file']['tmp_name'];
+                $fileType = $_FILES['file']['type'];
                 $fileExt = explode('.', $fileName);
                 $fileActualExt = strtolower(end($fileExt));
 
@@ -66,7 +218,7 @@
                                     <div class="content">
                                         <h3>Change avatar successfully.</h3>
                                         <div class="btn close" style="display: flex; justify-content: center;">
-                                            <button id="close_announce">OK</button>
+                                            <!-- <button id="close_announce">OK</button> -->
                                         </div> 
                                     </div>
                                 </div>
@@ -79,7 +231,7 @@
                                     <div class="content">
                                         <h3>Change avatar failed.<br>Please try again.</h3>
                                         <div class="btn close" style="display: flex; justify-content: center;">
-                                            <button id="close_announce">OK</button>
+                                            <!-- <button id="close_announce">OK</button> -->
                                         </div> 
                                     </div>
                                 </div>
@@ -93,13 +245,14 @@
                                 <div class="content">
                                     <h3>There was a problem to upload file.<br>Please check your inputs again.</h3>
                                     <div class="btn close" style="display: flex; justify-content: center;">
-                                        <button id="close_announce">OK</button>
+                                        <!-- <button id="close_announce">OK</button> -->
                                     </div> 
                                 </div>
                             </div>
                         </div>
                     <?php
                 }
+                echo "<meta http-equiv='refresh' content='0'>";
             }                    
         ?>
         <article class="usr-blog-content">
@@ -113,12 +266,12 @@
                     </div>
                     <div class="modal" id="mymodal">
                         <div class="modal-content">
-                            <form action="usr-blog.php" method="POST" enctype="multipart/form-data">
+                            <form action="role-usr-blog.php" method="POST" enctype="multipart/form-data">
                                 <span class="close">&times;</span>
                                 <h2 style="margin: 2rem; text-align: center;">Change your avatar</h2>
                                 <div class="form-group">
-                                    <button name="btn_change_img">Choose image</button>
-                                    <input type="text" id="first-name-m" name="fname">
+                                    <input type="file" name="file"></input>
+                                    <input type="submit" class="post-btn modal-btn" name="btn_change_img"></input>
                                 </div>
                             </form>
                         </div>
@@ -199,7 +352,7 @@
                                             <div class="content">
                                                 <h3>Update successfully.</h3>
                                                 <div class="btn close" style="display: flex; justify-content: center;">
-                                                    <button id="close_announce">OK</button>
+                                                    <!-- <button id="close_announce">OK</button> -->
                                                 </div> 
                                             </div>
                                         </div>
@@ -212,19 +365,20 @@
                                         <div class="content">
                                             <h3>No fields are changed.<br>Please check your update.</h3>
                                             <div class="btn close" style="display: flex; justify-content: center;">
-                                                <button id="close_announce">OK</button>
+                                                <!-- <button id="close_announce">OK</button> -->
                                             </div> 
                                         </div>
                                     </div>
                                 </div>
                             <?php
                             }
+                            echo "<meta http-equiv='refresh' content='0'>";
                         }
                     ?>
 
                     <div class="modal" id="mymodal1">
                         <div class="modal-content">
-                            <form action="usr-blog.php" method="POST">
+                            <form action="role-usr-blog.php" method="POST">
                                 <span class="close">&times;</span>
                                 <h2>Change your information</h2>
                                 <div class="form-group">
@@ -274,7 +428,7 @@
                                             <div class="content">
                                                 <h3>Confirm old password failed.<br>Please try again.</h3>
                                                 <div class="btn close" style="display: flex; justify-content: center;">
-                                                    <button id="close_announce">OK</button>
+                                                    <!-- <button id="close_announce">OK</button> -->
                                                 </div> 
                                             </div>
                                         </div>
@@ -288,7 +442,7 @@
                                                 <div class="content">
                                                     <h3>Confirm new password failed.<br>Please try again.</h3>
                                                     <div class="btn close" style="display: flex; justify-content: center;">
-                                                        <button id="close_announce">OK</button>
+                                                        <!-- <button id="close_announce">OK</button> -->
                                                     </div> 
                                                 </div>
                                             </div>
@@ -312,13 +466,14 @@
                                             <div class="content">
                                                 <h3>Update successfully.</h3>
                                                 <div class="btn close" style="display: flex; justify-content: center;">
-                                                    <button id="close_announce">OK</button>
+                                                    <!-- <button id="close_announce">OK</button> -->
                                                 </div> 
                                             </div>
                                         </div>
                                     </div>
                                 <?php
                             }
+                            echo "<meta http-equiv='refresh' content='0'>";
                         }
                     ?>
                     <div>
@@ -328,7 +483,7 @@
 
                     <div class="modal" id="mymodal2">
                         <div class="modal-content">
-                            <form action="usr-blog.php" method="POST">
+                            <form action="role-usr-blog.php" method="POST">
                                 <span class="close">&times;</span>
                                 <h2>Change your password</h2>
                                 <div class="form-group">
@@ -351,122 +506,6 @@
                     </div>
 
                     <!--Add new post modal-->
-                    <?php
-                        $res = $post->find();
-                        $num_post = 0;
-                        foreach ($res as $row) {
-                            $num_post++;
-                        }                       
-                            
-                        if (isset($_POST['btn_new_post'])){
-                            $title = $_POST['blog-title'];
-                            $province = $_POST['province'];
-                            $description = $_POST['description'];
-                            $heading1 = $_POST['blog-heading1'];
-                            $para1 = $_POST['blog-para1'];
-                            $heading2 = $_POST['blog-heading2'];
-                            $para2 = $_POST['blog-para2'];
-                            $heading3 = $_POST['blog-heading3'];
-                            $para3 = $_POST['blog-para3'];
-                            $heading4 = $_POST['blog-heading4'];
-                            $para4 = $_POST['blog-para4'];
-                            $heading5 = $_POST['blog-heading5'];
-                            $para5 = $_POST['blog-para5'];
-                            $brief = $_POST['brief'];
-
-                            $date = date("D M d Y");
-                            $postid = $num_post + 1;
-
-                            $fileName = array();
-                            $fileTmpName = array();
-                            $fileType = array();
-                            $fileExt = array();
-                            $fileActualExt = array();
-                            $img_post = array();
-
-                            $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-                            $check = true;
-                            $count = 0;
-                            $_FILES['userfile']['name'][1];
-
-                            for($i=0; $i<4; $i++) {
-                                echo $_FILES['userfile']['name'][$i];
-                                if((string)$_FILES['userfile']['name'][$i] != '') {
-                                    $count++;
-                                    $fileName[$i]=$_FILES['userfile']['name'][$i];
-                                    $fileTmpName[$i]=$_FILES['userfile']['tmp_name'][$i];
-                                    $fileType[$i]=$_FILES['userfile']['type'][$i];
-    
-                                    $fileExt[$i] = explode('.', $fileName[$i]);
-                                    $fileActualExt[$i] = strtolower(end($fileExt[$i]));
-    
-                                    if(!in_array($fileActualExt[$i], $allowed)) {
-                                        $check = false;
-                                        break;
-                                    }        
-                                }
-                            }
-                            if($check) {
-                                $fileNameNew = array();
-                                $fileDestination = array();
-
-                                for($i=0; $i<$count; $i++) {
-                                    $fileNameNew[$i] = 'blog_content_'.$postid.'_'.($i+1).'.'.$fileActualExt[$i];
-                                    $fileDestination[$i] = 'uploads/'.$fileNameNew[$i];
-                                    $img_post[$i] = $fileNameNew[$i];
-                                    move_uploaded_file($fileTmpName[$i], $fileDestination[$i]);
-                                }
-
-                                $insert_post = $post->insertOne([
-                                    'postid'    => $postid,
-                                    'accountid'  => $viewerid,
-                                    'title' => $title,
-                                    'description' => $description,
-                                    'date' => $date,
-                                    'provinceid' => $province,
-                                    'heading1' => $heading1,
-                                    'paragraph1' => $para1,
-                                    'heading2' => $heading2,
-                                    'paragraph2' => $para2,
-                                    'heading3' => $heading3,
-                                    'paragraph3' => $para3,
-                                    'heading4' => $heading4,
-                                    'paragraph4' => $para4,
-                                    'heading5' => $heading5,
-                                    'paragraph5' => $para5,
-                                    'brief' => $brief,
-                                    'img' => $img_post
-                                ]);       
-                                ?>
-                                    <div class="announce failed" id="announce">
-                                        <div class="form_announce">
-                                            <div class="content">
-                                                <h3>Post successfully.</h3>
-                                                <div class="btn close" style="display: flex; justify-content: center;">
-                                                    <button id="close_announce">OK</button>
-                                                </div> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php
-
-                            } else {
-                                ?>
-                                    <div class="announce failed" id="announce">
-                                        <div class="form_announce">
-                                            <div class="content">
-                                                <h3>Post failed.<br>Please check your inputs again.</h3>
-                                                <div class="btn close" style="display: flex; justify-content: center;">
-                                                    <button id="close_announce">OK</button>
-                                                </div> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php
-                            }                    
-                        }
-                    ?>
                     <div>
                         <button id="myBtn3" class="mybtn" href="#addnewpost"><i
                                 class="fas fa-pencil"></i>&nbsp;&nbsp;Add new post</button>
@@ -474,10 +513,10 @@
 
                     <div class="modal" id="mymodal3">
                         <div class="modal-content">
-                            <form action="usr-blog.php" method="POST" enctype="multipart/form-data">
+                            <form action="role-usr-blog.php" method="POST" enctype="multipart/form-data">
                                 <span class="close">&times;</span>
                                 <h2>Add new post</h2>
-                                <i><b>You can upload up to 4 pictures with extensions: jpg, jpeg, png, pdf.</b></i>
+                                <!-- <i><b>You can upload up to 4 pictures with extensions: jpg, jpeg, png, pdf.</b></i> -->
                                 <div class="form-group">
                                     <label for="btitle">Title</label><br>
                                     <input type="text" id="title" name="blog-title">
@@ -485,70 +524,70 @@
                                 <div class="form-group">
                                     <label for="bplace">Place</label>
                                     <select id="province" name="province">
-                                        <option value="0">Viet Nam</option>
+                                    <option value="0">Viet Nam</option>
                                         <option value="1">An Giang</option>
-                                        <option value="2">Bà Rịa - Vũng Tàu</option>
-                                        <option value="3">Bắc Giang</option>
-                                        <option value="4">Bắc Cạn</option>
-                                        <option value="5">Bạc Liêu</option>
-                                        <option value="6">Bắc Ninh</option>
-                                        <option value="7">Bến Tre</option>
-                                        <option value="8">Bình Định</option>
-                                        <option value="9">Bình Dương</option>
-                                        <option value="10">Bình Phước</option>
-                                        <option value="11">Bình Thuận</option>
-                                        <option value="12">Cà Mau</option>
-                                        <option value="13">Cần Thơ</option>
-                                        <option value="14">Cao Bằng </option>
-                                        <option value="15">Đà Nẵng</option>
-                                        <option value="16">Đắk Lắk</option>
-                                        <option value="17">Đắk Nông</option>
-                                        <option value="18">Điện Biên</option>
-                                        <option value="19">Đồng Nai</option>
-                                        <option value="20">Đồng Tháp</option>
+                                        <option value="2">Ba Ria - Vung Tau</option>
+                                        <option value="3">Bac Giang</option>
+                                        <option value="4">Bac Can</option>
+                                        <option value="5">Bac Lieu</option>
+                                        <option value="6">Bac Ninh</option>
+                                        <option value="7">Ben Tre</option>
+                                        <option value="8">Binh Dinh</option>
+                                        <option value="9">Binh Duong</option>
+                                        <option value="10">Binh Phuoc</option>
+                                        <option value="11">Binh Thuan</option>
+                                        <option value="12">Ca Mau</option>
+                                        <option value="13">Can Tho</option>
+                                        <option value="14">Cao Bang </option>
+                                        <option value="15">Da Nang</option>
+                                        <option value="16">Dak Lak</option>
+                                        <option value="17">Dak Nong</option>
+                                        <option value="18">Dien Bien</option>
+                                        <option value="19">Dong Nai</option>
+                                        <option value="20">Dong Thap</option>
                                         <option value="21">Gia Lai</option>
-                                        <option value="22">Hà Giang</option>
-                                        <option value="23">Hà Nam</option>
-                                        <option value="24">Hà Nội </option>
-                                        <option value="25">Hà Tĩnh</option>
-                                        <option value="26">Hải Dương</option>
-                                        <option value="27">Hải Phòng</option>
-                                        <option value="28">Hậu Giang</option>
-                                        <option value="29">Hòa Bình</option>
-                                        <option value="30">Hưng Yên</option>
-                                        <option value="31">Khánh Hòa</option>
-                                        <option value="32">Kiên Giang</option>
+                                        <option value="22">Ha Giang</option>
+                                        <option value="23">Ha Nam</option>
+                                        <option value="24">Ha Noi </option>
+                                        <option value="25">Ha Tinh</option>
+                                        <option value="26">Hai Duong</option>
+                                        <option value="27">Hai Phong</option>
+                                        <option value="28">Hau Giang</option>
+                                        <option value="29">Hoa Binh</option>
+                                        <option value="30">Hung Yen</option>
+                                        <option value="31">Khanh Hoa</option>
+                                        <option value="32">Kien Giang</option>
                                         <option value="33">Kon Tum</option>
-                                        <option value="34">Lai Châu</option>
-                                        <option value="35">Lâm Đồng</option>
-                                        <option value="36">Lạng Sơn</option>
-                                        <option value="37">Lào Cai</option>
+                                        <option value="34">Lai Chau</option>
+                                        <option value="35">Lam Dong</option>
+                                        <option value="36">Lang Son</option>
+                                        <option value="37">Lao Cai</option>
                                         <option value="38">Long An</option>
-                                        <option value="39">Nam Định</option>
-                                        <option value="40">Nghệ An</option>
-                                        <option value="41">Ninh Bình</option>
-                                        <option value="42">Ninh Thuận</option>
-                                        <option value="43">Phú Thọ</option>
-                                        <option value="44">Phú Yên</option>
-                                        <option value="45">Quảng Bình</option>
-                                        <option value="46">Quảng Nam</option>
-                                        <option value="47">Quảng Ngãi</option>
-                                        <option value="48">Quảng Ninh</option>
-                                        <option value="49">Quảng Trị</option>
-                                        <option value="50">Sóc Trăng</option>
-                                        <option value="51">Sơn La</option>
-                                        <option value="52">Tây Ninh</option>
-                                        <option value="53">Thái Bình</option>
-                                        <option value="54">Thái Bình</option>
-                                        <option value="55">Thanh Hóa</option>
-                                        <option value="56">Thừa Thiên Huế</option>
-                                        <option value="57">Tiền Giang</option>
-                                        <option value="58">Thành phố Hồ Chí Minh</option>
-                                        <option value="59">Trà Vinh</option>
-                                        <option value="60">Tuyên Quang</option>
-                                        <option value="61">Vĩnh Long</option>
-                                        <option value="62">Vĩnh Phúc</option>
-                                        <option value="63">Yên Bái</option>
+                                        <option value="39">Nam Dinh</option>
+                                        <option value="40">Nghe An</option>
+                                        <option value="41">Ninh Binh</option>
+                                        <option value="42">Ninh Thuan</option>
+                                        <option value="43">Phu Tho</option>
+                                        <option value="44">Phu Yen</option>
+                                        <option value="45">Quang Binh</option>
+                                        <option value="46">Quang Nam</option>
+                                        <option value="47">Quang Ngai</option>
+                                        <option value="48">Quang Ninh</option>
+                                        <option value="49">Quang Tri</option>
+                                        <option value="50">Soc Trang</option>
+                                        <option value="51">Son La</option>
+                                        <option value="52">Tay Ninh</option>
+                                        <option value="53">Thai Binh</option>
+                                        <option value="54">Thai Binh</option>
+                                        <option value="55">Thanh Hoa</option>
+                                        <option value="56">Thua Thien Hue</option>
+                                        <option value="57">Tien Giang</option>
+                                        <option value="58">Ho Chi Minh</option>
+                                        <option value="59">Tra Vinh</option>
+                                        <option value="60">Tuyen Quang</option>
+                                        <option value="61">Vinh Long</option>
+                                        <option value="62">Vinh Phuc</option>
+                                        <option value="63">Yen Bai</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -620,7 +659,6 @@
             </section>
 
             <section class="usr-list-post">
-
                 <?php
                     $count = 0;
                     foreach($result_post as $row) {
@@ -635,161 +673,25 @@
                                 <a><img src="./image/<?php echo $imgsrc;?>" alt="Image name"></a>
                             </div>
                             <div class="usr-post-title">
-                                <a href="blog-content.php?postid=<?php echo $row['postid'];?>;"><?php echo $title;?></a>
+                                <a href="blog-content.php?postid=<?php echo $row['postid'];?>"><?php echo $title;?></a>
                                 <p>
                                     <?php echo $description;?>
                                 </p>
                             </div>
                             <div class="option">
-                                <a href="#editpost" id="edit-post<?php echo $count;?>" class="edit-btn modal-btns"><i class="fas fa-user-edit"></i></a>
-                                <a href="#deletepost" id="del-post<?php echo $count;?>" class="del-btn modal-btns"><i class="fas fa-trash-alt"></i></a>
+                                <a href="role-edit-post.php?postid=<?php echo $row['postid'];?>" class="edit-btn modal-btns"><i class="fas fa-user-edit"></i></a>
+                                <form action="role-usr-blog.php?postid=<?php echo $row['postid'];?>" method="POST">
+                                    <button class="btn" name="delete_post" class="del-btn modal-btns" ><i class="fas fa-trash-alt"></i></button>
+                                </form>
                             </div>
                         </div>
                         <?php
                     }
                 ?>
-                <div class="modal" id="editmodal">
-                    <div class="modal-content">
-                        <form action="#">
-                            <span class="close">&times;</span>
-                            <h2>Edit post</h2>
-                            <div class="form-group">
-                                <label for="btitle">Title</label><br>
-                                <input type="text" id="b-title" name="blog-title">
-                            </div>
-                            <div class="form-group">
-                                <label for="bplace">Place</label>
-                                <select id="b-province" name="province">
-                                    <option value="0">Viet Nam</option>
-                                    <option value="1">An Giang</option>
-                                    <option value="2">Bà Rịa - Vũng Tàu</option>
-                                    <option value="3">Bắc Giang</option>
-                                    <option value="4">Bắc Cạn</option>
-                                    <option value="5">Bạc Liêu</option>
-                                    <option value="6">Bắc Ninh</option>
-                                    <option value="7">Bến Tre</option>
-                                    <option value="8">Bình Định</option>
-                                    <option value="9">Bình Dương</option>
-                                    <option value="10">Bình Phước</option>
-                                    <option value="11">Bình Thuận</option>
-                                    <option value="12">Cà Mau</option>
-                                    <option value="13">Cần Thơ</option>
-                                    <option value="14">Cao Bằng </option>
-                                    <option value="15">Đà Nẵng</option>
-                                    <option value="16">Đắk Lắk</option>
-                                    <option value="17">Đắk Nông</option>
-                                    <option value="18">Điện Biên</option>
-                                    <option value="19">Đồng Nai</option>
-                                    <option value="20">Đồng Tháp</option>
-                                    <option value="21">Gia Lai</option>
-                                    <option value="22">Hà Giang</option>
-                                    <option value="23">Hà Nam</option>
-                                    <option value="24">Hà Nội </option>
-                                    <option value="25">Hà Tĩnh</option>
-                                    <option value="26">Hải Dương</option>
-                                    <option value="27">Hải Phòng</option>
-                                    <option value="28">Hậu Giang</option>
-                                    <option value="29">Hòa Bình</option>
-                                    <option value="30">Hưng Yên</option>
-                                    <option value="31">Khánh Hòa</option>
-                                    <option value="32">Kiên Giang</option>
-                                    <option value="33">Kon Tum</option>
-                                    <option value="34">Lai Châu</option>
-                                    <option value="35">Lâm Đồng</option>
-                                    <option value="36">Lạng Sơn</option>
-                                    <option value="37">Lào Cai</option>
-                                    <option value="38">Long An</option>
-                                    <option value="39">Nam Định</option>
-                                    <option value="40">Nghệ An</option>
-                                    <option value="41">Ninh Bình</option>
-                                    <option value="42">Ninh Thuận</option>
-                                    <option value="43">Phú Thọ</option>
-                                    <option value="44">Phú Yên</option>
-                                    <option value="45">Quảng Bình</option>
-                                    <option value="46">Quảng Nam</option>
-                                    <option value="47">Quảng Ngãi</option>
-                                    <option value="48">Quảng Ninh</option>
-                                    <option value="49">Quảng Trị</option>
-                                    <option value="50">Sóc Trăng</option>
-                                    <option value="51">Sơn La</option>
-                                    <option value="52">Tây Ninh</option>
-                                    <option value="53">Thái Bình</option>
-                                    <option value="54">Thái Bình</option>
-                                    <option value="55">Thanh Hóa</option>
-                                    <option value="56">Thừa Thiên Huế</option>
-                                    <option value="57">Tiền Giang</option>
-                                    <option value="58">Thành phố Hồ Chí Minh</option>
-                                    <option value="59">Trà Vinh</option>
-                                    <option value="60">Tuyên Quang</option>
-                                    <option value="61">Vĩnh Long</option>
-                                    <option value="62">Vĩnh Phúc</option>
-                                    <option value="63">Yên Bái</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="picture">Picture</label><br>
-                                <button>Choose picture</button><br>
-                                <input type="text" name="picture">
-                            </div>
-                            <div class="form-group">
-                                <label for="bopen">Opening</label><br>
-                                <textarea id="b-opening" name="blog-opening">Some text...</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="bheading1">Heading 1</label><br>
-                                <input type="text" id="b-heading1" name="blog-heading1">
-                            </div>
-                            <div class="form-group">
-                                <label for="paragraph1">Paragraph 1</label><br>
-                                <textarea id="b-para1" name="blog-para1">Some text...</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="bheading2">Heading 2</label><br>
-                                <input type="text" id="b-heading2" name="blog-heading2">
-                            </div>
-                            <div class="form-group">
-                                <label for="paragraph2">Paragraph 2</label><br>
-                                <textarea id="b-para2" name="blog-para2">Some text...</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="bheading3">Heading 3</label><br>
-                                <input type="text" id="b-heading3" name="blog-heading3">
-                            </div>
-                            <div class="form-group">
-                                <label for="paragraph3">Paragraph 3</label><br>
-                                <textarea id="b-para3" name="blog-para3">Some text...</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="bheading4">Heading 4</label><br>
-                                <input type="text" id="b-heading4" name="blog-heading4">
-                            </div>
-                            <div class="form-group">
-                                <label for="paragraph4">Paragraph 4</label><br>
-                                <textarea id="b-para4" name="blog-para4">Some text...</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="bheading5">Heading 5</label><br>
-                                <input type="text" id="b-heading5" name="blog-heading5">
-                            </div>
-                            <div class="form-group">
-                                <label for="paragraph5">Paragraph 5</label><br>
-                                <textarea id="b-para5" name="blog-para5">Some text...</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="brief">Brief</label><br>
-                                <textarea id="b-brief" name="brief">Some text...</textarea>
-                            </div>
-                            <div class="form-group">
-                                <button class="post-btn modal-btn">Save</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
                 <script src="js/modal-usr-blog.js"></script>
             </section>
         </article>
     </main>
-
     <!------------------------------Footer---------------------------------------------------->
     <?php
         require('common/footer.php');
@@ -803,6 +705,7 @@
     </script>
     <script>
         document.getElementById("close_announce").addEventListener("click", function(){
+            // window.location.reload();
             document.getElementById("announce").classList.add("action");
         })
         document.addEventListener('keydown',function(e){

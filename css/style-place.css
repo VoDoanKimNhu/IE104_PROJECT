@@ -167,3 +167,32 @@
         font-size: 0.7rem;
     }
 }
+
+/* Pagination flex-row */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pagination {
+    justify-content: center;
+    color: rgba(0,0,0,0.2);
+    margin: 4rem 0;
+}
+
+.pagination a {
+    padding: .6rem .9rem;
+    border-radius: 2rem;
+    margin: 0.3rem;
+    color: gray;
+}
+
+.pagination .pages {
+    background: grey;
+    color: white;
+}
+
+.pagination ul {
+    list-style-type:none;
+}

@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);    
     session_start();
     require('common/document-head.php');
 ?>
@@ -170,24 +171,26 @@
                 $result_viewer = $account->findOne(['accountid' => $viewerid]);
                 $viewer_img = $result_viewer['imgsrc'];
                 $viewer_name = $result_viewer['firstname'].' '.$result_viewer['lastname'];
-            ?>
-            <div class="comment-act">
-                <div class="add-comment">
-                    <div class="info">
-                        <img src="/IE104_PROJECT/image/<?php echo $viewer_img;?>" alt="Image of <?php echo $viewer_name;?>" class="img-owner">
-                    </div> 
-                </div>
-                <form action="blog-content.php" name="add-comment" id="add-comment" method="POST">
-                    <div class="add-cmt">
-                        <input type="text" name="comment" id="comment" placeholder="Add a public comment...">
-                    </div>
-                    <div class="btn-cmt">
-                        <button class="btn" name="submit_cmt">Comment</button>
-                    </div>
-                </form>
-            </div>
-            <?php
 
+                if($viewerid != '') {
+                    ?>
+                    <div class="comment-act">
+                        <div class="add-comment">
+                            <div class="info">
+                                <img src="/IE104_PROJECT/image/<?php echo $viewer_img;?>" alt="Image of <?php echo $viewer_name;?>" class="img-owner">
+                            </div> 
+                        </div>
+                        <form action="blog-content.php" name="add-comment" id="add-comment" method="POST">
+                            <div class="add-cmt">
+                                <input type="text" name="comment" id="comment" placeholder="Add a public comment...">
+                            </div>
+                            <div class="btn-cmt">
+                                <button class="btn" name="submit_cmt">Comment</button>
+                            </div>
+                        </form>
+                    </div>
+                    <?php        
+                }
                 if (isset($_GET['pageno'])) {
                     $pageno = $_GET['pageno'];
                 } else {

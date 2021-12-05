@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     use MongoDB\Client;
 
     require_once "vendor/autoload.php";

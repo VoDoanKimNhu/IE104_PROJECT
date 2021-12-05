@@ -1,5 +1,5 @@
 <?php
-    error_reporting(0);    
+    error_reporting(0);
     require('common/document-head.php');
 ?>
 <title>About us</title>
@@ -11,7 +11,7 @@
 
 <body>
   <?php
-        require('common/header.php');
+        require('common/role-header.php');
     ?>
   <main>
 

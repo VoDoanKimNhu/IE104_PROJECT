@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     require('common/document-head.php');
 ?>
 <title>Home</title>
@@ -140,7 +141,7 @@
                                 $count_cmt++;
                             }
                             ?>
-                                <div class="post-content" data-aos="zoom-in" data-aos-delay="<?php $i*10;?>">
+                                <div class="post-content" data-aos="zoom-in" data-aos-delay="<?php $i*2;?>">
                                     <div class="post-image image">
                                         <div>
                                             <img src="image/<?php echo $row['img'][0];?>" class="img-p" alt="Image name">
@@ -157,7 +158,7 @@
                                         <p>
                                             <?php echo $row->description;?>
                                         </p>
-                                        <button class="btn post-btn"><a href="blog-content.php" style="color: rgb(153, 8, 8);">
+                                        <button class="btn post-btn"><a href="blog-content.php?postid=<?php echo $row->postid;?>" style="color: rgb(153, 8, 8);">
                                                 Read More &nbsp;<i style="color: rgb(153, 8, 8);"
                                                     class="fas fa-arrow-right"></i></a></button>
                                     </div>
@@ -218,7 +219,7 @@
                                     </div>
 
                                     <div class="post-title">
-                                        <a class="post-cont" href="blog-content.php?postid=<?php echo $key;?>"><?php echo $post__['title'];?></a>
+                                        <a class="post-cont" href="blog-content.php?postid=<?php echo $key+1;?>"><?php echo $post__['title'];?></a>
                                     </div>
 
                                 </div>
@@ -257,7 +258,7 @@
                             for($i=0; $i<$index; $i++) {
                                 if($provinceid[$i] != '') {
                                 ?>
-                                <span class="tag" data-aos="flip-up" data-aos-delay="100"><a href="#"><?php echo $provinceid[$i];?></a></span>
+                                <span class="tag" data-aos="flip-up" data-aos-delay="100"><a href="#"><?php echo $provinceid[$i]+1;?></a></span>
                                 <?php
                                 }
                             }                        
