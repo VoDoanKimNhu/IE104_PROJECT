@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require('common/document-head.php');
 ?>
     <title>Blog Content</title>
@@ -6,7 +7,6 @@
 </head>
 
 <?php
-
     use MongoDB\Client;
 
     require_once "vendor/autoload.php";
@@ -16,23 +16,36 @@
     $post = $db->POST;
     $account = $db->ACCOUNT;
     $comment = $db->COMMENT;
+    $province = $db->PROVINCE;
 
-    $viewerid = 5;
+    $viewerid = $_SESSION['accountid'];
 
     $postid = (int) $_GET['postid'];
     $result = $post->findOne(['postid' => $postid]);
     
     $title = $result['title'];
-    $description = $result['description'];
     $accountid = $result['accountid'];
-    $content = $result['content'];
+    $description = $result['description'];
+    $heading1 = $result['heading1'];
+    $para1 = $result['paragraph1'];
+    $heading2 = $result['heading2'];
+    $para2 = $result['paragraph2'];
+    $heading3 = $result['heading3'];
+    $para3 = $result['paragraph3'];
+    $heading4 = $result['heading4'];
+    $para4 = $result['paragraph4'];
+    $heading5 = $result['heading5'];
+    $para5 = $result['paragraph5'];
+    $brief = $result['brief'];
     $date = $result['date'];
     $imgs = $result['img'];
-    $province = $result['province'];
+    $provinceid = $result['provinceid'];
+
+    $result_pro = $province->findOne(['provinceid' => $provinceid]);
+    $province = $result_pro['name'];
 
     $imgs_length = count($imgs);
 ?>
-
 <?php
     $res = $comment->find(['postid' => $postid]);
     $num_cmt = 0;
@@ -54,7 +67,6 @@
         ]);   
     }
 ?>
-
 <body>
     <?php
         require('common/header.php');
@@ -108,45 +120,32 @@
                     </div>
                     <br>
                     <div class="overview">
-                        <p><?php echo $content?></p>
+                        <p><?php echo $description?></p>
                         <br>
                     </div>
                     <br>
                     <div class="detail-content">
-                        <h3>Ethnic culture</h3>
-                        <p>Learning about local culture is a great way to start your time in Sapa. Many minorities in this region still wear their ethnic dress, live in simple villages, and embrace ancient customs. The morning markets are the perfect place to witness the vibrant culture of the ethnic groups. Set aside time for Mường Hum, a small but charming Sunday morning market, or make the three-hour drive to Bắc Hà Market to see locals trading all types of colourful wares and produce. </p>
-                        <p>You can also get to know the ethnic groups through their unique handmade costumes. Spend some time learning about the styles of the different tribes through sewing, embroidery, weaving or batik workshops. Each costume may take months to make. If you’d like to shop ethnic designs, drop in the IndigoCat store to buy authentic bags, jackets and pillows.</p>
-                        <q><strong>TIP: ETHOS offers community-based tours for responsible travellers, ranging from motorbike rides to sewing classes to photography tours.</strong></q>
-                        <br>
-                        <br>
+                        <?php
+                            for($i=0; $i<5; $i++) {
+                                $name_heading = 'heading'.($i+1);
+                                $name_para = 'para'.($i+1);
 
-                        <h3>Mountain treks</h3>
-                        <p>There are countless tour companies in Sapa, but choosing one that’s owned by locals and follows sustainable practices is the way to go. Before you head off, talk with your guide to decide on an itinerary that suits you. You may like to spend more time walking in the mountains, or learning about life in the villages. If you choose a multi-day or overnight trek, you’ll have a chance to sleep in one of the small ethnic villages in the mountains — a must-do experience!</p>
-                        <p>Most treks begin with a walk to the wet market to buy food for your trip. Then, it’s an invigorating hike through the hills, full of exquisite panoramas and sweet mountain air. Follow your guide along winding paths, stopping for pictures along the way. Lunch is usually cooked over an open fire. Through the afternoon you may find yourself walking to scenic points, bamboo groves or waterfalls. Sapa has trails for everyone. Pace yourself and enjoy the view.</p>
-                        <q><strong>TIP: Sapa Sisters are known for excellent tailored tours led by local guides. These homegrown tours will give you context about Sapa’s history and the reality of life for its ethnic minorities today.</strong></q>
-                        <br>
-                        <br>
-
-                        <h3>Sustainable stays</h3>
-                        <p>Choosing where to stay in Sapa is half the fun of planning your trip. In the town, or out in the terraces? A pool and buffet, or family-style hospitality? There’s lot to choose from in every category, but some of Sapa’s most unique accommodations are its homestays. Staying with an ethnic family supplements the small income they receive from farming and gives you the chance to hear stories about local life, taste delicious ethnic dishes, and make wonderful new friends. </p>
-                        <p>If you are looking for a leisurely escape or a getaway with someone special, spring for a bungalow at Topas Ecolodge. This mountain retreat is known for incredible views of Sapa’s misty peaks and terraced valleys (especially from its two saltwater pools) however the lodge is also a leader when it comes to sustainability. To its credit, Topas employs more than 100 staff from nearby villages, recycles its wastewater and glass, reduces plastic and packaging, and buys from local suppliers.</p>
-                        <br>
-
-                        <h3>Herbal baths</h3>
-                        <p>You can’t leave Sapa without trying its famous herbal baths. The Red Dzao women have perfected the recipe for a healing soak, using bark and leaves harvested in the forests. The leaves are chopped and left to dry in the sun, then boiled in huge pots of water to create an aromatic, steamy blend used to soothe tired muscles, stave off sickness, and help women recover after childbirth. </p>
-                        <p>Dedicate a few hours to visit the Sapa-napro bathhouse in the village of Tả Phìn. Spend a half-hour soaking in a barrel full of bubbly, piping hot liquid for just 150,000 VND, then enjoy a late lunch or hot chocolate in the adjacent cafe, with Sapa’s magnificent views accompanying you every minute.</p>
-                        <q><strong>TIP: If you don’t fancy the ride to Tả Phìn Village, you can book a healing herbal bath in town at Victoria Sapa Resort & Spa, followed by a massage of your choice. Bliss!</strong></q>
-                        <br>
-                        <br>
-
-                        <h3>Sapa flavours </h3>
-                        <p>Like the rest of Vietnam, in Sapa you’ll find just-picked produce to be the highlight of the table. Ethnic families dine mainly on herbs and vegetables, river fish, and smoked buffalo meat. There are some unusual ethnic dishes for adventurous travellers, but even picky eaters will love the region’s fresh handmade tofu and chayote leaves (rau su su) sauteed with garlic. Be sure to try Sapa’s famous rainbow trout, served in a warming soup, or grilled with spices and rolled in rice paper with cucumber, greens and herbs. </p>
-                        <p>The Hill Station Restaurant on Fansipan Street offers cooking classes in authentic Black H’mong cuisine, including a trip to the local market. If you’re a foodie, you might like to stay with Topas Ecolodge or Topas Riverside Lodge, where the chefs lay out amazing hotpots, wood-fired barbecue dinners, and seasonal spreads made with ingredients from the lodge’s organic farms. </p>
-                        <br>
+                                if($$name_heading != '') {
+                                    ?>
+                                    <h3><?php echo $$name_heading;?></h3>
+                                    <p><?php echo $$name_para;?></p>
+                                    <!-- <p>You can also get to know the ethnic groups through their unique handmade costumes. Spend some time learning about the styles of the different tribes through sewing, embroidery, weaving or batik workshops. Each costume may take months to make. If you’d like to shop ethnic designs, drop in the IndigoCat store to buy authentic bags, jackets and pillows.</p>
+                                    <q><strong>TIP: ETHOS offers community-based tours for responsible travellers, ranging from motorbike rides to sewing classes to photography tours.</strong></q> -->
+                                    <br>
+                                    <br>
+                                    <?php
+                                }
+                            }
+                        ?>
                     </div>
                     <br>
                     <div class="summary">
-                        <p>There are now several excellent transport options to Sapa from Hanoi. Comfortable limo vans (from 450,000 VND) from downtown Hanoi take about five to six hours, and will drop you off in Sapa town, where you can take a taxi to homestays and lodges in the surrounding valleys. Many travellers take the eight-hour night train (from 900,000 VND) from Hanoi to Lào Cai, where another hour-long ride is required to reach Sapa town. To hire a private car and driver from Hanoi to Sapa costs about 3.5 million VND one way. </p>
+                        <p><?php echo $brief;?></p>
                         <br>
                     </div>
                     <br>
@@ -195,7 +194,7 @@
                     $pageno = 1;
                 }
 
-                $no_of_records_per_page = 1;
+                $no_of_records_per_page = 3;
                 $offset = ($pageno-1)*$no_of_records_per_page;
                 $rec_count = $num_cmt;
                 $total_pages = ceil($rec_count/$no_of_records_per_page);
@@ -241,8 +240,7 @@
                     <?php if($pageno >= $total_pages){ echo '...'; } else { echo ($pageno + 1); } ?>
                 </a>
                 <a href="#"><i class="fas fa-chevron-right"></i></a>
-            </ul>
-        </div>
+            </div>
         </section>
         <!-- <section class="interaction container">
             <h3>LEAVE A REPLY</h3>

@@ -25,13 +25,13 @@
             $_SESSION['accountid'] = $result['accountid'];
             switch ($result['role']) {
                 case '1':
-                    header("location: index.html");
+                    header("location: index-role.php");
                     break;
                 case '2':
                     header("location: #");
                     break;    
                 default:
-                    header("location: index.html");
+                    header("location: index-role.php");
                     break;
             }
         } 
@@ -97,7 +97,7 @@
                 $_SESSION['loggedin'] = true;
                 $_SESSION['accountid'] = $accountid;
 
-                header("location: index.html");
+                header("location: index-role.php");
             }  
         }
     }

@@ -1,4 +1,6 @@
-<!--#include virtual="/IE104_PROJECT/common/document-head.html"-->
+<?php
+    require('common/document-head.php');
+?>
 <title>Donate</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -7,8 +9,10 @@
 </head>
 
 <body>
-  <!--#include virtual="/IE104_PROJECT/common/header.html"-->
-  <main>
+<?php
+  require('common/header.php');
+?>
+<main>
     <div class="wall">
       <div class="text-content">
         <h1 class="text-heading" style="font-family: 'Comforter', cursive;">Donate Us</h1>
@@ -129,7 +133,9 @@
     </div>
   </main>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!--#include virtual="/IE104_PROJECT/common/footer.html"-->
+  <?php
+        require('common/footer.php');
+  ?>
 </body>
 
 </html>
