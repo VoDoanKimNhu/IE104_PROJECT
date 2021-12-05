@@ -3,9 +3,7 @@
 
 /*------------------Blog Carousel------------------*/
 /*Slideshow*/
-*{
-    background-color: white;
-}
+
 .slideshow-container {
     position: relative;
     width: 100%;
