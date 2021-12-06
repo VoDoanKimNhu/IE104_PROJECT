@@ -57,7 +57,7 @@
                                     $pro = $province->find();
                                     foreach($pro as $row) {
                                         ?>
-                                            <option <?php if($_SERVER["REQUEST_METHOD"] == "POST") if($_POST["province"] == (int) $row->provinceid) echo "selected";?> value="<?php echo $row->provinceid;?>"><?php echo $row->name;?></option>
+                                            <option <?php if($_SERVER["REQUEST_METHOD"] == "POST") if((int) $_POST["province"] == $row->provinceid) echo "selected";?> value="<?php echo $row->provinceid;?>"><?php echo $row->name;?></option>
                                         <?php
                                     }       
                                 ?>

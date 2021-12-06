@@ -16,6 +16,7 @@
     $db = $conn->IE104_PROJECT;
     $post = $db->POST;
     $account = $db->ACCOUNT;
+    $province = $db->PROVINCE;
 
     $viewerid = $_SESSION['accountid'];
     $result_act = $account->findOne(['accountid' => $viewerid]);
@@ -39,7 +40,7 @@
                 
             if (isset($_POST['btn_new_post'])){
                 $title = $_POST['blog-title'];
-                $province = $_POST['province'];
+                $province = (int) $_POST['province'];
                 $description = $_POST['description'];
                 $heading1 = $_POST['blog-heading1'];
                 $para1 = $_POST['blog-para1'];
@@ -527,7 +528,16 @@
                                 <div class="form-group">
                                     <label for="bplace">Place</label>
                                     <select id="province" name="province">
-                                    <option value="0">Viet Nam</option>
+                                    <?php
+                                        $pro = $province->find();
+                                        foreach($pro as $row) {
+                                            ?>
+                                                <option value="<?php echo $row->provinceid;?>"><?php echo $row->name;?></option>
+                                            <?php
+                                        }       
+                                    ?>
+
+                                    <!-- <option value="0">Viet Nam</option>
                                         <option value="1">An Giang</option>
                                         <option value="2">Ba Ria - Vung Tau</option>
                                         <option value="3">Bac Giang</option>
@@ -590,7 +600,7 @@
                                         <option value="60">Tuyen Quang</option>
                                         <option value="61">Vinh Long</option>
                                         <option value="62">Vinh Phuc</option>
-                                        <option value="63">Yen Bai</option>
+                                        <option value="63">Yen Bai</option> -->
                                     </select>
                                 </div>
                                 <div class="form-group">
