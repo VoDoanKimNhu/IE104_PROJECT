@@ -259,7 +259,7 @@
                             for($i=0; $i<$index; $i++) {
                                 if($provinceid[$i] != '') {
                                 ?>
-                                <span class="tag" data-aos="flip-up" data-aos-delay="100"><a href="#"><?php echo $provinceid[$i]+1;?></a></span>
+                                <span class="tag" data-aos="flip-up" data-aos-delay="100"><a href="#"><?php echo $provinceid[$i+1];?></a></span>
                                 <?php
                                 }
                             }                        
