@@ -25,7 +25,7 @@
       <h1>Members</h1>
       <div class="row">
         <div class="col-sm-4">
-          <img src="https://i.pinimg.com/564x/b3/de/98/b3de9861019b62a9a7c67c2a87e0dfba.jpg" alt="Vo Doan Kim Nhu"
+          <img src="./image/aboutus.jpg" alt="Vo Doan Kim Nhu"
             style="width:100%">
           <div class="icons">
             <a href="#"><i class="fab fa-facebook"></i></a>
@@ -36,6 +36,7 @@
         <div class="col-sm-8 member-text">
           <h2>Võ Đoàn Kim Như</h2>
           <p>19521972</p>
+          <p>Like to climb mountains and explore the culture of Vietnamese ethnic groups to to satisfy understanding.</p>
         </div>
       </div>
 
@@ -43,9 +44,10 @@
         <div class="col-sm-8 member-text">
           <h2>Nguyễn Thị Huệ</h2>
           <p>19521558</p>
+          <p>Passionate about discovering regional cuisines around Vietnam and relish to write blogs to share delightful tips.</p>
         </div>
         <div class="col-sm-4">
-          <img src="https://i.pinimg.com/564x/b3/de/98/b3de9861019b62a9a7c67c2a87e0dfba.jpg" alt="Nguyen Thi Hue"
+          <img src="./image/aboutus.jpg" alt="Nguyen Thi Hue"
             style="width:100%">
           <div class="icons">
             <a href="#"><i class="fab fa-facebook"></i></a>
@@ -57,7 +59,7 @@
 
       <div class="row">
         <div class="col-sm-4">
-          <img src="https://i.pinimg.com/564x/b3/de/98/b3de9861019b62a9a7c67c2a87e0dfba.jpg" alt="Vo Thi Nhu Lai"
+          <img src="./image/aboutus.jpg" alt="Vo Thi Nhu Lai"
             style="width:100%">
           <div class="icons">
             <a href="#"><i class="fab fa-facebook"></i></a>
@@ -68,6 +70,7 @@
         <div class="col-sm-8 member-text">
           <h2>Võ Thị Như Lài</h2>
           <p>19521733</p>
+          <p>Enjoy capturing beautiful scenes through nice shots and talking to many people to understand the ancient history of Vietnam.</p>
         </div>
       </div>
     </section>
@@ -85,14 +88,27 @@
       </div>
     </div> -->
 
-    <div class="centered">
+    <!-- <div class="centered">
       <h1>Our Project</h1>
       <p>Each Vietnamese city exudes its own distinct character.
           <br> Get a feel for Vietnam’s fascinating urban centres in these interactive tours.
           <br>Let these local Vietnamese show you around their hometowns with personal stories, top tips, and
           must-do experiences.
       </p>
-    </div>
+    </div> -->
+
+    <section class="head-content">
+      <div class="container">
+        <h1>Our Project</h1>
+        <p>Each Vietnamese city exudes its own distinct character.
+            <br> Get a feel for Vietnam’s fascinating urban centres in these interactive tours.
+            <br>Let these local Vietnamese show you around their hometowns with personal stories, top tips, and
+            must-do experiences.
+            <br>This website is a place for everyone who relishes tralveling in general and share experience.
+            <br>Through all of posts, we can see what Vietnam has and how Vietnam is gorgeous.
+        </p>
+      </div>
+  </section>
 
 
     <div class="slideshow-container">

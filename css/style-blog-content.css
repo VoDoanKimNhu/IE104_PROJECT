@@ -230,10 +230,17 @@ p, q, ol, ul, h3, h4, h5, h6 {
   /* Modal Content (image) */
   .modal-content {
     margin: auto;
-    display: block;
+    /* display: block; */
     width: 80%;
     max-width: 700px;
   }
+
+.modal img {
+    height: 520px;
+    width: 100%;
+    object-fit: cover;
+    margin-left: 20rem;
+}
   
   /* Caption of Modal Image */
   #caption {
@@ -244,7 +251,7 @@ p, q, ol, ul, h3, h4, h5, h6 {
     text-align: center;
     color: #ccc;
     padding: 10px 0;
-    height: 150px;
+    /* height: 150px; */
   }
   
   /* Add Animation */
@@ -295,6 +302,12 @@ p, q, ol, ul, h3, h4, h5, h6 {
 
 .comment-act {
     margin-top: 40px;
+}
+
+.container h2{
+    font-family: 'M PLUS 2', sans-serif; 
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 .container .comment-act .add-comment .info img {
@@ -505,9 +518,9 @@ p, q, ol, ul, h3, h4, h5, h6 {
         width: 100%;
     }
 
-    .comment-act .btn-cmt {
-        /* width: 100%; */
-    }
+    /* .comment-act .btn-cmt {
+         width: 100%; 
+    } */
         
     .comment .detail {
         width: 100%;

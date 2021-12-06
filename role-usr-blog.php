@@ -272,7 +272,10 @@
                         <div class="modal-content">
                             <form action="role-usr-blog.php" method="POST" enctype="multipart/form-data">
                                 <span class="close">&times;</span>
-                                <h2 style="margin: 2rem; text-align: center;">Change your avatar</h2>
+                                <h2 style="margin: 2rem; text-align: center; font-weight: bold;
+                                            color: rgb(153, 8, 8);
+                                            font-family: 'Outfit', sans-serif; 
+                                            text-transform: uppercase;">Change your avatar</h2>
                                 <div class="form-group">
                                     <input type="file" name="file"></input>
                                     <input type="submit" class="post-btn modal-btn" name="btn_change_img"></input>

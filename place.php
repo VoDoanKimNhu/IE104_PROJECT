@@ -51,19 +51,19 @@
             <div class="search-container">
                 <form action="place.php" method="POST">
                     <!-- <input type="text" placeholder="Search.." name="search"> -->
-                    <div class="form-group" >
-                        <select style="display: inline-block; padding: 20px;" id="province" name="province" value="selected">
-                            <?php
-                                $pro = $province->find();
-                                foreach($pro as $row) {
-                                    ?>
-                                        <option <?php if($_SERVER["REQUEST_METHOD"] == "POST") if($_POST["province"] == (int) $row->provinceid) echo "selected";?> value="<?php echo $row->provinceid;?>"><?php echo $row->name;?></option>
-                                    <?php
-                                }       
-                            ?>
-                        </select>
-                    </div>
-                    <button style="display: inline-block;" type="submit" name="search"><i class="fas fa-search"></i></button>
+                    <div class="form-group">
+                            <select id="province" name="province" value="selected">
+                                <?php
+                                    $pro = $province->find();
+                                    foreach($pro as $row) {
+                                        ?>
+                                            <option <?php if($_SERVER["REQUEST_METHOD"] == "POST") if($_POST["province"] == (int) $row->provinceid) echo "selected";?> value="<?php echo $row->provinceid;?>"><?php echo $row->name;?></option>
+                                        <?php
+                                    }       
+                                ?>
+                            </select>
+                        </div>
+                    <button type="submit" name="search"><i class="fas fa-search"></i></button>
                 </form>
             </div>
         </div>
@@ -102,7 +102,7 @@
                                 <h1 class="title">
                                     <a href="blog-content.php?postid=<?php echo $row->postid;?>"><?php echo $row->title;?></a>
                                 </h1>
-                                <p style="font-size: 16px;" class="introduce"><?php echo $row->description;?></p>
+                                <p class="introduce"><?php echo $row->description;?></p>
                             </div>
                         </div>
                     <?php
