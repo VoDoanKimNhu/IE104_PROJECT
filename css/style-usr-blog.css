@@ -85,8 +85,11 @@ main .usr-blog-content .blog-nav .usr-name {
     margin-top: 1rem;
     text-align: center;
     font-size: 24px;
-    color: rgb(168, 116, 18);
+    /*color: rgb(168, 116, 18);*/
     font-weight: bold;
+    color: rgb(153, 8, 8);
+    font-family: 'Outfit', sans-serif;
+
 }
 
 main .usr-blog-content .blog-nav .avatar-container {
@@ -162,7 +165,7 @@ main .usr-blog-content .usr-list-post .usr-post .usr-post-image img {
     border-top-right-radius: 3%;
 }
 
-main .usr-blog-content .usr-list-post .usr-post .usr-post-title h1 a{
+.usr-post-title a{
     text-transform: uppercase;
     font-size: 1rem;
     font-weight: bold;
@@ -188,9 +191,11 @@ main .usr-blog-content .usr-list-post {
     margin: 0 2rem 6rem 5rem;
 }
 
-main .usr-blog-content .usr-list-post .edit-btn, .del-btn {
+
+
+/* main .usr-blog-content .usr-list-post .edit-btn, .del-btn {
     border: none;
-    /*color: rgb(90, 90, 241);*/
+    color: rgb(90, 90, 241);
     text-align: right;
     font-size: 18px;
     position: relative;
@@ -200,7 +205,7 @@ main .usr-blog-content .usr-list-post .edit-btn, .del-btn {
 
 main .usr-blog-content .usr-list-post .del-btn {
     margin-left: 14rem;
-}
+} */
 
 @media only screen and (max-width: 1200px){
     main .usr-blog-content .usr-list-post {

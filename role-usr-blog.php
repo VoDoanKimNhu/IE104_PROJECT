@@ -676,15 +676,31 @@
                                 <a><img src="./image/<?php echo $imgsrc;?>" alt="Image name"></a>
                             </div>
                             <div class="usr-post-title">
-                                <a href="blog-content.php?postid=<?php echo $row['postid'];?>"><?php echo $title;?></a>
+                                <a style="text-transform: uppercase;
+                                    font-size: 1rem;
+                                    font-weight: bold;
+                                    color: rgb(153, 8, 8);
+                                    font-family: 'Outfit', sans-serif;
+                                    letter-spacing: 0.7px" 
+                                    href="blog-content.php?postid=<?php echo $row['postid'];?>"><?php echo $title;?></a>
                                 <p>
                                     <?php echo $description;?>
                                 </p>
                             </div>
-                            <div class="option">
-                                <a href="role-edit-post.php?postid=<?php echo $row['postid'];?>" class="edit-btn modal-btns"><i class="fas fa-user-edit"></i></a>
-                                <form action="role-usr-blog.php?postid=<?php echo $row['postid'];?>" method="POST">
-                                    <button class="btn" name="delete_post" class="del-btn modal-btns" ><i class="fas fa-trash-alt"></i></button>
+                            <div class="option" style="display: inline-block;">
+                                <a style="background-color: rgb(168, 116, 18);
+                                        font-size: 17px;
+                                        color: white;
+                                        padding: 5px 4px;
+                                        margin-left: 10px;" href="role-edit-post.php?postid=<?php echo $row['postid'];?>" class="edit-btn modal-btns"><i class="fas fa-user-edit"></i></a>
+                                <form style="display: inline-block; margin: 8px;" action="role-usr-blog.php?postid=<?php echo $row['postid'];?>" method="POST">
+                                    <button style="margin-left: 11.8rem;
+                                            border: none;
+                                            color: white;
+                                            padding: 4px 6px;
+                                            background-color: rgb(168, 116, 18);
+                                            font-size: 17px;
+                                            cursor: pointer;" class="btn" name="delete_post" class="del-btn modal-btns" ><i class="fas fa-trash-alt"></i></button>
                                 </form>
                             </div>
                         </div>
