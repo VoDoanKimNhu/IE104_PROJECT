@@ -42,8 +42,6 @@
         $para5 = $_POST['blog-para5'];
         $brief = $_POST['brief'];
 
-        echo $province.$description.$heading1.$para1;
-
         $update = $post->updateOne(
             ['postid' => (int) $postid],
             ['$set' => 

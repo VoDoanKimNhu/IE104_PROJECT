@@ -52,7 +52,7 @@
                 <form action="place.php" method="POST">
                     <!-- <input type="text" placeholder="Search.." name="search"> -->
                     <div class="form-group" >
-                        <select style="display: inline-block; padding: 20px;" id="province" name="province" value="selected">
+                        <select style="display: inline-block; padding: 20px; width: 200px;" id="province" name="province" value="selected">
                             <?php
                                 $pro = $province->find();
                                 foreach($pro as $row) {
