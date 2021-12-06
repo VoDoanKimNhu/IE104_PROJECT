@@ -102,7 +102,7 @@
                                 <h1 class="title">
                                     <a href="blog-content.php?postid=<?php echo $row->postid;?>"><?php echo $row->title;?></a>
                                 </h1>
-                                <p style="font-size: 16px;" class="introduce"><?php echo $row->description;?></p>
+                                <p class="introduce"><?php echo $row->description;?></p>
                             </div>
                         </div>
                     <?php

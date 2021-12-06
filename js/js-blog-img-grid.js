@@ -13,7 +13,7 @@ function two() {
     for(i=0; i<elements.length; i++) {
         elements[i].style.msFlex="50%";
         elements[i].style.flex="50%";
-        elements[i].style.height="400px";
+        elements[i].style.height="300px";
     }
 }
 

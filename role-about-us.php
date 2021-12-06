@@ -110,10 +110,13 @@
         </p>
       </div>
   </section>
+<<<<<<< HEAD
 
     <div class="achie">
         <h1 style="margin-bottom: 5rem; margin-top: 10rem;">Our Achievements</h1>
     </div>
+=======
+>>>>>>> dfafa0707f2e75a37425196dc2c001a89bd0a91d
 
 
     <div class="slideshow-container">
