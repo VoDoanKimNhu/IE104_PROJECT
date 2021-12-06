@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+}
+
+.head-content .container {
+    background-image: linear-gradient(
+        rgba(204, 152, 57, 0.7),rgba(5, 11, 32, 0.7)),url("/IE104_PROJECT/image/Cao_Bang-Ban_Gioc_Waterfall-0014 text.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    min-height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.head-content .container h1 {
+    color: white;
+    letter-spacing: 0.3rem;
+    word-spacing: 3px;
+    margin: 0;
+    font-size: 6rem;
+    font-family: 'Comforter', cursive;
+}
+
+.head-content .container p {
+    color: white;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+.centered {
+    margin-top: 3rem;
+    position: relative;
+    text-align: center;
+}
+
+.centered h1 {
+    color: rgb(168, 116, 18);
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.centered p {
+    margin-top: 2rem;
+    line-height: 2rem;
+    letter-spacing: 1.5px;
+    word-spacing: 1px;
+    font-weight: 600;
+}
+
+.filter {
+    padding: 90px 0px 0px 90px;
+}
+
+/* .filter .all {
+    padding: 7px 20px;
+    background: rgb(153, 8, 8);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+} */
+
+/* .filter .search-container {
+    display: inline-block;
+}
+ */
+/* .filter .search-container input[type=text] {
+    padding: 6px 8px;
+    font-size: 16px;
+    border: 1px solid rgb(124, 115, 115);
+    margin-left: 3rem;
+} */
+
+.filter .search-container select {
+    width: 200px;
+    padding: 10px;
+}
+
+.filter .search-container option {
+    font-family: 'M PLUS 2', sans-serif; 
+    color: black; 
+    font-weight: bolder;
+}
+
+.filter .search-container button {
+    background: rgb(153, 8, 8);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    display: inline-block; 
+    padding: 10px; 
+    width: 50px;
+}
+
+.filter .search-container button:hover {
+    background: rgb(148, 25, 25);
+}
+
+.filter .search-container .form-group {
+    display: inline-block;
+}
+
+
+.content-container {
+    padding: 90px;
+}
+
+.content-container .place{
+    display: inline-block;
+    margin-bottom: 3rem;
+}
+
+.content-container .place .place-img img{
+    height: 220px;
+    width: 220px;
+    overflow: hidden;
+    float: left;
+    margin-right: 1.5rem;
+    border: 7px solid rgb(168, 116, 18);
+    object-fit: cover;
+}
+
+.content-container .place .place-intro .title a{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    color: rgb(153, 8, 8);
+    font-family: 'Outfit', sans-serif;
+}
+
+.content-container .place .place-intro .introduce {
+    margin-top: 0.5rem;
+    font-size: 15px;
+    word-spacing: 0.5px;
+    letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 800px){
+    .content-container .place .place-img img {
+        float: none;
+        width: 100%;
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 655px){
+    .head-content .container h1 {
+        font-size: 4rem;
+    }
+    .head-content .container p {
+        font-size: 0.9rem;
+    }
+    .content-container .place .place-img img {
+        float: none;
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 570px){
+    .content-container .place .place-img img {
+        float: none;
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .filter .search-container input[type=text] {
+        margin-left: 0;
+    }
+    .head-content .container h1 {
+        font-size: 3rem;
+    }
+    .head-content .container p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Pagination flex-row */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pagination {
+    justify-content: center;
+    color: rgba(0,0,0,0.2);
+    margin: 4rem 0;
+}
+
+.pagination a {
+    padding: .6rem .9rem;
+    border-radius: 2rem;
+    margin: 0.3rem;
+    color: gray;
+}
+
+.pagination .pages {
+    background: grey;
+    color: white;
+}
+
+.pagination ul {
+    list-style-type:none;
+}
+
+.form-group select{
+    width: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    height: auto;
+}

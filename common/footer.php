@@ -1,0 +1,37 @@
+<footer>
+        <h2 class="slogan">Beauty, Charm & Adventure with SeeShareVN</h2>
+        <div class="footer-link">
+            <div>
+                <h3>Useful Link</h3>
+                <div class="link">
+                    <div class="use-link">
+                        <a href="https://evisa.xuatnhapcanh.gov.vn/trang-chu-ttdt">VietNam visa</a>
+                    </div>
+                    <div class="use-link">
+                        <a href="https://www.vietnam-briefing.com/news/covid-19-vietnam-travel-updates-restrictions.html/">Restrictions in Covid-19</a>
+                    </div>
+                    <div class="use-link">
+                        <a href="https://vietnamnews.vn/">VietNam News</a>
+                    </div>
+                    <div class="use-link">
+                        <a href="https://www.nationsonline.org/oneworld/map/vietnam-administrative-map.htm">VietNam Map</a>
+                    </div>
+                    <div class="use-link">
+                        <a href="https://www.vietnamtourism.gov.vn/english/">VietNam Tourism</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Follow us on</h3>
+                <div class="icons">
+                    <i class="fa fa-facebook"><a href="#"></a></i>
+                    <i class="fa fa-twitter"><a href="#"></a></i>
+                    <i class="fa fa-instagram"><a href="#"></a></i>
+                    <i class="fa fa-linkedin"><a href="#"></a></i>
+                </div>
+                <p class="inf">Welcome to the official website of Vietnam National Administration of Tourism. Visit our social media pages for more travel inspiration.</p>
+            </div>
+            
+        </div>
+        <p class="source">Made with <i class="fa fa-heart-o" style="font-size: 20px;"></i> by UIT students.</p>
+    </footer>
