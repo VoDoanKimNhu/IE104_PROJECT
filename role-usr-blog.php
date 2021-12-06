@@ -536,71 +536,6 @@
                                             <?php
                                         }       
                                     ?>
-
-                                    <!-- <option value="0">Viet Nam</option>
-                                        <option value="1">An Giang</option>
-                                        <option value="2">Ba Ria - Vung Tau</option>
-                                        <option value="3">Bac Giang</option>
-                                        <option value="4">Bac Can</option>
-                                        <option value="5">Bac Lieu</option>
-                                        <option value="6">Bac Ninh</option>
-                                        <option value="7">Ben Tre</option>
-                                        <option value="8">Binh Dinh</option>
-                                        <option value="9">Binh Duong</option>
-                                        <option value="10">Binh Phuoc</option>
-                                        <option value="11">Binh Thuan</option>
-                                        <option value="12">Ca Mau</option>
-                                        <option value="13">Can Tho</option>
-                                        <option value="14">Cao Bang </option>
-                                        <option value="15">Da Nang</option>
-                                        <option value="16">Dak Lak</option>
-                                        <option value="17">Dak Nong</option>
-                                        <option value="18">Dien Bien</option>
-                                        <option value="19">Dong Nai</option>
-                                        <option value="20">Dong Thap</option>
-                                        <option value="21">Gia Lai</option>
-                                        <option value="22">Ha Giang</option>
-                                        <option value="23">Ha Nam</option>
-                                        <option value="24">Ha Noi </option>
-                                        <option value="25">Ha Tinh</option>
-                                        <option value="26">Hai Duong</option>
-                                        <option value="27">Hai Phong</option>
-                                        <option value="28">Hau Giang</option>
-                                        <option value="29">Hoa Binh</option>
-                                        <option value="30">Hung Yen</option>
-                                        <option value="31">Khanh Hoa</option>
-                                        <option value="32">Kien Giang</option>
-                                        <option value="33">Kon Tum</option>
-                                        <option value="34">Lai Chau</option>
-                                        <option value="35">Lam Dong</option>
-                                        <option value="36">Lang Son</option>
-                                        <option value="37">Lao Cai</option>
-                                        <option value="38">Long An</option>
-                                        <option value="39">Nam Dinh</option>
-                                        <option value="40">Nghe An</option>
-                                        <option value="41">Ninh Binh</option>
-                                        <option value="42">Ninh Thuan</option>
-                                        <option value="43">Phu Tho</option>
-                                        <option value="44">Phu Yen</option>
-                                        <option value="45">Quang Binh</option>
-                                        <option value="46">Quang Nam</option>
-                                        <option value="47">Quang Ngai</option>
-                                        <option value="48">Quang Ninh</option>
-                                        <option value="49">Quang Tri</option>
-                                        <option value="50">Soc Trang</option>
-                                        <option value="51">Son La</option>
-                                        <option value="52">Tay Ninh</option>
-                                        <option value="53">Thai Binh</option>
-                                        <option value="54">Thai Binh</option>
-                                        <option value="55">Thanh Hoa</option>
-                                        <option value="56">Thua Thien Hue</option>
-                                        <option value="57">Tien Giang</option>
-                                        <option value="58">Ho Chi Minh</option>
-                                        <option value="59">Tra Vinh</option>
-                                        <option value="60">Tuyen Quang</option>
-                                        <option value="61">Vinh Long</option>
-                                        <option value="62">Vinh Phuc</option>
-                                        <option value="63">Yen Bai</option> -->
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -686,15 +621,31 @@
                                 <a><img src="./image/<?php echo $imgsrc;?>" alt="Image name"></a>
                             </div>
                             <div class="usr-post-title">
-                                <a href="blog-content.php?postid=<?php echo $row['postid'];?>"><?php echo $title;?></a>
+                                <a style="text-transform: uppercase;
+                                    font-size: 1rem;
+                                    font-weight: bold;
+                                    color: rgb(153, 8, 8);
+                                    font-family: 'Outfit', sans-serif;
+                                    letter-spacing: 0.7px" 
+                                    href="blog-content.php?postid=<?php echo $row['postid'];?>"><?php echo $title;?></a>
                                 <p>
                                     <?php echo $description;?>
                                 </p>
                             </div>
-                            <div class="option">
-                                <a href="role-edit-post.php?postid=<?php echo $row['postid'];?>" class="edit-btn modal-btns"><i class="fas fa-user-edit"></i></a>
-                                <form action="role-usr-blog.php?postid=<?php echo $row['postid'];?>" method="POST">
-                                    <button class="btn" name="delete_post" class="del-btn modal-btns" ><i class="fas fa-trash-alt"></i></button>
+                            <div class="option" style="display: inline-block;">
+                                <a style="background-color: rgb(168, 116, 18);
+                                        font-size: 17px;
+                                        color: white;
+                                        padding: 5px 4px;
+                                        margin-left: 10px;" href="role-edit-post.php?postid=<?php echo $row['postid'];?>" class="edit-btn modal-btns"><i class="fas fa-user-edit"></i></a>
+                                <form style="display: inline-block; margin: 8px;" action="role-usr-blog.php?postid=<?php echo $row['postid'];?>" method="POST">
+                                    <button style="margin-left: 11.8rem;
+                                            border: none;
+                                            color: white;
+                                            padding: 4px 6px;
+                                            background-color: rgb(168, 116, 18);
+                                            font-size: 17px;
+                                            cursor: pointer;" class="btn" name="delete_post" class="del-btn modal-btns" ><i class="fas fa-trash-alt"></i></button>
                                 </form>
                             </div>
                         </div>
