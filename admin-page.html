@@ -1,0 +1,136 @@
+<!--#include virtual="/IE104_PROJECT/common/document-head.html"-->
+<title>Admin page</title>
+<link href="./css/style-admin-page.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!--#include virtual="/IE104_PROJECT/common/header.html"-->
+
+<main>
+    <button class="tablink" onclick="openPage('Posts', this, 'rgb(153, 8, 8)')">Posts</button>
+    <button class="tablink" onclick="openPage('Accounts', this, 'rgb(153, 8, 8)')"
+        id="defaultOpen">Accounts</button>
+    <div id="Posts" class="tabcontent">
+        <div class="list-post">
+            <div class="link-post">
+                <a href="#">The perfect weekend in Ho Chi Minh</a>
+                <p class="owner">Vuong Nguyen</p>
+                <p class="date"><time datetime="2021-03-01">Mar 01 2021</time></p>
+                <button class="del-btn"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="link-post">
+                <a href="#">Sapa for sustainable travelers</a>
+                <p class="owner">Nguyen Hue</p>
+                <p class="date"><time datetime="2021-03-01">Fri Jan 14 2021</time></p>
+                <button class="del-btn"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="link-post">
+                <a href="#">Sea and sky: Ha Long aboard the Emeraude</a>
+                <p class="owner">Vo Lai</p>
+                <p class="date"><time datetime="2021-03-01">Fri Nov 05 2021</time></p>
+                <button class="del-btn"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="link-post">
+                <a href="#">3 walking tours of Hanoi</a>
+                <p class="owner">Kim Nhu</p>
+                <p class="date"><time datetime="2021-03-01">Sat Feb 21 2021</time></p>
+                <button class="del-btn"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="link-post">
+                <a href="#">5 ways to encounter Vietnam's ethnic groups</a>
+                <p class="owner">Lisa</p>
+                <p class="date"><time datetime="2021-03-01">Sun Mar 21 2021</time></p>
+                <button class="del-btn"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="link-post">
+                <a href="#">A girls' guide to a weekend in Hoi An</a>
+                <p class="owner">James</p>
+                <p class="date"><time datetime="2021-03-01">Sat Jul 16 2021</time></p>
+                <button class="del-btn"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="Accounts" class="tabcontent">
+        <div class="list-account">
+            <div class="list-acc">
+                <div class="acc-avt">
+                    <img src="./image/user_1.jpg" alt="acc1">
+                </div>
+                <div class="acc-inf">
+                    <h3>Vuong Nguyen</h3>
+                    <p>Email: vuongnguyen@gmail.com</p>
+                    <p>Password: ********</p>
+                    <button class="change-inf"><i class="fas fa-edit"></i></button>
+                </div>
+            </div>
+            <div class="list-acc">
+                <div class="acc-avt">
+                    <img src="./image/myhanoi_0.jpg" alt="acc1">
+                </div>
+                <div class="acc-inf">
+                    <h3>Nguyen Hue</h3>
+                    <p>Email: nghue@gmail.com</p>
+                    <p>Password: *******</p>
+                    <button class="change-inf"><i class="fas fa-edit"></i></button>
+                </div>
+            </div>
+            <div class="list-acc">
+                <div class="acc-avt">
+                    <img src="./image/user_2.jpg" alt="acc1">
+                </div>
+                <div class="acc-inf">
+                    <h3>Vo Lai</h3>
+                    <p>Email: vlai@gmail.com</p>
+                    <p>Password: *********</p>
+                    <button class="change-inf"><i class="fas fa-edit"></i></button>
+                </div>
+            </div>
+            <div class="list-acc">
+                <div class="acc-avt">
+                    <img src="./image/user_3.jpg" alt="acc1">
+                </div>
+                <div class="acc-inf">
+                    <h3>Kim Nhu</h3>
+                    <p>Email: knhu@gmail.com</p>
+                    <p>Password: *********</p>
+                    <button class="change-inf"><i class="fas fa-edit"></i></button>
+                </div>
+            </div>
+            <div class="list-acc">
+                <div class="acc-avt">
+                    <img src="./image/user_5.jpg" alt="acc1">
+                </div>
+                <div class="acc-inf">
+                    <h3>Lisa</h3>
+                    <p>Email: lisa@gmail.com</p>
+                    <p>Password: ********</p>
+                    <button class="change-inf"><i class="fas fa-edit"></i></button>
+                </div>
+            </div>
+            <div class="list-acc">
+                <div class="acc-avt">
+                    <img src="./image/avt.jpg" alt="acc1">
+                </div>
+                <div class="acc-inf">
+                    <h3>James</h3>
+                    <p>Email: james@gmail.com</p>
+                    <p>Password: ********</p>
+                    <button class="change-inf"><i class="fas fa-edit"></i></button>
+                </div>
+            </div>
+
+        </div>
+       
+    </div>
+
+    <script src="js/js-admin-page.js"></script>
+</main>
+
+
+<!--#include virtual="/IE104_PROJECT/common/footer.html"-->
+
+</body>
+
+</html>

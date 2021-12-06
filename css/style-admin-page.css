@@ -1,0 +1,127 @@
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+/* body, html {
+  height: 100%;
+  margin: 0;
+} */
+
+/* Style tab links */
+.tablink {
+  background-color: white;
+  color: rgb(168, 116, 18);
+  float: left;
+  /* border-bottom: 3px solid rgb(153, 8, 8); */
+  border: none;
+  border-bottom: 3px solid rgb(153, 8, 8);
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 22px;
+  width: 50%;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* .tablink:hover {
+  background-color: #777;
+} */
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: black;
+    padding: 100px 50px;
+    /* height: 100%; */
+}
+
+#Posts {background-color: white;}
+#Accounts {background-color: white;}
+
+.tabcontent .list-post {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0.7rem;
+}
+
+.tabcontent .list-post .link-post, .list-acc{
+    position: relative;
+    /*display: block;*/
+    margin-bottom: 2rem;
+/*     border-bottom: 1px solid rgb(168, 116, 18); */
+}
+
+.tabcontent .list-post .link-post a{
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    color: rgb(153, 8, 8);
+    text-transform: uppercase;
+    margin-left: 10px;
+    font-weight: bold;
+    word-spacing: 0.6px;
+    letter-spacing: 0.7px;
+}
+
+.tabcontent .list-post .link-post p {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+main .tabcontent .list-post .link-post .del-btn {
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 10px;
+}
+
+main .tabcontent .list-account {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0.7rem;
+}
+
+main .tabcontent .list-account .list-acc .acc-avt img{
+    height: 120px;
+    width: 120px;
+    overflow: hidden;
+    float: left;
+    object-fit: cover;
+    border: 2px solid rgb(168, 116, 18);
+    border-radius: 50%;
+    margin-right: 1.5rem;
+}
+
+.tabcontent .list-account .list-acc .acc-inf h3 {
+    font-family: 'Outfit', sans-serif;
+    color: rgb(153, 8, 8);
+    text-transform: uppercase;
+    margin-left: 10px;
+    font-weight: bold;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    margin-top: 0.5rem;
+}
+
+.tabcontent .list-account .list-acc .acc-inf p {
+    font-size: 15px;
+}
+
+.tabcontent .list-account .list-acc .acc-inf .change-inf {
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+@media (max-width: 800px) {
+    .tabcontent .list-post {
+        grid-template-columns: 100%;
+    }
+    .tabcontent .list-account {
+        grid-template-columns: 100%;
+    }
+}
