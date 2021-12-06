@@ -91,12 +91,13 @@ p, q, ol, ul, h3, h4, h5, h6 {
 }
 
 .info img {
-    max-width: 200px;
-    width: 20%;
-    max-width: 100px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .info .post-owner h2 {
@@ -297,11 +298,13 @@ p, q, ol, ul, h3, h4, h5, h6 {
 }
 
 .container .comment-act .add-comment .info img {
-    max-width: 70px;
-    width: 100%;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .add-comment {
@@ -359,11 +362,13 @@ p, q, ol, ul, h3, h4, h5, h6 {
 }
 
 .container .comment .info img {
-    max-width: 100px;
-    width: 10%;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .comment .detail {

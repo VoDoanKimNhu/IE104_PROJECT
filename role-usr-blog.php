@@ -29,8 +29,11 @@
     <!----------------------------Header-------------------------------->
     <?php
             $res = $post->find();
+            $id_ps = array();
+            $i = 0;
             $num_post = 0;
             foreach ($res as $row) {
+                $id_ps[$i] = $row->postid;
                 $num_post++;
             }                       
                 
@@ -51,7 +54,7 @@
                 $brief = $_POST['brief'];
 
                 $date = date("D M d Y");
-                $postid = $num_post + 1;
+                $postid = max($id_ps) + 1;
 
                 $fileName = array();
                 $fileTmpName = array();
@@ -60,7 +63,7 @@
                 $fileActualExt = array();
                 $img_post = array();
 
-                $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+                $allowed = array('jpg', 'jpeg', 'png');
 
                 $check = true;
                 $count = 0;
@@ -90,7 +93,7 @@
                     $fileDestination = array();
 
                     for($i=0; $i<$count; $i++) {
-                        $fileNameNew[$i] = 'blog_content_'.$postid.'_'.($i+1).'.'.$fileActualExt[$i];
+                        $fileNameNew[$i] = 'blog_content_'.$postid.'_'.($i+1).'.'.'jpg';
                         $fileDestination[$i] = 'image/'.$fileNameNew[$i];
                         $img_post[$i] = $fileNameNew[$i];
                         move_uploaded_file($fileTmpName[$i], $fileDestination[$i]);

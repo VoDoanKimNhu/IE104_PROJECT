@@ -79,7 +79,7 @@
                         <div class="content">
                             <h3>Update successfully.</h3>
                             <div class="btn close" style="display: flex; justify-content: center;">
-                                <button id="close_announce">OK</button>
+                                <!-- <button id="close_announce">OK</button> -->
                             </div> 
                         </div>
                     </div>
@@ -92,16 +92,15 @@
                     <div class="content">
                         <h3>No fields are changed.<br>Please check your update.</h3>
                         <div class="btn close" style="display: flex; justify-content: center;">
-                            <button id="close_announce">OK</button>
+                            <!-- <button id="close_announce">OK</button> -->
                         </div> 
                     </div>
                 </div>
             </div>
         <?php
         }
+        echo "<meta http-equiv='refresh' content='0'>";
     }
-
-
 ?>
 
 <script>

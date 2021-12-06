@@ -19,9 +19,10 @@
     $comment = $db->COMMENT;
     $province = $db->PROVINCE;
 
-    $viewerid = $_SESSION['accountid'];
+    $viewerid = (int) $_SESSION['accountid'];
 
     $postid = (int) $_GET['postid'];
+    // echo $_GET['postid']; 
     $result = $post->findOne(['postid' => $postid]);
     
     $title = $result['title'];
@@ -42,7 +43,7 @@
     $imgs = $result['img'];
     $provinceid = $result['provinceid'];
 
-    $result_pro = $province->findOne(['provinceid' => $provinceid]);
+    $result_pro = $province->findOne(['provinceid' => (int) $provinceid]);
     $province = $result_pro['name'];
 
     $imgs_length = count($imgs);
@@ -70,7 +71,11 @@
 ?>
 <body>
     <?php
-        require('common/header.php');
+        if($viewerid != '') {
+            require('common/role-header.php');
+        } else{
+            require('common/header.php');
+        }
     ?>
     <main>
         <section class="head-content">
@@ -180,7 +185,7 @@
                                 <img src="/IE104_PROJECT/image/<?php echo $viewer_img;?>" alt="Image of <?php echo $viewer_name;?>" class="img-owner">
                             </div> 
                         </div>
-                        <form action="blog-content.php" name="add-comment" id="add-comment" method="POST">
+                        <form action="blog-content.php?postid=<?php echo $_GET['postid'];?>" name="add-comment" id="add-comment" method="POST">
                             <div class="add-cmt">
                                 <input type="text" name="comment" id="comment" placeholder="Add a public comment...">
                             </div>

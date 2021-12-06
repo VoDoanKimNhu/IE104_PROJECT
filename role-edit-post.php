@@ -22,7 +22,7 @@
     $postid = $_GET['postid'];
     $result_post = $post->findOne(['postid' => (int) $postid]);
 
-    $pro = $province->findOne(['provinceid' => $result_post['provinceid']]);
+    $pro = $province->findOne(['provinceid' => (int) $result_post['provinceid']]);
 
 ?>
 <?php
@@ -105,6 +105,7 @@
                         <select id="b-province" name="province" value="<?php echo $pro['name'];?>">
                         <?php 
                             $provinces = $province->find();
+
                             foreach($provinces as $row) {
                                 if((int) $row->provinceid == (int) $pro['provinceid']) {
                                     ?>
@@ -188,7 +189,6 @@
     </script>
     <script>
         document.getElementById("close_announce").addEventListener("click", function(){
-            // window.location.reload();
             document.getElementById("announce").classList.add("action");
         })
         document.addEventListener('keydown',function(e){
