@@ -28,7 +28,7 @@
             $mail->Host = "smtp.gmail.com";
             $mail->SMTPAuth = true;
             $mail->Username = "19521972@gm.uit.edu.vn";
-            $mail->Password = '1582104979';
+            $mail->Password = '';
             $mail->Port = '587';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
